@@ -10,22 +10,24 @@ FresherNote is a web application inspired by Evernote that will be build using R
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
-- [ ] Questions
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Answers for questions / comments on answers
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Search for Questions
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Topics / tags
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+- [ ] Minimum necessary features:
+  - [ ] Questions
+  - [ ] Answers for questions / comments on answers
+  - [ ] Search for Questions
+  - [ ] Topics / tags
+- [ ] Smooth, bug-free navigation
+- [ ] Adequate seed data to demonstrate the site's features
+- [ ] Adequate CSS styling
+
+## Product Goals and Priorities
+XXXXX will allow users to do the following:
+- [ ] Create an account
+- [ ] Log in / out (with demo user)
+- [ ] Ask (create), read (all), answer (all), edit (own) and delete (own) questions
+- [ ] Comment on answers and questions
+- [ ] View feeds of questions filtered by topic
+- [ ] Tag owned questions with Topics
+- [ ] Search with dropdown of previously asked questions
 
 ## Design Docs
 * [View Wireframes][views]
@@ -42,7 +44,7 @@ FresherNote is a web application inspired by Evernote that will be build using R
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (1 day, W1 Tu 6pm)
+### Phase 1: Backend setup and Front End User Authentication (0.5 days, W1 Tu 12pm)
 
 **Objective:** Functioning rails project with Authentication
 
@@ -53,22 +55,20 @@ FresherNote is a web application inspired by Evernote that will be build using R
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
 
-### Phase 2: Questions Model, API, and basic APIUtil (1.5 days, W1 Th 12pm)
+### Phase 2: Questions Model, API, and basic APIUtil (1.5 days, W1 Wed 6pm)
 
 **Objective:** Questions can be created, read, edited and destroyed through
 the API.
 
 - [ ] create `Questions` model
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`QuestionsController`)
-- [ ] jBuilder views for notes
+- [ ] CRUD API for questions (`QuestionsController`)
+- [ ] jBuilder views for questions
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
-<!-- ############################################################### -->
-
-### Phase 3: Flux Architecture and Router (1.5 days, W1 F 6pm)
+### Phase 3: Flux Architecture and Router (1.5 days, W1 F 12pm)
 
 **Objective:** Questions can be created, read, edited and destroyed with the
 user interface.
@@ -78,11 +78,12 @@ user interface.
 - implement each note component, building out the flux loop as needed.
   - [ ] `QuestionsIndex`
   - [ ] `QuestionIndexItem`
-  - [ ] `QuestionForm`
+  - [ ] `NewQuestionForm`
+  - [ ] `EditQuestionForm`
 - [ ] save Questions to the DB when the form loses focus or is left idle
   after editing.
 
-### Phase 4: Start Styling (0.5 days, W2 M 12pm)
+### Phase 4: Start Styling (0.5 days, W2 F 6pm)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
@@ -91,39 +92,56 @@ user interface.
 - [ ] position elements on the page
 - [ ] add basic colors & styles
 
-### Phase 5: Answers and Comments (1 day, W2 Tu 12pm)
+### Phase 5: Answers (1 day, W2 M 6pm)
 
-**Objective:** Answers belong to Questions, and comments belong to Answers.
+**Objective:** Answers belong to Questions, and can be viewed in QuestionDetail.
 
-- [ ] create `Answer` and `Comment` models
+- [ ] create `Answer` model
 - build out API, Flux loop, and components for:
   - [ ] Answer CRUD
   - [ ] adding answers requires a login
-  - [ ] adding comments requires a login
-  - [ ] viewing answers by question and comments by answer
-- Use CSS to style new views
+- Use CSS to style QuestionDetail
 
-### Phase 6: Tags (1 days, W2 Th 12pm)
+### Phase 5: Comments (1 day, W2 Tu 12pm)
 
-**Objective:** Questions can be tagged with multiple tags, and tags are searchable. Questions can also be added to topics, which are searchable.
+**Objective:** Comments belong to Answers, and can be viewed in QuestionDetail.
 
-- [ ] create `Tag` model and join table, do same for `Topic`
+- [ ] create `Comment` model
 - build out API, Flux loop, and components for:
-  - [ ] fetching tags / topics for questions
-  - [ ] adding tags / topics to questions
-  - [ ] creating tags / topics while adding to questions
-  - [ ] searching questions by tag / topic
-- [ ] Style new elements
+  - [ ] Comment CRUD
+  - [ ] adding comments requires a login
+- Use CSS to style QuestionDetail
 
-### Phase 7: Allow Complex Styling in Questions (0.5 days, W2 Th 6pm)
+### Phase 6: TopicTags (1.5 days, W2 W 6pm)
 
-**objective:** Enable complex styling of notes.
+**Objective:** Questions can be tagged with multiple TopicTags.
+
+- [ ] create `Topic` model and `TopicTagging` join table
+- build out API, Flux loop, and components for:
+  - [ ] fetching TopicTags for questions
+  - [ ] adding TopicTags to questions
+  - [ ] creating TopicTags while adding to questions
+  - [ ] searching questions by TopicTags
+- [ ] Style new elements for filtered QuestionIndex (by topic)
+
+### Phase 7: Allow Complex Styling in Questions (0.5 days, W2 Th 12pm)
+
+**objective:** Enable complex styling of answers.
 
 - [ ] Integrate rich text formatting (`react-quill` based on Quill.js looks great).
 - [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
+- [ ] Style the new AnswerForm.
 
-### Phase 8: Styling Cleanup and Seeding (1 day, W2 F 6pm)
+### Phase 8: Allow Complex Styling in Questions (0.5 days, W2 Th 6pm)
+
+**objective:** Enable question searches.
+
+- [ ] Create searchResult dropdown component that responds to question input
+- [ ] Limit to 5 results
+- [ ] Search button to display all search results
+- [ ] Style new elements in filtered QuestionIndex
+
+### Phase 9: Search Previously Asked Questions (1 day, W2 F 6pm)
 
 **objective:** Make the site feel more cohesive and professional.
 

@@ -24,8 +24,7 @@
 
 - `GET /api/questions`
   - Questions index/search
-  - accepts `tag_name` query param to list questions by tag
-  - accepts `topic_name` query param to list questions by topic
+  - accepts `topic` query param to list questions by Topic
   - accepts `text` list questions that include text
   - accepts pagination params (if I get there)
 - `POST /api/questions`
@@ -37,7 +36,6 @@
 
 - `GET /api/questions/questionId/answers`
 - `POST /api/questions/questionId/answers`
-- `GET /api/questions/questionId/answers/:id`
 - `PATCH /api/questions/questionId/answers/:id`
 - `DELETE /api/questions/questionId/answers/:id`
 
@@ -48,22 +46,13 @@
 - `PATCH /api/questions/questionId/answers/:id`
 - `DELETE /api/questions/questionId/answers/:id`
 
-### Tags
-
-- A question's tags will be included in the question show template
-- `GET /api/tags`
-  - includes query param for typeahead suggestions
-- `POST /api/questions/:question_id/tags`: add tag to question by name
-  - if question doesn't already exist, it will be created
-- `DELETE /api/questions/:question_id/tags/:tag_name`: remove tag from question by
-  name
-
 ### Topics
 
-- A question's tags will be included in the question show template
-- `GET /api/tags`
+- A question's topics will be included in the question detail component
+  - from `GET /api/questions/:id`
+- `GET /api/topics`
   - includes query param for typeahead suggestions
-- `POST /api/questions/:question_id/tags`: add tag to question by name
-  - if question doesn't already exist, it will be created
-- `DELETE /api/questions/:question_id/tags/:tag_name`: remove tag from question by
+- `POST /api/questions/:question_id/topic`: add tag to question by name
+  - if topic doesn't already exist, it will be created
+- `DELETE /api/questions/:question_id/tags/:topic`: remove topic from question by
   name

@@ -8,17 +8,17 @@ _**exactly**_ match the nesting of your routes.)
 
 * **App**
   * QuestionsIndex
-    * Search / Ask
     * QuestionIndexItem
   * **QuestionDetail**
-    * Answer
-      * Comment
+    * AnswerForm
+    * AnswerIndex
+      * CommentList
+        * CommentForm
     * **AnswerFrom**
-      * Tags / Topics
 
 ## Routes
 
 * **component:** `App` **path:** `/`
-  * **component:** `QuestionsIndex` **path:** question
-    * **component:** `QuestionDetail` **path:** `questions/:questionId`
-      * **component:** `QuestionAnswers` **path:** `answers`
+  * **component:** `QuestionsIndex` **path:** `questions`
+  * **component:** `QuestionDetail` **path:** `questions/:questionId`
+    * **component:** `QuestionAnswers` **path:** `answers`

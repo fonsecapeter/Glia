@@ -6,13 +6,17 @@
 ## New Session
 ![sign-in]
 
-## Question Index / Ask Question Form (single input in nav, button for search, button for ask)
-![question_index]
+## App (contains below component views)
+![app]
 
-## Question / Answer / Answers Form / Comment / Comment Form
-![question_index_item]
+## Question Index
+![question-index]
+
+## Question Detail
+![question-detail]
 
 [sign-up]: ./wireframes/sign_up.png
 [sign-in]: ./wireframes/sign_in.png
-[question_index]: ./wireframes/question_index.png
-[question_index_item]: ./wireframes/question_index_item.png
+[app]: ./wireframes/app.png
+[question-index]: ./wireframes/question_index.png
+[question-detail]: ./wireframes/question_detail.png
