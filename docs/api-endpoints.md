@@ -20,34 +20,42 @@
 
 ## JSON API
 
-### Notes
+### Questions
 
-- `GET /api/notes`
+- `GET /api/questions`
   - Notes index/search
-  - accepts `tag_name` query param to list notes by tag
+  - accepts `tag_name` query param to list questions by tag
+  - accepts `topic_name` query param to list questions by topic
   - accepts pagination params (if I get there)
-- `POST /api/notes`
-- `GET /api/notes/:id`
-- `PATCH /api/notes/:id`
-- `DELETE /api/notes/:id`
+- `POST /api/questions`
+- `GET /api/questions/:id`
+- `PATCH /api/questions/:id`
+- `DELETE /api/questions/:id`
 
-### Notebooks
+### Answers
 
-- `GET /api/notebooks`
-- `POST /api/notebooks`
-- `GET /api/notebooks/:id`
-- `PATCH /api/notebooks/:id`
-- `DELETE /api/notebooks/:id`
-- `GET /api/notebooks/:id/notes`
-  - index of all notes for a notebook
-  - accepts pagination params (if I get there)
+- `GET /api/questions/questionId/answers`
+- `POST /api/questions/questionId/answers`
+- `GET /api/questions/questionId/answers/:id`
+- `PATCH /api/questions/questionId/answers/:id`
+- `DELETE /api/questions/questionId/answers/:id`
 
 ### Tags
 
-- A note's tags will be included in the note show template
+- A question's tags will be included in the question show template
 - `GET /api/tags`
   - includes query param for typeahead suggestions
-- `POST /api/notes/:note_id/tags`: add tag to note by name
-  - if note doesn't already exist, it will be created
-- `DELETE /api/notes/:note_id/tags/:tag_name`: remove tag from note by
+- `POST /api/questions/:question_id/tags`: add tag to question by name
+  - if question doesn't already exist, it will be created
+- `DELETE /api/questions/:question_id/tags/:tag_name`: remove tag from question by
+  name
+
+### Topics
+
+- A question's tags will be included in the question show template
+- `GET /api/tags`
+  - includes query param for typeahead suggestions
+- `POST /api/questions/:question_id/tags`: add tag to question by name
+  - if question doesn't already exist, it will be created
+- `DELETE /api/questions/:question_id/tags/:tag_name`: remove tag from question by
   name

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 656.97869 735.77742"
+   height="207.65274mm"
+   width="185.41399mm"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="sign_in.svg"
+   inkscape:export-filename="/Users/peterfonseca/appacademy/capstone/docs/wireframes/sign_in.png"
+   inkscape:export-xdpi="440"
+   inkscape:export-ydpi="440">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="691"
+     inkscape:window-height="480"
+     id="namedview27"
+     showgrid="false"
+     inkscape:zoom="0.32074917"
+     inkscape:cx="328.48935"
+     inkscape:cy="367.88871"
+     inkscape:window-x="45"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(734.11059,113.27781)"
+     id="layer1">
+    <rect
+       ry="14.301284"
+       y="85.557999"
+       x="-732.60059"
+       height="93.608398"
+       width="653.95868"
+       id="rect4136"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#999999;stroke-width:3.01999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text4140"
+       y="-13.412755"
+       x="-629.83624"
+       style="font-style:normal;font-weight:normal;font-size:131.44192505px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="-13.412755"
+         x="-629.83624"
+         id="tspan4142">Sign In</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:72.39622498px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#999999;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-711.0365"
+       y="152.33479"
+       id="text4144"><tspan
+         id="tspan4146"
+         x="-711.0365"
+         y="152.33479">username</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#999999;stroke-width:3.01999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4148"
+       width="653.95868"
+       height="93.608398"
+       x="-732.60059"
+       y="211.27228"
+       ry="14.301284" />
+    <text
+       id="text4150"
+       y="278.04907"
+       x="-711.0365"
+       style="font-style:normal;font-weight:normal;font-size:72.39622498px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#999999;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="278.04907"
+         x="-711.0365"
+         id="tspan4152">password</tspan></text>
+    <rect
+       ry="14.301284"
+       y="334.12943"
+       x="-732.60059"
+       height="93.608398"
+       width="653.95868"
+       id="rect4156"
+       style="opacity:1;fill:#999999;fill-opacity:1;stroke:#999999;stroke-width:3.01999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:72.39622498px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-523.88373"
+       y="400.90622"
+       id="text4158"><tspan
+         id="tspan4160"
+         x="-523.88373"
+         y="400.90622">sign in</tspan></text>
+    <text
+       id="text4162"
+       y="615.21936"
+       x="-675.61511"
+       style="font-style:normal;font-weight:normal;font-size:35px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="615.21936"
+         x="-675.61511"
+         id="tspan4164">don't have an account? <tspan
+   id="tspan4166"
+   style="fill:#3771c8">Sign in</tspan></tspan></text>
+    <rect
+       style="opacity:1;fill:#5f8dd3;fill-opacity:1;stroke:#999999;stroke-width:3.01999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4187"
+       width="653.95868"
+       height="93.608398"
+       x="-732.60059"
+       y="459.84369"
+       ry="14.301284" />
+    <text
+       id="text4189"
+       y="526.62048"
+       x="-507.97635"
+       style="font-style:normal;font-weight:normal;font-size:72.39622498px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="526.62048"
+         x="-507.97635"
+         id="tspan4191">guest</tspan></text>
+    <flowRoot
+       transform="translate(-734.11056,-113.27781)"
+       style="font-style:normal;font-weight:normal;font-size:35px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="flowRoot4193"
+       xml:space="preserve"><flowRegion
+         id="flowRegion4195"><rect
+           y="-89.936935"
+           x="25.714285"
+           height="882.85712"
+           width="800"
+           id="rect4197" /></flowRegion><flowPara
+         id="flowPara4199" /></flowRoot>  </g>
+</svg>

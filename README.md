@@ -49,6 +49,7 @@ FresherNote is a web application inspired by Evernote that will be build using R
 - [ ] create new project
 - [ ] create `User` model
 - [ ] authentication
+  - [ ] Multiple sessions
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
 
@@ -59,7 +60,7 @@ the API.
 
 - [ ] create `Questions` model
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
+- [ ] CRUD API for notes (`QuestionsController`)
 - [ ] jBuilder views for notes
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
@@ -69,78 +70,69 @@ the API.
 
 ### Phase 3: Flux Architecture and Router (1.5 days, W1 F 6pm)
 
-**Objective:** Notes can be created, read, edited and destroyed with the
+**Objective:** Questions can be created, read, edited and destroyed with the
 user interface.
 
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
 - implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle
+  - [ ] `QuestionsIndex`
+  - [ ] `QuestionIndexItem`
+  - [ ] `QuestionForm`
+- [ ] save Questions to the DB when the form loses focus or is left idle
   after editing.
 
 ### Phase 4: Start Styling (0.5 days, W2 M 12pm)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
+- [ ] decide on color palette and logo
 - [ ] create a basic style guide
 - [ ] position elements on the page
 - [ ] add basic colors & styles
 
-### Phase 5: Notebooks (1 day, W2 Tu 12pm)
+### Phase 5: Answers and Comments (1 day, W2 Tu 12pm)
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+**Objective:** Answers belong to Questions, and comments belong to Answers.
 
-- [ ] create `Notebook` model
+- [ ] create `Answer` and `Comment` models
 - build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
+  - [ ] Answer CRUD
+  - [ ] adding answers requires a login
+  - [ ] adding comments requires a login
+  - [ ] viewing answers by question and comments by answer
 - Use CSS to style new views
-
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
 
 ### Phase 6: Tags (1 days, W2 Th 12pm)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Questions can be tagged with multiple tags, and tags are searchable. Questions can also be added to topics, which are searchable.
 
-- [ ] create `Tag` model and join table
+- [ ] create `Tag` model and join table, do same for `Topic`
 - build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
+  - [ ] fetching tags / topics for questions
+  - [ ] adding tags / topics to questions
+  - [ ] creating tags / topics while adding to questions
+  - [ ] searching questions by tag / topic
 - [ ] Style new elements
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days, W2 Th 6pm)
+### Phase 7: Allow Complex Styling in Questions (0.5 days, W2 Th 6pm)
 
 **objective:** Enable complex styling of notes.
 
-- [ ] Integrate `react-quill` (based on Quill.js).
+- [ ] Integrate rich text formatting (`react-quill` based on Quill.js looks great).
 - [ ] Use Rails helpers to sanitize HTML before rendering.
 - [ ] Style the new Quill elements.
 
 ### Phase 8: Styling Cleanup and Seeding (1 day, W2 F 6pm)
 
-**objective:** Make the site feel more cohesive and awesome.
+**objective:** Make the site feel more cohesive and professional.
 
 - [ ] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+- [ ] Add transitions, custom svg's and other styling flourishes.
 
 ### Bonus Features (TBD)
-- [ ] Search through notes for blocks of text
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
-
-[phase-one]: docs/phases/phase1.md
-[phase-two]: docs/phases/phase2.md
-[phase-three]: docs/phases/phase3.md
-[phase-four]: docs/phases/phase4.md
-[phase-five]: docs/phases/phase5.md
+- [ ] User status of healthcare provider + visual distinction in answers
+- [ ] Pagination / infinite scroll for Questions Index
+- [ ] Support groups for private questions
+- [ ] Responsive layout

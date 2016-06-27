@@ -1,22 +1,22 @@
 # View Wireframes
 
 ## New User
-![new-user]
+![sign-up]
 
 ## New Session
-![new-session]
+![sign-in]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Question Index / Ask Question Form (single input in nav, button for search, button for ask)
+![question_index]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## Question / Answers / Comment Form
+![question_index_item]
 
-## NotebookForm
-![notebook-form]
+## Answer Form
+![answer_form]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[sign-up]: ./wireframes/sign_up.png
+[sign-in]: ./wireframes/sign_in.png
+[question_index]: ./wireframes/question_index.png
+[question_index_item]: ./wireframes/question_index_item.png
+[answwer_form]: ./wireframes/answwer_form.png
