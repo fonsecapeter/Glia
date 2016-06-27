@@ -83,7 +83,7 @@ user interface.
 
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
-- implement each note component, building out the flux loop as needed.
+- implement each Question component, building out the flux loop as needed.
   - [ ] `QuestionsIndex`
   - [ ] `QuestionIndexItem`
   - [ ] `NewQuestionForm`
