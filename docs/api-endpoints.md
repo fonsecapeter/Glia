@@ -23,9 +23,10 @@
 ### Questions
 
 - `GET /api/questions`
-  - Notes index/search
+  - Questions index/search
   - accepts `tag_name` query param to list questions by tag
   - accepts `topic_name` query param to list questions by topic
+  - accepts `text` list questions that include text
   - accepts pagination params (if I get there)
 - `POST /api/questions`
 - `GET /api/questions/:id`
@@ -37,6 +38,13 @@
 - `GET /api/questions/questionId/answers`
 - `POST /api/questions/questionId/answers`
 - `GET /api/questions/questionId/answers/:id`
+- `PATCH /api/questions/questionId/answers/:id`
+- `DELETE /api/questions/questionId/answers/:id`
+
+### Comments
+
+- `GET /api/questions/questionId/answers`
+- `POST /api/questions/questionId/answers`
 - `PATCH /api/questions/questionId/answers/:id`
 - `DELETE /api/questions/questionId/answers/:id`
 
