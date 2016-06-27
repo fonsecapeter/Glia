@@ -5,29 +5,37 @@
 
 ## Minimum Viable Product
 XXXXX is a web application (inspired by Quora) that will be built using Ruby on Rails and React.js. The concept is an online support-group for caregivers. By the end of week 9, this app, will, at a minimum, satisfy the following critera:
-FresherNote is a web application inspired by Evernote that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Minimum necessary features:
+  - [ ] Authentication
+    - [ ] Create an account
+    - [ ] Log in / out
+    - [ ] demo user
   - [ ] Questions
-  - [ ] Answers for questions / comments on answers
+    - [ ] create
+    - [ ] read as index and detail (all)
+    - [ ] edit (own)
+    - [ ] delete (own)
+  - [ ] Answers for questions
+    - [ ] create answer for question (all)
+    - [ ] read list for each question (all)
+    - [ ] edit (own)
+    - [ ] delete (own)
+  - [ ] Comments for Answers
+    - [ ] create comment for answer (all)
+    - [ ] read list for each answer (all)
+    - [ ] delete (own)
   - [ ] Search for Questions
-  - [ ] Topics / tags
-- [ ] Smooth, bug-free navigation
-- [ ] Adequate seed data to demonstrate the site's features
-- [ ] Adequate CSS styling
-
-## Product Goals and Priorities
-XXXXX will allow users to do the following:
-- [ ] Create an account
-- [ ] Log in / out (with demo user)
-- [ ] Ask (create), read (all), answer (all), edit (own) and delete (own) questions
-- [ ] Comment on answers and questions
-- [ ] View feeds of questions filtered by topic
-- [ ] Tag owned questions with Topics
-- [ ] Search with dropdown of previously asked questions
+  - [ ] Topics
+    - [ ] filter questions by topic
+    - [ ] add topics to questions (own)
+    - [ ] remove topics from questions (own)
+  - [ ] Smooth, bug-free navigation
+  - [ ] Adequate seed data to demonstrate the site's features
+  - [ ] Adequate CSS styling
 
 ## Design Docs
 * [View Wireframes][views]
@@ -44,16 +52,16 @@ XXXXX will allow users to do the following:
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (0.5 days, W1 Tu 12pm)
+### Phase 1: Backend setup and Front End User Authentication (1.5 days, W1 Tu 12pm)
 
-**Objective:** Functioning rails project with Authentication
+**Objective:** Functioning rails project with Authentication (frontend and backend)
 
 - [ ] create new project
 - [ ] create `User` model
 - [ ] authentication
   - [ ] Multiple sessions
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [ ] user sign-up/sign-in pages
+- [ ] blank landing page after sign-in
 
 ### Phase 2: Questions Model, API, and basic APIUtil (1.5 days, W1 Wed 6pm)
 
@@ -112,9 +120,9 @@ user interface.
   - [ ] adding comments requires a login
 - Use CSS to style QuestionDetail
 
-### Phase 6: TopicTags (1.5 days, W2 W 6pm)
+### Phase 6: Topics (1.5 days, W2 W 6pm)
 
-**Objective:** Questions can be tagged with multiple TopicTags.
+**Objective:** Questions can be tagged with multiple Topics.
 
 - [ ] create `Topic` model and `TopicTagging` join table
 - build out API, Flux loop, and components for:
@@ -124,7 +132,7 @@ user interface.
   - [ ] searching questions by TopicTags
 - [ ] Style new elements for filtered QuestionIndex (by topic)
 
-### Phase 7: Allow Complex Styling in Questions (0.5 days, W2 Th 12pm)
+### Phase 7: Rich Text Formatting (0.5 days, W2 Th 12pm)
 
 **objective:** Enable complex styling of answers.
 
@@ -132,7 +140,7 @@ user interface.
 - [ ] Use Rails helpers to sanitize HTML before rendering.
 - [ ] Style the new AnswerForm.
 
-### Phase 8: Allow Complex Styling in Questions (0.5 days, W2 Th 6pm)
+### Phase 8: Searchable (0.5 days, W2 Th 6pm)
 
 **objective:** Enable question searches.
 
@@ -140,14 +148,6 @@ user interface.
 - [ ] Limit to 5 results
 - [ ] Search button to display all search results
 - [ ] Style new elements in filtered QuestionIndex
-
-### Phase 9: Search Previously Asked Questions (1 day, W2 F 6pm)
-
-**objective:** Make the site feel more cohesive and professional.
-
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add transitions, custom svg's and other styling flourishes.
 
 ### Bonus Features (TBD)
 - [ ] User status of healthcare provider + visual distinction in answers
