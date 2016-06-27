@@ -19,4 +19,4 @@
 [sign-in]: ./wireframes/sign_in.png
 [question_index]: ./wireframes/question_index.png
 [question_index_item]: ./wireframes/question_index_item.png
-[answer_form]: ./wireframes/answwer_form.png
+[answer_form]: ./wireframes/answer_form.png
