@@ -17,6 +17,7 @@ _**exactly**_ match the nesting of your routes.)
 
   * **NewUser**
   * **NewSession**
+  
 ## Routes
 
 * **component:** `App` **path:** `/`
