@@ -1,10 +1,10 @@
-# XXXXX
+# Glia
 [Heroku link](https://www.heroku.com)
 
 [heroku]: http://www.herokuapp.com
 
 ## Minimum Viable Product
-XXXXX is a web application (inspired by Quora) that will be built using Ruby on Rails and React.js. The concept is an online support-group for caregivers. By the end of week 9, this app, will, at a minimum, satisfy the following critera:
+Glia is a web application (inspired by Quora) that will be built using Ruby on Rails and React.js. The concept is an online support-group for caregivers. By the end of week 9, this app, will, at a minimum, satisfy the following critera:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
@@ -123,7 +123,7 @@ user interface.
   - [ ] searching questions by TopicTags
 - [ ] Style new elements for filtered QuestionIndex (by topic)
 
-### Phase 7: Rich Text Formatting (0.5 days, W2 Th 12pm)
+### Phase 7: Rich Text Formatting (1 day, W2 Th 6pm)
 
 **objective:** Enable complex styling of answers.
 
@@ -131,7 +131,7 @@ user interface.
 - [ ] Use Rails helpers to sanitize HTML before rendering.
 - [ ] Style the new AnswerForm.
 
-### Phase 8: Searchable (0.5 days, W2 Th 6pm)
+### Phase 8: Searchable (1 day, W2 F 6pm)
 
 **objective:** Enable question searches.
 
