@@ -6,19 +6,17 @@
   * **QuestionsIndex**
     * QuestionIndexItem
   * **QuestionDetail**
-    * AnswerForm
+    * NewAnswerForm
+    * EditAnswerForm
     * AnswerIndex
       * CommentList
         * CommentForm
 
-  * **NewUser**
-  * **NewSession**
+  * NewUser (modal)
+  * NewSession (modal)
 
 ## Routes
 
 * **component:** `App` **path:** `/`
   * **component:** `QuestionsIndex` **path:** `questions`
   * **component:** `QuestionDetail` **path:** `questions/:questionId`
-
-  * **component:** `NewUser` **path:** `/sign_in`
-  * **component:** `NewSession` **path:** `/sign_up`

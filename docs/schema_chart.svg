@@ -36,9 +36,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="168.54308"
-     inkscape:cy="670.42119"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="663.18031"
+     inkscape:cy="526.49699"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -60,7 +60,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -155,6 +155,36 @@
          id="path4291"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       id="g4191">
+      <g
+         transform="matrix(-0.75922751,-0.6508253,-0.6508253,0.75922751,-345.15026,376.96656)"
+         id="g4185">
+        <path
+           inkscape:transform-center-x="-8.4600287"
+           transform="matrix(0.8660254,0.5,-0.5,0.8660254,266.02975,130.7149)"
+           d="m -198.49498,862.95858 -29.3064,-50.76017 58.6128,0 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="true"
+           sodipodi:arg2="2.6179939"
+           sodipodi:arg1="1.5707963"
+           sodipodi:r2="16.920055"
+           sodipodi:r1="33.840111"
+           sodipodi:cy="829.11847"
+           sodipodi:cx="-198.49498"
+           sodipodi:sides="3"
+           id="path4187"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#333333;stroke-width:6.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           sodipodi:type="star" />
+        <path
+           sodipodi:nodetypes="czcszc"
+           inkscape:connector-curvature="0"
+           id="path4189"
+           d="m 61.336579,276.62306 c 0,0 -1.26706,52.4682 -0.07072,86.6669 1.19634,34.1987 4.828961,62.1768 -26.758216,99.02517 L -184.64165,716.3979 c -32.62724,37.82818 -60.08824,30.47839 -91.39561,32.88524 -31.30738,2.40685 -62.77928,0.22192 -62.77928,0.22192"
+           style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:6.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
     </g>
     <g
        id="g4146"

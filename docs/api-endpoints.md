@@ -28,31 +28,32 @@
   - accepts `text` list questions that include text
   - accepts pagination params (if I get there)
 - `POST /api/questions`
-- `GET /api/questions/:id`
-- `PATCH /api/questions/:id`
-- `DELETE /api/questions/:id`
+- `GET /api/questions/:questionId`
+- `PATCH /api/questions/:questionId`
+- `DELETE /api/questions/:questionId`
 
 ### Answers
 
-- `GET /api/questions/questionId/answers`
+- A Question's Answers will be included in the question detail component
+  - from `GET /api/questions/:questionId`
 - `POST /api/questions/questionId/answers`
-- `PATCH /api/questions/questionId/answers/:id`
-- `DELETE /api/questions/questionId/answers/:id`
+- `PATCH /api/questions/questionId/answers/:answerId`
+- `DELETE /api/questions/questionId/answers/:answerId`
 
 ### Comments
 
-- `GET /api/questions/questionId/answers`
+- A Question's Topics will be included in the question detail component
+  - from `GET /api/questions/:questionId/answers`
+- An Answers's Comments will be included in the question detail component
+  - from `GET /api/questions/:questionId`
 - `POST /api/questions/questionId/answers`
-- `PATCH /api/questions/questionId/answers/:id`
-- `DELETE /api/questions/questionId/answers/:id`
+- `DELETE /api/questions/questionId/answers/:answerId`
 
 ### Topics
 
-- A question's topics will be included in the question detail component
-  - from `GET /api/questions/:id`
+- A Question's Topics will be included in the question detail component
+  - from `GET /api/questions/:questionId`
 - `GET /api/topics`
   - includes query param for typeahead suggestions
-- `POST /api/questions/:question_id/topic`: add tag to question by name
-  - if topic doesn't already exist, it will be created
-- `DELETE /api/questions/:question_id/tags/:topic`: remove topic from question by
-  name
+- When a question is edited, the server will handle topic creation or association
+  - from `POST /api/questions` and `PATCH /api/questions/:questionId`

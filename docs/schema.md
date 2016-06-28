@@ -20,12 +20,13 @@ author_id   | integer   | not null, foreign key (references users), indexed
 question_id | integer   | not null, foreign key (references notebooks), indexed
 
 ## comments
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-question_id | integer   | not null: foreign key (references questions), indexed
-content     | string    | not null
+column name      | data type | details
+-----------------|-----------|-----------------------
+id               | integer   | not null, primary key
+author_id        | integer   | not null, foreign key (references users), indexed
+commentable_id   | integer   | not null: foreign key (references questions), indexed
+commentable_type | string    | not null: foreign key (references questions), indexed
+content          | string    | not null
 
 ## topics
 column name | data type | details

@@ -19,7 +19,7 @@ flux cycle for question get requests:
 ### Questions API Request Actions
 
 * `fetchAllQuestions`
-  0. invoked from `QuestionsIndex` `didMount`/`willReceiveProps`
+  0. invoked from `QuestionsIndex` `didMount` / `willReceiveProps`
   0. `GET /api/questions` is called.
   0. `receiveAllQuestions` is set as the callback.
 
@@ -35,7 +35,7 @@ flux cycle for question get requests:
 
 * `updateQuestion`
   0. invoked from `QuestionDetail` `onSubmit`
-  0. `POST /api/questions/:questionId` is called.
+  0. `PATCH /api/questions/:questionId` is called.
   0. `receiveQuestion` is set as the callback.
 
 * `destroyQuestion`
@@ -68,35 +68,58 @@ flux cycle for question get requests:
 ### Answer API Request Actions
 
 * `createAnswer`
-  0. invoked from new answer button `onClick`
+  0. invoked from `onSubmit` in `NewAnswerForm`
   0. `POST /api/questions/:questionId/answers` is called.
   0. `receiveQuestion` is set as the callback.
 
 * `updateAnswer`
-  0. invoked from `AnswerDetail` `onSubmit`
-  0. `POST /api/questions/:questionId/answers/:answerId` is called.
+  0. invoked from `onSubmit` in `EditAnswerForm`
+  0. `PATCH /api/questions/:questionId/answers/:answerId` is called.
   0. `receiveQuestion` is set as the callback.
 
 * `destroyAnswer`
-  0. invoked from delete answer button `onClick`
+  0. invoked from delete answer button `onClick` in `QuestionDetail` or `AnswerForm`
   0. `DELETE /api/questions/:questionId/answers/:answerId` is called.
   0. `receiveQuestion` is set as the callback.
 
 ### Answer API Response Actions
 
-* see Question API Response Actions above
+* will call `receiveQuestion` for all, answer data will come with question
 
 ### Store Listeners
 
-* see Question Store Listeners above
+* `QuestionDetail` component listens to `Question` store.
+
+
+## Comment Cycles
+
+### Comment API Request Actions
+
+* `createComment`
+  0. invoked from comment button `onClick`
+  0. `POST /api/questions/:questionId/answers/:answerId/comments` is called.
+  0. `receiveQuestion` is set as the callback.
+
+* `destroyComment`
+  0. invoked from delete answer button `onClick`
+  0. `DELETE /api/questions/:questionId/answers/:answerId/comments/:commentId` is called.
+  0. `receiveQuestion` is set as the callback.
+
+### Answer API Response Actions
+
+* will call `receiveQuestion` for all, answer data will come with question
+
+### Store Listeners
+
+* `QuestionDetail` component listens to `Question` store.
 
 
 ## Topic Cycles
 
 ### Topic API Request Actions
 
-* `getTopics`
-  0. invoked from `QuestionsIndex` `didMount`/`willReceiveProps`
+* `fetchAllTopics`
+  0. invoked from `QuestionsIndex` `didMount` / `willReceiveProps`
   0. `GET /api/topics` is called.
   0. `receiveAllTopics` is set as the callback.
 
@@ -109,29 +132,6 @@ flux cycle for question get requests:
 ### Store Listeners
 
 * `QuestionsIndex` component listens to `Topic` store.
-
-
-## Comment Cycles
-
-### Comment API Request Actions
-
-* `createComment`
-  0. invoked from new comment button `onClick`
-  0. `POST /api/questions/:questionId/answers/:answerId/comments` is called.
-  0. `receiveQuestion` is set as the callback.
-
-* `destroyComment`
-  0. invoked from delete answer button `onClick`
-  0. `DELETE /api/questions/:questionId/answers/:answerId/comments/:commentId` is called.
-  0. `receiveQuestion` is set as the callback.
-
-### Answer API Response Actions
-
-* see Question API Response Actions above
-
-### Store Listeners
-
-* see Question Store Listeners above
 
 
 ## SearchSuggestion Cycles
