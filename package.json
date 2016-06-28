@@ -7,19 +7,24 @@
     "doc": "docs",
     "test": "test"
   },
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fonsecapeter/glia.git"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
+
   "bugs": {
     "url": "https://github.com/fonsecapeter/glia/issues"
   },
+
   "homepage": "https://github.com/fonsecapeter/glia#readme",
   "dependencies": {
     "babel-core": "^6.10.4",
@@ -31,5 +36,14 @@
     "react-dom": "^15.1.0",
     "react-router": "^2.5.1",
     "webpack": "^1.13.1"
+  },
+
+  "engines": {
+    "node": "5.9.0",
+    "npm": "3.7.3"
+  },
+
+  "scripts": {
+  "postinstall": "./node_modules/.bin/webpack"
   }
 }
