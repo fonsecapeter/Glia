@@ -9,35 +9,7 @@ const SignInForm = require('./sign_in_modal');
 
 const SessionActions = require('../actions/session_actions');
 
-const styles = {
-  btn: {
-    margin: '1em auto',
-    padding: '1em 2em',
-    outline: 'none',
-    fontSize: 16,
-    fontWeight: '600',
-    background: '#C94E50',
-    color: '#FFFFFF',
-    border: 'none'
-  },
-  container: {
-    padding: '2em',
-    textAlign: 'center'
-  },
-  title: {
-    margin: 0,
-    color: '#C94E50',
-    fontWeight: 400
-  }
-};
-
 const App = React.createClass({
-  // getInitialState (){
-  //   return({
-  //     modalIsOpen: false
-  //   })
-  // },
-
   componentDidMount () {
     SessionStore.addListener(this.forceUpdate.bind(this));
   },
@@ -46,58 +18,36 @@ const App = React.createClass({
     SessionActions.logOut();
   },
 
-  // ---------------------------------------------------------------------------
-
-  // toggleDialog (ref) {
-  //   console.log(this.refs);
-  //   return ( () => {
-  //     this.refs[ref].toggle();
-  //   });
-  // },
-  //
-  // getContent (modalName) {
-  //   return (
-  //     <div>
-  //       <h2>Boron Modal</h2>
-  //       <button onClick={ this.toggleDialog(modalName) }>close</button>
-  //     </div>
-  //   );
-  // },
-  //
-  // getTriggerAndModal (modalName) {
-  //   let Modal = Boron[modalName];
-  //
-  //   return (
-  //     <div>
-  //       <button onCLick={ this.toggleDialog(modalName) }>{ modalName }</button>
-  //       <Modal ref={ modalName }>{ this.getContent(modalName) }</Modal>
-  //     </div>
-  //   );
-  // },
-
+  // modal ---------------------------------------------------------------------
   toggleDialog: function(ref){
-
-      return function(){
-          this.refs[ref].toggle();
-      }.bind(this);
+    return () => {
+      this.refs[ref].toggle();
+    };
   },
 
   getContent: function(modalName){
-      return <div style={styles.container}>
-      {/*<h2 style={styles.title}><strong>Boron</strong> is amazing</h2>*/}
-          <SignInForm signType={ modalName } />
-          <button style={styles.btn} onClick={this.toggleDialog(modalName)}>Close</button>
-      </div>;
+    return <div>
+      <SignInForm signType={ modalName } />
+      <button onClick={ this.toggleDialog(modalName) }>
+        Close
+      </button>
+    </div>;
   },
 
   getTriggerAndModal: function(modalName){
-      var Modal = Boron['FadeModal'];
+    let Modal = Boron['FadeModal'];
 
-      return <div>
-      <button style={styles.btn} onClick={this.toggleDialog(modalName)}>{modalName}</button>
+    return (
+      <div key={ modalName }>
+        <button onClick={ this.toggleDialog(modalName) }>
+          {modalName}
+        </button>
 
-      <Modal ref={modalName}>{this.getContent(modalName)}</Modal>
-      </div>;
+        <Modal ref={ modalName }>
+          { this.getContent(modalName) }
+        </Modal>
+      </div>
+    );
   },
   // ---------------------------------------------------------------------------
 
@@ -117,9 +67,11 @@ const App = React.createClass({
     } else if ( !['/sign_in', '/sign_up'].includes(this.props.location.pathname) ) {
       return (
         <nav className="sign-in-up">
-          <Link to="/sign_in" activeClassName="current">sign in</Link>
-          &nbsp;or&nbsp;
-          <Link to="/sign_up" activeClassName="current">sign up</Link>
+          {
+            ['sign_in', 'sign_out'].map( name => {
+              return this.getTriggerAndModal(name);
+            })
+          }
         </nav>
       );
     }
@@ -134,17 +86,6 @@ const App = React.createClass({
           { this.greeting() }
         </header>
         { this.props.children }
-
-        {
-          ['sign_in', 'sign_out'].map( name => {
-            return this.getTriggerAndModal(name);
-          })
-        }
-
-        {/*{['OutlineModal', 'ScaleModal', 'FadeModal', 'FlyModal', 'DropModal', 'WaveModal'].map(function(name){
-          return self.getTiggerAndModal(name);
-        })}*/}
-
       </div>
     );
   }
