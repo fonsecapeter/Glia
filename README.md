@@ -91,16 +91,7 @@ user interface.
 - [ ] save Questions to the DB when the form loses focus or is left idle
   after editing.
 
-### Phase 4: Start Styling (0.5 days, W2 F 6pm)
-
-**Objective:** Existing pages (including signup/signin) will look good.
-
-- [ ] decide on color palette and logo
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
-
-### Phase 5: Answers (1 day, W2 M 6pm)
+### Phase 4: Answers (1.5 days, W2 M 6pm)
 
 **Objective:** Answers belong to Questions, and can be viewed in QuestionDetail.
 
@@ -151,6 +142,6 @@ user interface.
 
 ### Bonus Features (TBD)
 - [ ] User status of healthcare provider + visual distinction in answers
-- [ ] Pagination / infinite scroll for Questions Index
 - [ ] Support groups for private questions
+- [ ] Pagination / infinite scroll for Questions Index
 - [ ] Responsive layout
