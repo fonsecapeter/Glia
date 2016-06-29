@@ -18,6 +18,13 @@ const App = React.createClass({
     SessionActions.signOut();
   },
 
+  _guestSignIn() {
+    SessionActions.signIn({
+      username: 'guest',
+      password: 'password'
+    });
+  },
+
   greeting () {
     if (SessionStore.isUserSignedIn()) {
       return (
@@ -34,6 +41,9 @@ const App = React.createClass({
     } else {
       return (
         <nav className="sign-in-up">
+          <button onClick={ this._guestSignIn }>
+            Guest
+          </button>
           {
             ['sign_in', 'sign_up'].map( name => {
               return this.getTriggerAndModal(name);
@@ -55,7 +65,7 @@ const App = React.createClass({
     return <div>
     <SignInForm signType={ modalName } />
     <button onClick={ this.toggleDialog(modalName) }>
-    Cancel
+      Cancel
     </button>
     </div>;
   },
@@ -66,11 +76,11 @@ const App = React.createClass({
     return (
       <div key={ modalName }>
       <button onClick={ this.toggleDialog(modalName) }>
-      {modalName.split("_").join(" ")}
+        {modalName.split("_").join(" ")}
       </button>
 
       <Modal ref={ modalName } className="modal-container">
-      { this.getContent(modalName) }
+        { this.getContent(modalName) }
       </Modal>
       </div>
     );

@@ -69,7 +69,7 @@ const SignInForm = React.createClass({
       return <li key={ idx }>{ errorMessage }</li>;
     });
 
-    return <ul>{ messages }</ul>;
+    return <ul className="errors" >{ messages }</ul>;
   },
 
   formType () {
