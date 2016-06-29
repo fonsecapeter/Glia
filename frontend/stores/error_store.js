@@ -32,7 +32,7 @@ ErrorStore.__onDispatch = function (payload) {
   }
 };
 
-ErrorStore.formErrors = function (form) {
+ErrorStore.formErrors = function (form) {  
   if (form !== _form) {
     return {};
   }

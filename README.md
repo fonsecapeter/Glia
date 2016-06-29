@@ -6,14 +6,14 @@
 ## Minimum Viable Product
 Glia is a web application (inspired by Quora) that will be built using Ruby on Rails and React.js. The concept is an online support-group for caregivers. By the end of week 9, this app, will, at a minimum, satisfy the following critera:
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] Hosting on Heroku
+- [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Minimum necessary features:
-  - [ ] Authentication
-    - [ ] Create an account
-    - [ ] Log in / out
-    - [ ] demo user
+  - [x] Authentication
+    - [x] Create an account
+    - [x] Log in / out
+    - [x] demo user
   - [ ] Questions
     - [ ] create
     - [ ] read as index and detail (all)

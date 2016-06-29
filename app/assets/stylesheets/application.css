@@ -163,4 +163,8 @@ header {
   color: #b92b27;
   padding: 0;
 }
+
+.empty-input {
+  color: lightgray;
+}
 /* sign-in-up modals */

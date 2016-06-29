@@ -43,12 +43,27 @@ const SignInForm = React.createClass({
     });
   },
 
+  _beforeSubmit () {
+    let username, password = '';
+    if (this.state.username !== 'username') {
+      username = this.state.username;
+    }
+
+    if (this.state.pwdType !== 'text') {
+      password = this.state.password;
+    }
+
+    return { username: username, password: password };
+  },
+
   _onSubmit (event) {
     event.preventDefault();
 
+    let credentials = this._beforeSubmit();
+
     const formData = {
-      username: this.state.username,
-      password: this.state.password
+      username: credentials.username,
+      password: credentials.password
     };
 
     if (this.props.signType === 'sign_in') {
@@ -62,7 +77,6 @@ const SignInForm = React.createClass({
 
   fieldErrors (field) {
     const errors = ErrorStore.formErrors(this.props.signType);
-
 
     if (!errors[field]) { return; }
 
@@ -96,9 +110,14 @@ const SignInForm = React.createClass({
   },
 
   render () {
-    let fieldName = 'base';
-    if (this.props.signType === 'sign_up') {
-      fieldName = 'user';
+    let uClass,pClass = 'sign-in-input';
+
+    if (this.state.username === 'username') {
+      uClass += ' empty-input';
+    }
+
+    if (this.state.pwdType === 'text') {
+      pClass += ' empty-input';
     }
 
     return(
@@ -106,13 +125,13 @@ const SignInForm = React.createClass({
         <form onSubmit={this._onSubmit} className='sign-in-form-box'>
           <h2 className="modal-title">{ this.formType() }</h2>
 
-          { this.fieldErrors({ fieldName }) }
+          { this.fieldErrors('base') }
           <input type='text'
             value={ this.state.username }
             onFocus={ this.unameFocus }
             onClick={ this.unameFocus }
             onChange={ this._update('username') }
-            className='sign-in-input' />
+            className={ uClass } />
 
           <br />
           <br />
@@ -121,7 +140,7 @@ const SignInForm = React.createClass({
             onFocus={ this.pwdFocus }
             onClick={ this.pwdFocus }
             onChange={ this._update('password') }
-            className='sign-in-input' />
+            className={ pClass } />
 
           <br />
           <br />
