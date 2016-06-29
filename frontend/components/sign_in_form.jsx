@@ -60,7 +60,7 @@ const SignInForm = React.createClass({
   },
 
   fieldErrors (field) {
-    const errors = ErrorStore.formErrors(this.formType());
+    const errors = ErrorStore.formErrors(this.props.signType);
 
     if (!errors[field]) { return; }
 
@@ -81,13 +81,20 @@ const SignInForm = React.createClass({
     }
   },
 
+  pwdFocus () {
+    if (this.pwdType === "input") {
+      this.pwdType="password";
+      this.setState({password: ''});
+    }
+  },
+
   render () {
     return(
       <div className="sign-in-form-container">
         <form onSubmit={this._onSubmit} className='sign-in-form-box'>
           <h2 className="modal-title">{ this.formType() }</h2>
 
-          { this.fieldErrors('username') }
+          { this.fieldErrors('base') }
           <input type='text'
             value={ this.state.username }
             onChange={ this._update('username') }
@@ -95,8 +102,9 @@ const SignInForm = React.createClass({
 
           <br />
           <br />
-          <input type='password'
+          <input type={this.pwdType}
           value={ this.state.password }
+          onFocus={this.pwdFocus()}
           onChange={ this._update('password') }
           className='sign-in-input' />
 
