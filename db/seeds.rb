@@ -9,3 +9,9 @@ User.create(
   username: 'guest',
   password: 'password'
 )
+
+# 10.times do
+#   Question.create(
+#     author_id
+#   )
+# end

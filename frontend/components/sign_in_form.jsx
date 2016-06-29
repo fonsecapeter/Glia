@@ -63,6 +63,7 @@ const SignInForm = React.createClass({
   fieldErrors (field) {
     const errors = ErrorStore.formErrors(this.props.signType);
 
+
     if (!errors[field]) { return; }
 
     const messages = errors[field].map( (errorMessage, idx) => {
@@ -95,12 +96,17 @@ const SignInForm = React.createClass({
   },
 
   render () {
+    let fieldName = 'base';
+    if (this.props.signType === 'sign_up') {
+      fieldName = 'user';
+    }
+
     return(
       <div className="sign-in-form-container">
         <form onSubmit={this._onSubmit} className='sign-in-form-box'>
           <h2 className="modal-title">{ this.formType() }</h2>
 
-          { this.fieldErrors('base') }
+          { this.fieldErrors({ fieldName }) }
           <input type='text'
             value={ this.state.username }
             onFocus={ this.unameFocus }
