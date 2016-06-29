@@ -5,10 +5,10 @@ const SessionApiUtil = {
     $.ajax({
       url: '/api/session',
       type: 'POST',
-      data: { user },
+      data: { user: user },
       success,
       error (xhr) {
-        const errors = xhr.response.JSON;
+        const errors = xhr.responseJSON;
 
         error('login', errors);
       }
@@ -28,9 +28,9 @@ const SessionApiUtil = {
 
   signUp (user, success, error) {
     $.ajax({
-      url: '/api/user',
+      url: 'api/user',
       type: 'POST',
-      data: { user },
+      data: { user: user },
       success,
       error (xhr) {
         const errors = xhr.responseJSON;

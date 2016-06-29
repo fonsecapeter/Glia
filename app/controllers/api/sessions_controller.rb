@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user
-      sing_in(@user)
+      sign_in(@user)
       render :root
     else
       render(

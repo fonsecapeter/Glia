@@ -32,7 +32,7 @@ SessionStore.isUserSignedIn = function () {
   return !!_currentUser.id;
 };
 
-SessionStore._onDispatch = function (payload) {
+SessionStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case SessionConstants.SIGNIN:
       _signIn(payload.currentUser);

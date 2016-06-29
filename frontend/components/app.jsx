@@ -29,7 +29,7 @@ const App = React.createClass({
     return <div>
       <SignInForm signType={ modalName } />
       <button onClick={ this.toggleDialog(modalName) }>
-        Close
+        Cancel
       </button>
     </div>;
   },
@@ -43,7 +43,7 @@ const App = React.createClass({
           {modalName}
         </button>
 
-        <Modal ref={ modalName }>
+        <Modal ref={ modalName } className="modal-container">
           { this.getContent(modalName) }
         </Modal>
       </div>
@@ -68,7 +68,7 @@ const App = React.createClass({
       return (
         <nav className="sign-in-up">
           {
-            ['sign_in', 'sign_out'].map( name => {
+            ['sign_in', 'sign_up'].map( name => {
               return this.getTriggerAndModal(name);
             })
           }
@@ -82,7 +82,13 @@ const App = React.createClass({
     return (
       <div>
         <header>
-          <Link to='/' className='header-link'><h1>Glia</h1></Link>
+          <hgroup className="logo">
+            <Link to='/' className='header-link'><h1>Glia</h1></Link>
+          </hgroup>
+          <hgroup className="dummy-ask">
+            <input className="dummy-ask-bar" />
+            <button className="dummy-ask-button">Ask Question</button>
+          </hgroup>
           { this.greeting() }
         </header>
         { this.props.children }

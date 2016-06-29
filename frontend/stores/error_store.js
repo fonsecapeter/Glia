@@ -21,7 +21,7 @@ function _clearErrors() {
   ErrorStore.__emitChange() ;
 }
 
-ErrorStore._onDispatch = function (payload) {
+ErrorStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case ErrorConstants.SET_ERRORS:
       _setErrors (payload);
