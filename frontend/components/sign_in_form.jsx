@@ -14,8 +14,9 @@ const SignInForm = React.createClass({
 
   getInitialState () {
     return {
-      username: '',
-      password: ''
+      username: 'username',
+      password: 'password',
+      pwdType: 'text'
     };
   },
 
@@ -82,9 +83,14 @@ const SignInForm = React.createClass({
   },
 
   pwdFocus () {
-    if (this.pwdType === "input") {
-      this.pwdType="password";
-      this.setState({password: ''});
+    if (this.state.pwdType === 'text') {
+      this.setState({ password: '', pwdType: 'password' });
+    }
+  },
+
+  unameFocus () {
+    if (this.state.username === 'username') {
+      this.setState({username: ''});
     }
   },
 
@@ -97,16 +103,19 @@ const SignInForm = React.createClass({
           { this.fieldErrors('base') }
           <input type='text'
             value={ this.state.username }
+            onFocus={ this.unameFocus }
+            onClick={ this.unameFocus }
             onChange={ this._update('username') }
             className='sign-in-input' />
 
           <br />
           <br />
-          <input type={this.pwdType}
-          value={ this.state.password }
-          onFocus={this.pwdFocus()}
-          onChange={ this._update('password') }
-          className='sign-in-input' />
+          <input type={this.state.pwdType}
+            value={ this.state.password }
+            onFocus={ this.pwdFocus }
+            onClick={ this.pwdFocus }
+            onChange={ this._update('password') }
+            className='sign-in-input' />
 
           <br />
           <br />

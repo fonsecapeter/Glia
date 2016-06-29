@@ -57,12 +57,13 @@ Glia is a web application (inspired by Quora) that will be built using Ruby on R
 **Objective:** Functioning rails project with Authentication (frontend and backend)
 
 - [x] create new project
-- [ ] heroku deployment
+- [x] heroku deployment
 - [x] create `User` model
 - [x] authentication
 - [x] user sign-up/sign-in pages
 - [x] blank landing page after sign-in
-- [ ] error handling
+- [x] error handling
+- [ ] guest account
 
 ### Phase 2: Questions Model, API, and basic APIUtil (1.5 days, W1 Wed 6pm)
 
