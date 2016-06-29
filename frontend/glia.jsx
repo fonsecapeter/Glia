@@ -11,6 +11,7 @@ const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 //Components
 const App = require('./components/app');
+const QuestionIndex = require('./components/questions/question_index');
 //Auth
 const SessionStore = require('./stores/session_store');
 const SessionActions = require('./actions/session_actions');
@@ -18,6 +19,7 @@ const SessionActions = require('./actions/session_actions');
 const appRouter = (
   <Router history={ hashHistory }>
     <Route path="/" component={ App }>
+      <IndexRoute component={ QuestionIndex } />
     </Route>
   </Router>
 );

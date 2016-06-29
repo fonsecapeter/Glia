@@ -1,4 +1,4 @@
-"use strinct";
+"use strict";
 
 const SessionApiUtil = {
   signIn (user, success, error) {

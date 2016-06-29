@@ -20,6 +20,13 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
+  has_many(
+    :questions,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: 'Question'
+  )
+
   def self.find_by_credentials(username, password)
     # verify username
     user = User.find_by(username: username)

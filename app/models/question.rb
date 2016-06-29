@@ -16,6 +16,13 @@ class Question < ActiveRecord::Base
   validates :answered, inclusion: { in: [true, false] }
   after_initialize :ensure_answered
 
+  belongs_to(
+    :author,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: 'User'
+  )
+
   private
 
   def ensure_answered
