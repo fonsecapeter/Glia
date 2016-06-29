@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
 
     if @user
       sign_in(@user)
-      render :root
+      render "api/users/show"
     else
       render(
         json: {
@@ -22,7 +22,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       sign_out
-      render :root
+      render "api/users/show"
     else
       render(
         json: {

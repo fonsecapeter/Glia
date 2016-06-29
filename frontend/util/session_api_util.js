@@ -10,7 +10,7 @@ const SessionApiUtil = {
       error (xhr) {
         const errors = xhr.responseJSON;
 
-        error('login', errors);
+        error('sign_in', errors);
       }
     });
   },
@@ -18,7 +18,7 @@ const SessionApiUtil = {
   signOut (success) {
     $.ajax({
       url: '/api/session',
-      type: 'DELTE',
+      type: 'DELETE',
       success,
       error () {
         console.log('Logout error in SessionApiUtil#logout');
@@ -34,7 +34,7 @@ const SessionApiUtil = {
       success,
       error (xhr) {
         const errors = xhr.responseJSON;
-        error('signup', errors);
+        error('sign_up', errors);
       }
     });
   },

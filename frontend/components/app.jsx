@@ -5,7 +5,7 @@ const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store');
 
 const Boron = require('boron');
-const SignInForm = require('./sign_in_modal');
+const SignInForm = require('./sign_in_form');
 
 const SessionActions = require('../actions/session_actions');
 
@@ -14,8 +14,8 @@ const App = React.createClass({
     SessionStore.addListener(this.forceUpdate.bind(this));
   },
 
-  _onLogOut () {
-    SessionActions.logOut();
+  _onSignOut () {
+    SessionActions.signOut();
   },
 
   // modal ---------------------------------------------------------------------
@@ -40,7 +40,7 @@ const App = React.createClass({
     return (
       <div key={ modalName }>
         <button onClick={ this.toggleDialog(modalName) }>
-          {modalName}
+          {modalName.split("_").join(" ")}
         </button>
 
         <Modal ref={ modalName } className="modal-container">
@@ -59,9 +59,9 @@ const App = React.createClass({
           { SessionStore.currentUser().username }
           </h2>
           <input type="submit"
-            className="header-sign-out-button"
+            className="header-sign-out-button button"
             value="sign out"
-            onClick={ this._onLogOut } />
+            onClick={ this._onSignOut } />
         </hgroup>
       );
     } else if ( !['/sign_in', '/sign_up'].includes(this.props.location.pathname) ) {

@@ -96,11 +96,13 @@ header {
   top: 0;
   left: 0;
 
-  width: 100%;
+  width: 99%;
+  min-width: 515px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 8px 0 8px;
 
   border-top: 2px solid #b92b27;
   border-bottom: 1px solid #ddd;
@@ -111,6 +113,16 @@ header {
 
 .logo a {
   color: #b92b27;
+}
+
+.header-sign-out-button {
+  width: auto;
+  margin-left: 8px;
+}
+
+.header-group {
+  display: flex;
+  align-items: center;
 }
 
 .dummy-ask-bar {

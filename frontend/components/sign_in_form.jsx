@@ -5,6 +5,7 @@ const Link = require('react-router').Link;
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
+const hashHistory = require('react-router').hashHistory;
 
 const SignInForm = React.createClass({
   contextTypes: {
@@ -30,7 +31,8 @@ const SignInForm = React.createClass({
 
   redirectIfSignedIn () {
     if (SessionStore.isUserSignedIn()) {
-      this.context.router.push('/');
+      // this.context.router.push('/');
+      hashHistory.push('/');
     }
   },
 
@@ -48,11 +50,13 @@ const SignInForm = React.createClass({
       password: this.state.password
     };
 
-    if (this.props.location.pathname === '/sign_in') {
+    if (this.props.signType === 'sign_in') {
       SessionActions.signIn(formData);
     } else {
       SessionActions.signUp(formData);
     }
+
+    hashHistory.push('/');
   },
 
   fieldErrors (field) {
@@ -69,40 +73,37 @@ const SignInForm = React.createClass({
 
   formType () {
     // sign_up or sign_in from url
-    return this.props.location.pathname.slice(1);
+    // return this.props.location.pathname.slice(1);
+    if (this.props.signType === 'sign_in') {
+      return 'Sign in';
+    } else {
+      return 'Sign up';
+    }
   },
 
   render () {
-    let navLink;
-    if (this.formType() === 'sign_in') {
-      navLink = <Link to='/sign_up'>sign up instead</Link>;
-    } else {
-      navLink = <Link to='/sign_in'>Sign in instead</Link>;
-    }
-
     return(
       <div className="sign-in-form-container">
         <form onSubmit={this._onSubmit} className='sign-in-form-box'>
-          Welcome to Glia
-          <br />
-          Please { this.formType() } or { navLink }
+          <h2 className="modal-title">{ this.formType() }</h2>
 
-          <label> Username:
-            { this.fieldErrors('username') }
-            <input type='text'
-              value={ this.state.username }
-              onChange={ this._update('username') }
-              className='sign-in-input' />
-          </label>
-          <label> Password:
-            <input type='text'
-            value={ this.state.password }
-            onChange={ this._update('password') }
+          { this.fieldErrors('username') }
+          <input type='text'
+            value={ this.state.username }
+            onChange={ this._update('username') }
             className='sign-in-input' />
-          </label>
 
           <br />
-          <input type="submit" value="Submit" />
+          <br />
+          <input type='password'
+          value={ this.state.password }
+          onChange={ this._update('password') }
+          className='sign-in-input' />
+
+          <br />
+          <br />
+          <input type="submit"
+            className="button" value={ this.formType() } />
         </form>
       </div>
     );

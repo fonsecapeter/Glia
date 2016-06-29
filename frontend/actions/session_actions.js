@@ -19,13 +19,13 @@ const SessionActions = {
   signIn (formData) {
     SessionApiUtil.signIn(
       formData,
-      SessionActions.recieveCurrentUser,
+      SessionActions.receiveCurrentUser,
       ErrorActions.setErrors
     );
   },
 
   signOut () {
-    SessionApiUtil.logOut(SessionActions.removeCurrentUser);
+    SessionApiUtil.signOut(SessionActions.removeCurrentUser);
   },
 
   fetchCurrentUser (complete) {
@@ -47,7 +47,7 @@ const SessionActions = {
     AppDispatcher.dispatch({
       actionType: SessionConstants.SIGNOUT
     });
-    hashHistory.push('/login');
+    hashHistory.push('/');
   }
 };
 
