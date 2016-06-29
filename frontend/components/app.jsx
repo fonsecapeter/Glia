@@ -18,39 +18,6 @@ const App = React.createClass({
     SessionActions.signOut();
   },
 
-  // modal ---------------------------------------------------------------------
-  toggleDialog: function(ref){
-    return () => {
-      this.refs[ref].toggle();
-    };
-  },
-
-  getContent: function(modalName){
-    return <div>
-      <SignInForm signType={ modalName } />
-      <button onClick={ this.toggleDialog(modalName) }>
-        Cancel
-      </button>
-    </div>;
-  },
-
-  getTriggerAndModal: function(modalName){
-    let Modal = Boron['FadeModal'];
-
-    return (
-      <div key={ modalName }>
-        <button onClick={ this.toggleDialog(modalName) }>
-          {modalName.split("_").join(" ")}
-        </button>
-
-        <Modal ref={ modalName } className="modal-container">
-          { this.getContent(modalName) }
-        </Modal>
-      </div>
-    );
-  },
-  // ---------------------------------------------------------------------------
-
   greeting () {
     if (SessionStore.isUserSignedIn()) {
       return (
@@ -64,7 +31,7 @@ const App = React.createClass({
             onClick={ this._onSignOut } />
         </hgroup>
       );
-    } else if ( !['/sign_in', '/sign_up'].includes(this.props.location.pathname) ) {
+    } else {
       return (
         <nav className="sign-in-up">
           {
@@ -76,6 +43,39 @@ const App = React.createClass({
       );
     }
   },
+
+  // modal ---------------------------------------------------------------------
+  toggleDialog: function(ref){
+    return () => {
+      this.refs[ref].toggle();
+    };
+  },
+
+  getContent: function(modalName){
+    return <div>
+    <SignInForm signType={ modalName } />
+    <button onClick={ this.toggleDialog(modalName) }>
+    Cancel
+    </button>
+    </div>;
+  },
+
+  getTriggerAndModal: function(modalName){
+    let Modal = Boron['FadeModal'];
+
+    return (
+      <div key={ modalName }>
+      <button onClick={ this.toggleDialog(modalName) }>
+      {modalName.split("_").join(" ")}
+      </button>
+
+      <Modal ref={ modalName } className="modal-container">
+      { this.getContent(modalName) }
+      </Modal>
+      </div>
+    );
+  },
+  // ---------------------------------------------------------------------------
 
   render () {
     const self = this;
