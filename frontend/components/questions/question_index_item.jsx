@@ -5,7 +5,7 @@ const QuestionIndexItem = React.createClass({
     return (
       <div className="question-index-item">
         <p>{this.props.question.title}</p>
-        <p>{this.props.question.author_id}</p>
+        <p>{this.props.question.authorName}</p>
       </div>
     );
   }
