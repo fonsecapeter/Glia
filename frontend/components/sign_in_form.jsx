@@ -110,7 +110,7 @@ const SignInForm = React.createClass({
   },
 
   render () {
-    let uClass,pClass = 'sign-in-input';
+    let uClass, pClass = 'sign-in-input';
 
     if (this.state.username === 'username') {
       uClass += ' empty-input';

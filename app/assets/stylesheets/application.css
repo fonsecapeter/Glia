@@ -153,14 +153,28 @@ header {
 }
 
 .ask-modal {
+  -webkit-font-smoothing: antialiased;
   border-top: 10px solid #7cb5c0;
   width: 100%;
 }
 
 .modal-ask-container {
   width: 50%;
+  margin: auto;
 }
 
+.modal-ask-bar {
+  width: 80%;
+}
+
+.modal-ask-button {
+  width: 20%;
+}
+
+.modal-ask-description {
+  width: 100%;
+  margin-top: 5px;
+}
 /* main nav */
 
 /* sign-in-up modals */
