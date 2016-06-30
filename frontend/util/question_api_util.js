@@ -12,7 +12,8 @@ const QuestionApiUtil = {
   createQuestion (question, success, error) {
     $.ajax({
       url: '/api/questions',
-      type: 'GET',
+      type: 'POST',
+      data: { question: question },
       success,
       error (xhr) {
         const errors = xhr.responseJSON;
@@ -23,7 +24,7 @@ const QuestionApiUtil = {
 
   fetchQuestion (questionId, success) {
     $.ajax({
-      url: '/api/questions',
+      url: `/api/questions/${questionId}`,
       type: 'GET',
       success
     });
@@ -31,8 +32,9 @@ const QuestionApiUtil = {
 
   updateQuestion (question, success, error) {
     $.ajax({
-      url: '/api/questions',
-      type: 'GET',
+      url: `/api/questions/${question.id}`,
+      type: 'PATCH',
+      data: { question: question },
       success,
       error (xhr) {
         const errors = xhr.responseJSON;
@@ -43,8 +45,8 @@ const QuestionApiUtil = {
 
   destroyQuestion (questionId, success) {
     $.ajax({
-      url: '/api/questions',
-      type: 'GET',
+      url: `/api/questions/${questionId}`,
+      type: 'DELETE',
       success
     });
   },

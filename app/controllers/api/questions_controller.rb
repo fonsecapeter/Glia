@@ -6,7 +6,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def create
-    @questoin = Question.new(quesion_params)
+    @question = Question.new(question_params)
     @question.author_id = current_user.id
 
     if @question.save
@@ -39,6 +39,7 @@ class Api::QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
+    render :show
   end
 
   private

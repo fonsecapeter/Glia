@@ -1,1 +1,1 @@
-json.partial! 'question', question: @question
+json.extract! @question, :id, :title, :description, :answered, :author_id
