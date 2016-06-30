@@ -70,12 +70,12 @@ Glia is a web application (inspired by Quora) that will be built using Ruby on R
 **Objective:** Questions can be created, read, edited and destroyed through
 the API.
 
-- [ ] create `Questions` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for questions (`QuestionsController`)
-- [ ] jBuilder views for questions
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
+- [x] create `Questions` model
+- [x] seed the database with a small amount of test data
+- [x] CRUD API for questions (`QuestionsController`)
+- [x] jBuilder views for questions
+- [x] setup Webpack & Flux scaffold
+- [x] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (1.5 days, W1 F 12pm)
