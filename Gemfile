@@ -59,4 +59,5 @@ end
 
 group :development, :production do
   gem 'faker'
+  gem 'thin'
 end
