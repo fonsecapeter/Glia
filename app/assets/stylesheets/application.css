@@ -32,8 +32,9 @@ html, body, section, article, h1, h2, p {
  }
 
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-color: white;
 }
 
 button, .button {
@@ -69,6 +70,13 @@ a:hover {
   text-decoration: underline;
 }
 
+h3 {
+  font-weight: normal;
+
+  padding: 5px 5px 5px;
+  border-bottom: 1px solid #ddd;
+}
+
 input {
   width: 200px;
   padding: 10px 0 11px 14px;
@@ -85,13 +93,15 @@ input {
   border-radius: 2px;
   max-height: 29px;
   min-height: auto;
-  background-color: #f4f4f4;
+  background-color: #e6e6e6;
   overflow-y: hidden;
 }
 /* reset */
 
 /* main nav */
 header {
+  z-index: 10;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -104,7 +114,8 @@ header {
   align-items: center;
   padding: 0 8px 0 8px;
 
-  border-top: 2px solid #b92b27;
+  background-color: #f5f7ed;
+  border-top: 2px solid #7cb5c0;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 3px 2px -2px rgba(200,200,200,0.2);
 
@@ -113,7 +124,7 @@ header {
 }
 
 .logo a {
-  color: #b92b27;
+  color: #7cb5c0;
 }
 
 .header-sign-out-button {
@@ -150,21 +161,79 @@ header {
 .sign-in-form-container, .modal-container {
   padding: 6px;
   text-align: center;
+  background-color: #f5f7ed;
 }
 
 .modal-title {
   padding: 5px 5px 5px;
   margin: 30px;
   border-bottom: 1px solid #ddd;
+  color: #7cb5c0;
 }
 
 .errors {
   list-style-type: none;
-  color: #b92b27;
+  color: #7cb5c0;
   padding: 0;
 }
 
 .empty-input {
-  color: lightgray;
+  color: gray;
 }
 /* sign-in-up modals */
+
+/* question index */
+.question-index {
+  padding-top: 10px;
+  /*position: relative;*/
+  display: flex;
+  color: #585a61;
+}
+@media (max-width: 800px) {
+  .question-index {
+    flex-direction: column;
+  }
+}
+
+.question-index h3 {
+  color: black;
+}
+
+.topic-list {
+  flex: 1;
+  padding: 20px 20px 20px 20px;
+  margin: auto;
+  margin-top: 0;
+  height: 80px;
+}
+
+.topic-list-content {
+  position: fixed;
+}
+
+.feed {
+  flex: 3;
+  padding: 20px 20px 20px 20px;
+  margin: auto;
+  margin-top: 0;
+}
+
+.help-box {
+  flex: 1;
+  padding: 20px 20px 20px 20px;
+  margin: auto;
+  margin-top: 0;
+  height: 80px;
+}
+
+.help-box-content {
+  position: fixed;
+}
+/* question index */
+
+/* question index item */
+.question-index-item {
+  padding: 5px 5px 5px;
+  margin: 5px 0 5px 0;
+  border-bottom: 1px solid #ddd;
+}

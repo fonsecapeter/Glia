@@ -29,9 +29,9 @@ const App = React.createClass({
     if (SessionStore.isUserSignedIn()) {
       return (
         <hgroup className="header-group">
-          <h2 className="header-name">
+          <p className="header-name">
           { SessionStore.currentUser().username }
-          </h2>
+        </p>
           <input type="submit"
             className="header-sign-out-button button"
             value="sign out"
@@ -62,7 +62,7 @@ const App = React.createClass({
   },
 
   getContent: function(modalName){
-    return <div>
+    return <div className="modal-container">
     <SignInForm signType={ modalName } />
     <button onClick={ this.toggleDialog(modalName) }>
       Cancel

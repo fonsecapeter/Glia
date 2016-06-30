@@ -76,15 +76,15 @@ the API.
 - [x] jBuilder views for questions
 - [x] setup Webpack & Flux scaffold
 - [x] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [x] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (1.5 days, W1 F 12pm)
 
 **Objective:** Questions can be created, read, edited and destroyed with the
 user interface.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [x] setup the flux loop with skeleton files
+- [x] setup React Router
 - implement each Question component, building out the flux loop as needed.
   - [ ] `QuestionsIndex`
   - [ ] `QuestionIndexItem`

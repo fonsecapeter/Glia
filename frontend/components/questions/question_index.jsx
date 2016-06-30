@@ -27,14 +27,27 @@ const QuestionIndex = React.createClass({
 
   render () {
     return (
-      <div>
-        {
-          this.state.questions.map( question => {
-            return (
-              <QuestionIndexItem question={ question } key={ question.id }/>
-            );
-          })
-        }
+      <div className="question-index">
+        <div className="topic-list">
+          <div className="topic-list-content">
+            <h3>Topics</h3>
+          </div>
+        </div>
+        <div className="feed">
+          <h3>Top Questions For You</h3>
+          {
+            this.state.questions.map( question => {
+              return (
+                <QuestionIndexItem question={ question } key={ question.id }/>
+              );
+            })
+          }
+        </div>
+        <div className="help-box">
+          <div className="help-box-content">
+            <h3>Help</h3>            
+          </div>
+        </div>
       </div>
     );
   }

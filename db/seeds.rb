@@ -10,7 +10,7 @@ User.create!(
   password: 'password'
 )
 
-10.times do
+30.times do
   Question.create!(
     author_id: 1,
     title: 'What is a question?'

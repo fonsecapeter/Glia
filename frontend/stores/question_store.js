@@ -9,10 +9,11 @@ let _questions = {};
 const QuestionStore = new  Store(AppDispatcher);
 
 function _resetQuestions (questions) {
-  _questions = {};
-  questions.forEach( question => {
-    _questions[question.id] = question;
-  });
+  // _questions = {};
+  // questions.forEach( question => {
+  //   _questions[question.id] = question;
+  // });
+  _questions = questions;
 }
 
 function _addQuestion (question) {
