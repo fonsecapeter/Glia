@@ -54,7 +54,7 @@ const QuestionActions = {
   receiveQuestion (data) {
     AppDispatcher.dispatch({
       actionType: QuestionConstants.RECEIVE_QUESTION,
-      question: data
+      question: data.question
     });
   },
 

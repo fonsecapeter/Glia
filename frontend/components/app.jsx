@@ -9,6 +9,8 @@ const SignInForm = require('./sign_in_form');
 
 const SessionActions = require('../actions/session_actions');
 
+const QuestionAskForm = require('./questions/question_ask_form');
+
 const App = React.createClass({
   componentDidMount () {
     SessionStore.addListener(this.forceUpdate.bind(this));
@@ -96,8 +98,7 @@ const App = React.createClass({
             <Link to='/' className='header-link'><h1>Glia</h1></Link>
           </hgroup>
           <hgroup className="dummy-ask">
-            <input className="dummy-ask-bar" />
-            <button className="dummy-ask-button">Ask Question</button>
+            <QuestionAskForm />
           </hgroup>
           { this.greeting() }
         </header>
