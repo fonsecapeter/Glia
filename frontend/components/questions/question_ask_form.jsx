@@ -2,6 +2,8 @@ const React = require('react');
 const QuestionActions = require('../../actions/question_actions');
 const hashHistory = require('react-router').hashHistory;
 
+const SessionStore = require('../../stores/session_store');
+
 const Boron = require('boron');
 
 const QuestionAskForm = React.createClass({
@@ -103,7 +105,7 @@ const QuestionAskForm = React.createClass({
     );
   },
 
-  toggleDialog: function(ref){
+  toggleDialog (ref) {
     return () => {
       this.refs[ref].toggle();
     };
