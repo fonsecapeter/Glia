@@ -1,4 +1,5 @@
 const React = require('react');
+const Link = require('react-router').Link;
 const QuestionActions = require('../../actions/question_actions');
 const hashHistory = require('react-router').hashHistory;
 
@@ -10,7 +11,8 @@ const QuestionAskForm = React.createClass({
   getInitialState () {
     return ({
       title: 'what\'s on your mind?',
-      description: 'description'
+      description: 'description',
+      showDescription: false
     });
   },
 
@@ -68,20 +70,36 @@ const QuestionAskForm = React.createClass({
   },
 
   // modal ---------------------------------------------------------------------
+  toggleDescription () {
+    if (this.state.showDescription) {
+      this.setState({ showDescription: false });
+    } else {
+      this.setState({ showDescription: true });
+    }
+  },
+
   getContent (modalName) {
     let tClass = 'modal-ask-bar';
     let dClass = 'modal-ask-description';
-
     if (this.state.title === 'what\'s on your mind?') {
       tClass += ' empty-input';
     }
-
     if (this.state.description === 'description') {
       dClass += ' empty-input';
     }
 
+    let dToggleValue = '▲';
+    if (this.state.showDescription === false) {
+      dToggleValue = '▼';
+      dClass += ' hidden';
+    }
+
     return (
+
       <div className="modal-container">
+        <hgroup className="logo">
+          <Link to='/' className='header-link'><h1>Glia</h1></Link>
+        </hgroup>
         <div className="modal-ask-container">
           <input
             className={ tClass }
@@ -101,6 +119,11 @@ const QuestionAskForm = React.createClass({
             onChange={ this._onDescriptionChange }
             value={ this.state.description }></textarea>
         </div>
+        <div>
+          <button
+            onClick={ this.toggleDescription }
+            className="blue-text">{ dToggleValue }</button>
+        </div>
       </div>
     );
   },
@@ -114,8 +137,8 @@ const QuestionAskForm = React.createClass({
   getModal (modalName) {
     let Modal = Boron['FadeModal'];
     let modalStyle = {
-      top: 42,
-      width: '100%'
+      top: 0,
+      width: '99%'
     };
 
     return (
@@ -133,13 +156,15 @@ const QuestionAskForm = React.createClass({
     return (
       <div className="question-ask-form">
         { this.getModal('ask') }
-        <input
-          className="dummy-ask-bar"
-          onClick={ this.toggleDialog('ask') }
-          value={ this.state.question } />
-        <button
-          className="dummy-ask-button"
-          onClick={ this.toggleDialog('ask') }>Ask Question</button>
+        <hgroup className="dummy-ask-container">
+          <input
+            className="dummy-ask-bar"
+            onClick={ this.toggleDialog('ask') }
+            value={ this.state.question } />
+          <button
+            className="dummy-ask-button"
+            onClick={ this.toggleDialog('ask') }>Ask Question</button>
+        </hgroup>
       </div>
     );
   }

@@ -35,7 +35,7 @@ const App = React.createClass({
       return (
         <hgroup className="header-group">
           <p className="header-name">
-          <CloudinaryImage className="author-icon" publicId={imagePublicId} options={{ width: 16, height: 16 }} />
+            <CloudinaryImage className="author-icon" publicId={imagePublicId} options={{ width: 16, height: 16 }} />
           { SessionStore.currentUser().username }
         </p>
           <input type="submit"
@@ -47,7 +47,7 @@ const App = React.createClass({
     } else {
       return (
         <nav className="sign-in-up">
-          <button onClick={ this._guestSignIn }>
+          <button className="blue-text" onClick={ this._guestSignIn }>
             Guest
           </button>
           {
@@ -68,9 +68,10 @@ const App = React.createClass({
   },
 
   getContent: function(modalName){
-    return <div className="modal-container">
+    return <div className="sign-in-modal-container">
     <SignInForm signType={ modalName } />
-    <button onClick={ this.toggleDialog(modalName) }>
+    <button
+      onClick={ this.toggleDialog(modalName) }>
       Cancel
     </button>
     </div>;
@@ -85,7 +86,9 @@ const App = React.createClass({
         {modalName.split("_").join(" ")}
       </button>
 
-      <Modal ref={ modalName } className="modal-container">
+      <Modal
+        ref={ modalName }
+        className="sign-in-modal-container">
         { this.getContent(modalName) }
       </Modal>
       </div>

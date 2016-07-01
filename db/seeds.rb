@@ -45,7 +45,7 @@ questions.each do |question|
   Question.create!(
     author_id: rand(2...31),
     title: question,
-    description: Faker::Lorem.paragraph
+    description: Faker::Lorem.paragraph(rand(2...100))
   )
 end
 

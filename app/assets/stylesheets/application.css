@@ -64,14 +64,16 @@ button:hover, .button:hover {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: #73B1D6;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-h3 {
+h4 {
   font-weight: 400;
+  fint-size: 16px;
 
   padding: 5px 5px 5px;
   border-bottom: 1px solid #ddd;
@@ -108,10 +110,14 @@ input, textarea {
 .clearfix { display: inline-block; }
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
+
+.hidden {
+  display: none;
+}
 /* reset */
 
 /* main nav */
-header {
+header, .modal-container {
   z-index: 10;
 
   position: fixed;
@@ -124,10 +130,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8px 0 8px;
+  padding: 7px 8px 0 8px;
 
-  background-color: #f5f7ed;
-  border-top: 2px solid #7cb5c0;
+  background-color: #f6f6f6;
+  border-top: 2px solid #73B1D6;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 3px 2px -2px rgba(200,200,200,0.2);
 
@@ -136,12 +142,16 @@ header {
 }
 
 .logo a {
-  color: #7cb5c0;
+  color: #73B1D6;
 }
 
 .header-sign-out-button {
   width: auto;
   margin-left: 8px;
+}
+
+.blue-text {
+  color: #4589B0;
 }
 
 .header-group {
@@ -166,8 +176,7 @@ header {
 
 .ask-modal {
   -webkit-font-smoothing: antialiased;
-  border-top: 10px solid #7cb5c0;
-  width: 100%;
+  border-top: 7px solid #73B1D6;
 }
 
 .modal-ask-container {
@@ -177,6 +186,12 @@ header {
 
 .modal-ask-bar {
   width: 80%;
+}
+
+.toggle-show-button {
+  width: 5%;
+  float: right;
+  margin: 0;
 }
 
 .modal-ask-button {
@@ -190,26 +205,32 @@ header {
 /* main nav */
 
 /* sign-in-up modals */
+.sign-in-modal-container {
+  margin: auto;
+  text-align: center;
+  background-color: #f6f6f6;
+}
+
 .sign-in-up {
   display: flex;
 }
 
-.sign-in-form-container, .modal-container {
+.sign-in-form-container {
   padding: 6px;
   text-align: center;
-  background-color: #f5f7ed;
+  background-color: #f6f6f6;
 }
 
 .modal-title {
   padding: 5px 5px 5px;
   margin: 30px;
   border-bottom: 1px solid #ddd;
-  color: #7cb5c0;
+  color: #73B1D6;
 }
 
 .errors {
   list-style-type: none;
-  color: #7cb5c0;
+  color: #73B1D6;
   padding: 0;
 }
 

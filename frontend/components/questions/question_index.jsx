@@ -30,11 +30,11 @@ const QuestionIndex = React.createClass({
       <div className="question-index">
         <div className="topic-list">
           <div className="topic-list-content">
-            <h3>Topics</h3>
+            <h4>Topics</h4>
           </div>
         </div>
         <div className="feed">
-          <h3>Top Questions For You</h3>
+          <h4>Top Questions For You</h4>
           {
             this.state.questions.map( question => {
               return (
@@ -45,7 +45,7 @@ const QuestionIndex = React.createClass({
         </div>
         <div className="help-box">
           <div className="help-box-content">
-            <h3>Help</h3>
+            <h4>Help</h4>
           </div>
         </div>
       </div>
