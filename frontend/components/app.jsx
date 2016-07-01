@@ -47,7 +47,7 @@ const App = React.createClass({
     } else {
       return (
         <nav className="sign-in-up">
-          <button className="blue-text" onClick={ this._guestSignIn }>
+          <button className="red-button" onClick={ this._guestSignIn }>
             Guest
           </button>
           {
