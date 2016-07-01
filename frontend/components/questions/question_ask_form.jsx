@@ -153,14 +153,21 @@ const QuestionAskForm = React.createClass({
   // ---------------------------------------------------------------------------
 
   render () {
+    let dabClass = 'dummy-ask-bar';
+    let dabVal = this.state.title;
+    if (this.state.title === 'what\'s on your mind?') {
+      dabClass += ' empty-input';
+      dabVal = '';
+    }
+
     return (
       <div className="question-ask-form">
         { this.getModal('ask') }
         <hgroup className="dummy-ask-container">
           <input
-            className="dummy-ask-bar"
+            className={ dabClass }
             onClick={ this.toggleDialog('ask') }
-            value={ this.state.question } />
+            value={ dabVal } />
           <button
             className="dummy-ask-button"
             onClick={ this.toggleDialog('ask') }>Ask Question</button>

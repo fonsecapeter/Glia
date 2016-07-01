@@ -83,6 +83,14 @@ const App = React.createClass({
   getTriggerAndModal: function(modalName){
     let Modal = Boron['FadeModal'];
 
+    let backdropStyle = {
+      // backgroundImage: 'url(https://s-media-cache-ak0.pinimg.com/236x/e7/56/a0/e756a00a1ec23a6f6b95dad00040455f.jpg)',
+      backgroundImage: 'url(http://www.patternpictures.com/wp-content/uploads/2014/08/pp-bluegraphicscale-1408101600.png)',
+      backgroundRepeat: 'repeat',
+      backgroundSize: 200,
+      backgroundOpacity: 0.5
+    };
+
     return (
       <div key={ modalName }>
       <button onClick={ this.toggleDialog(modalName) }>
@@ -91,7 +99,8 @@ const App = React.createClass({
 
       <Modal
         ref={ modalName }
-        className="sign-in-modal-container">
+        className="sign-in-modal-container"
+        backdropStyle={ backdropStyle }>
         { this.getContent(modalName) }
       </Modal>
       </div>
