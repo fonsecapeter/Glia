@@ -26,13 +26,18 @@ const QuestionAskForm = React.createClass({
 
   _onSubmit (event) {
     event.preventDefault();
+    this.toggleDialog('ask');
 
     let formData = this._beforeSubmit();
 
     QuestionActions.createQuestion(formData);
+
+    this.setState({
+      title: 'what\'s on your mind?',
+      description: 'description'
+    });
     hashHistory.push('/');
     // this.setState(this.getInitialState());
-    this.toggleDialog('ask');
   },
 
   _beforeSubmit () {
@@ -73,17 +78,18 @@ const QuestionAskForm = React.createClass({
       dClass += ' empty-input';
     }
 
-    return <div className="modal-container">
-      <div className="modal-ask-container">
-        <input
-          className={ tClass }
-          onClick={ this.titleFocus }
-          onFocus={ this.titleFocus }
-          onChange={ this._onTitleChange }
-          value={ this.state.title } />
-        <button
-          className="dummy-ask-button modal-ask-button"
-          onClick={ this._onSubmit }>Ask Question</button>
+    return (
+      <div className="modal-container">
+        <div className="modal-ask-container">
+          <input
+            className={ tClass }
+            onClick={ this.titleFocus }
+            onFocus={ this.titleFocus }
+            onChange={ this._onTitleChange }
+            value={ this.state.title } />
+          <button
+            className="dummy-ask-button modal-ask-button"
+            onClick={ this._onSubmit }>Ask Question</button>
 
           <br />
           <textarea
@@ -92,8 +98,9 @@ const QuestionAskForm = React.createClass({
             onFocus={ this.descriptionFocus }
             onChange={ this._onDescriptionChange }
             value={ this.state.description }></textarea>
+        </div>
       </div>
-    </div>;
+    );
   },
 
   toggleDialog: function(ref){
@@ -105,7 +112,7 @@ const QuestionAskForm = React.createClass({
   getModal (modalName) {
     let Modal = Boron['FadeModal'];
     let modalStyle = {
-      top: 45,
+      top: 42,
       width: '100%'
     };
 
