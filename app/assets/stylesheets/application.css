@@ -176,7 +176,7 @@ header, .modal-container {
 
 .ask-modal {
   -webkit-font-smoothing: antialiased;
-  border-top: 7px solid #73B1D6;
+  border-top: 8px solid #73B1D6;
 }
 
 .modal-ask-container {
@@ -285,6 +285,12 @@ header, .modal-container {
 
 .help-box-content {
   position: fixed;
+}
+
+.help-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 6px;
 }
 /* question index */
 

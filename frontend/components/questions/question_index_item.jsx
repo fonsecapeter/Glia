@@ -30,7 +30,7 @@ const QuestionIndexItem = React.createClass({
       preview = preview.slice(0, 200) + '...';
       return (
         <p>
-          { preview }<a onClick={ this.expandDescription }> (more)</a>
+          { preview } <a onClick={ this.expandDescription }>(more)</a>
         </p>
       );
     } else {
@@ -45,7 +45,7 @@ const QuestionIndexItem = React.createClass({
   expanded () {
     return (
       <p>
-        { this.props.question.description }<a onClick={ this.shrinkDescription }> (less)</a>
+        { this.props.question.description } <a onClick={ this.shrinkDescription }>(less)</a>
       </p>
     );
   },

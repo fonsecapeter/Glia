@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="123.14968mm"
+   height="123.14968mm"
+   viewBox="0 0 436.35714 436.35714"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="lifesaver.svg"
+   inkscape:export-filename="lifesaver.png"
+   inkscape:export-xdpi="118.901"
+   inkscape:export-ydpi="118.901">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="-180.3343"
+     inkscape:cy="149.75972"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1391"
+     inkscape:window-height="876"
+     inkscape:window-x="49"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     showborder="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     showguides="false" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-143.24998,-215.61223)">
+    <circle
+       r="211.99538"
+       cy="433.7908"
+       cx="361.42856"
+       id="circle4140"
+       style="fill:none;stroke:#d38d5f;stroke-width:12.3663969;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       style="fill:#e6e6e6;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 218.17773 33.894531 A 184.28572 184.28572 0 0 0 33.892578 218.17969 A 184.28572 184.28572 0 0 0 33.917969 218.89453 L 161.06055 218.89453 A 57.142868 57.142868 0 0 1 161.03516 218.17773 A 57.142868 57.142868 0 0 1 161.32031 212.47461 A 57.142868 57.142868 0 0 1 162.17383 206.82617 A 57.142868 57.142868 0 0 1 163.58789 201.29102 A 57.142868 57.142868 0 0 1 165.54688 195.92578 A 57.142868 57.142868 0 0 1 168.03125 190.7832 A 57.142868 57.142868 0 0 1 171.01562 185.91406 A 57.142868 57.142868 0 0 1 174.47266 181.36523 A 57.142868 57.142868 0 0 1 178.36719 177.1875 A 57.142868 57.142868 0 0 1 182.6582 173.41797 A 57.142868 57.142868 0 0 1 187.30469 170.09375 A 57.142868 57.142868 0 0 1 192.25977 167.25195 A 57.142868 57.142868 0 0 1 197.47266 164.91992 A 57.142868 57.142868 0 0 1 202.89258 163.11719 A 57.142868 57.142868 0 0 1 208.4668 161.86719 A 57.142868 57.142868 0 0 1 214.13672 161.17969 A 57.142868 57.142868 0 0 1 218.17773 161.03516 A 57.142868 57.142868 0 0 1 218.89258 161.07031 L 218.89258 33.929688 A 184.28572 184.28572 0 0 0 218.17773 33.894531 z "
+       id="path4136"
+       transform="translate(143.24998,215.61223)" />
+    <circle
+       style="fill:#e6e6e6;stroke:#e6e6e6;stroke-width:13.5;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path4189"
+       cx="219.28571"
+       cy="305.93359"
+       r="26.428572" />
+    <path
+       style="fill:#e6e6e6;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 217.46484 275.28711 L 217.46484 402.44141 A 184.28572 184.28572 0 0 0 218.17773 402.46484 A 184.28572 184.28572 0 0 0 402.46484 218.17969 A 184.28572 184.28572 0 0 0 402.42969 217.46484 L 275.29688 217.46484 A 57.142868 57.142868 0 0 1 275.32227 218.17773 A 57.142868 57.142868 0 0 1 275.03516 223.88281 A 57.142868 57.142868 0 0 1 274.18164 229.53125 A 57.142868 57.142868 0 0 1 272.76953 235.06641 A 57.142868 57.142868 0 0 1 270.81055 240.43164 A 57.142868 57.142868 0 0 1 268.32617 245.57422 A 57.142868 57.142868 0 0 1 265.33984 250.44336 A 57.142868 57.142868 0 0 1 261.88477 254.99023 A 57.142868 57.142868 0 0 1 257.99023 259.16992 A 57.142868 57.142868 0 0 1 253.69922 262.93945 A 57.142868 57.142868 0 0 1 249.05273 266.26172 A 57.142868 57.142868 0 0 1 244.09766 269.10547 A 57.142868 57.142868 0 0 1 238.88477 271.4375 A 57.142868 57.142868 0 0 1 233.46484 273.23828 A 57.142868 57.142868 0 0 1 227.89062 274.49023 A 57.142868 57.142868 0 0 1 222.2207 275.17773 A 57.142868 57.142868 0 0 1 218.17773 275.32227 A 57.142868 57.142868 0 0 1 217.46484 275.28711 z "
+       id="path4184"
+       transform="translate(143.24998,215.61223)" />
+    <circle
+       r="26.428572"
+       cy="561.64789"
+       cx="509.28571"
+       id="circle4191"
+       style="fill:#e6e6e6;stroke:#e6e6e6;stroke-width:13.5;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       style="fill:#d35f5f;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 161.06055 218.89453 L 33.917969 218.89453 A 184.28572 184.28572 0 0 0 217.46484 402.44141 L 217.46484 275.28711 A 57.142868 57.142868 0 0 1 212.47461 275.03516 A 57.142868 57.142868 0 0 1 206.82617 274.18164 A 57.142868 57.142868 0 0 1 201.29102 272.76953 A 57.142868 57.142868 0 0 1 195.92578 270.81055 A 57.142868 57.142868 0 0 1 190.7832 268.32617 A 57.142868 57.142868 0 0 1 185.91406 265.33984 A 57.142868 57.142868 0 0 1 181.36523 261.88477 A 57.142868 57.142868 0 0 1 177.1875 257.99023 A 57.142868 57.142868 0 0 1 173.41797 253.69922 A 57.142868 57.142868 0 0 1 170.09375 249.05273 A 57.142868 57.142868 0 0 1 167.25195 244.09766 A 57.142868 57.142868 0 0 1 164.91992 238.88477 A 57.142868 57.142868 0 0 1 163.11719 233.46484 A 57.142868 57.142868 0 0 1 161.86719 227.89062 A 57.142868 57.142868 0 0 1 161.17969 222.2207 A 57.142868 57.142868 0 0 1 161.06055 218.89453 z "
+       id="path4188"
+       transform="translate(143.24998,215.61223)" />
+    <circle
+       r="26.428572"
+       cy="561.64789"
+       cx="219.28571"
+       id="circle4193"
+       style="fill:#d35f5f;stroke:#d35f5f;stroke-width:13.5;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       style="fill:#d35f5f;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 218.89258 33.929688 L 218.89258 161.07031 A 57.142868 57.142868 0 0 1 223.88281 161.32031 A 57.142868 57.142868 0 0 1 229.53125 162.17383 A 57.142868 57.142868 0 0 1 235.06641 163.58789 A 57.142868 57.142868 0 0 1 240.43164 165.54688 A 57.142868 57.142868 0 0 1 245.57422 168.03125 A 57.142868 57.142868 0 0 1 250.44336 171.01562 A 57.142868 57.142868 0 0 1 254.99023 174.47266 A 57.142868 57.142868 0 0 1 259.16992 178.36719 A 57.142868 57.142868 0 0 1 262.93945 182.6582 A 57.142868 57.142868 0 0 1 266.26172 187.30469 A 57.142868 57.142868 0 0 1 269.10547 192.25781 A 57.142868 57.142868 0 0 1 271.4375 197.47266 A 57.142868 57.142868 0 0 1 273.23828 202.89258 A 57.142868 57.142868 0 0 1 274.49023 208.4668 A 57.142868 57.142868 0 0 1 275.17773 214.13672 A 57.142868 57.142868 0 0 1 275.29688 217.46484 L 402.42969 217.46484 A 184.28572 184.28572 0 0 0 218.89258 33.929688 z "
+       id="path4181"
+       transform="translate(143.24998,215.61223)" />
+    <circle
+       style="fill:#d35f5f;stroke:#d35f5f;stroke-width:13.5;stroke-miterlimit:4;stroke-dasharray:none"
+       id="circle4195"
+       cx="509.28571"
+       cy="305.93359"
+       r="26.428572" />
+  </g>
+</svg>
