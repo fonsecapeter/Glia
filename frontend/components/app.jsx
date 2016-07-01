@@ -35,7 +35,10 @@ const App = React.createClass({
       return (
         <hgroup className="header-group">
           <p className="header-name">
-            <CloudinaryImage className="author-icon" publicId={imagePublicId} options={{ width: 16, height: 16 }} />
+            <CloudinaryImage
+              className="author-icon"
+              publicId={imagePublicId}
+              options={{ width: 16, height: 16 }} />
           { SessionStore.currentUser().username }
         </p>
           <input type="submit"
@@ -109,7 +112,9 @@ const App = React.createClass({
           </hgroup>
           { this.greeting() }
         </header>
-        { this.props.children }
+        <div className="app-children">
+          { this.props.children }
+        </div>
       </div>
     );
   }

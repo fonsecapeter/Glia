@@ -1,4 +1,5 @@
 const React = require('react');
+const Link = require('react-router').Link;
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
 const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
 cloudinaryConfig({ cloud_name: 'dxhqr7u1z' });
@@ -36,7 +37,7 @@ const QuestionIndexItem = React.createClass({
     } else {
       return (
         <p>
-          {preview}
+          { preview }
         </p>
       );
     }
@@ -45,23 +46,33 @@ const QuestionIndexItem = React.createClass({
   expanded () {
     return (
       <p>
-        { this.props.question.description } <a onClick={ this.shrinkDescription }>(less)</a>
+        { this.props.question.description }
+        <a onClick={ this.shrinkDescription }>(less)</a>
       </p>
     );
   },
 
   createdAgo () {
+    let createdAgo = this.props.question.createdAgo;
+
     return (
-      <span className='light-text'>, { this.props.question.createdAgo } ago</span>
+      <span className='light-text'>
+        , { createdAgo } ago
+      </span>
     );
   },
 
   render () {
+    let detailPath = `questions/${this.props.question.id}`;
+
     return (
       <div className="question-index-item">
-        <h3>{ this.props.question.title }</h3>
+        <Link to={ detailPath }><h3>{ this.props.question.title }</h3></Link>
         <p>
-          <CloudinaryImage className="author-icon" publicId={imagePublicId} options={{ width: 16, height: 16 }} />
+          <CloudinaryImage
+            className="author-icon"
+            publicId={imagePublicId}
+            options={{ width: 16, height: 16 }} />
           { this.props.question.authorName }
           { this.createdAgo() }
         </p>
