@@ -1,9 +1,7 @@
 const React = require('react');
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
 const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
-
 cloudinaryConfig({ cloud_name: 'dxhqr7u1z' });
-
 const imagePublicId = 'user_j20bee';
 
 const QuestionIndexItem = React.createClass({

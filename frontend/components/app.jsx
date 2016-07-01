@@ -2,14 +2,17 @@
 
 const React = require('react');
 const Link = require('react-router').Link;
-const SessionStore = require('../stores/session_store');
-
 const Boron = require('boron');
-const SignInForm = require('./sign_in_form');
-
+const SessionStore = require('../stores/session_store');
 const SessionActions = require('../actions/session_actions');
 
+const SignInForm = require('./sign_in_form');
 const QuestionAskForm = require('./questions/question_ask_form');
+
+const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
+const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
+cloudinaryConfig({ cloud_name: 'dxhqr7u1z' });
+const imagePublicId = 'user_j20bee';
 
 const App = React.createClass({
   componentDidMount () {
@@ -32,6 +35,7 @@ const App = React.createClass({
       return (
         <hgroup className="header-group">
           <p className="header-name">
+          <CloudinaryImage className="author-icon" publicId={imagePublicId} options={{ width: 16, height: 16 }} />
           { SessionStore.currentUser().username }
         </p>
           <input type="submit"

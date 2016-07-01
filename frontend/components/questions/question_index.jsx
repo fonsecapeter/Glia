@@ -45,7 +45,7 @@ const QuestionIndex = React.createClass({
         </div>
         <div className="help-box">
           <div className="help-box-content">
-            <h3>Help</h3>            
+            <h3>Help</h3>
           </div>
         </div>
       </div>

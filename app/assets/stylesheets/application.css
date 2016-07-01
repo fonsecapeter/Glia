@@ -34,7 +34,7 @@ html, body, section, article, h1, h2, p {
 html, body, button, input, .button {
   font-family: "Cabin";
   -webkit-font-smoothing: antialiased;
-  background-color: white;
+  background-color: #fff;
 }
 
 button, .button {
@@ -96,6 +96,18 @@ input, textarea {
   background-color: #e6e6e6;
   overflow-y: hidden;
 }
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
 /* reset */
 
 /* main nav */
@@ -228,7 +240,7 @@ header {
   padding: 20px 20px 20px 20px;
   margin: auto;
   margin-top: 0;
-  height: 80px;
+  height: 100%;
 }
 
 .topic-list-content {
