@@ -154,6 +154,10 @@ header, .modal-container {
   color: #4589B0;
 }
 
+.light-text {
+  color:  #b3b3b3;
+}
+
 .header-group {
   display: flex;
   align-items: center;

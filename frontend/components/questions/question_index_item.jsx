@@ -50,6 +50,12 @@ const QuestionIndexItem = React.createClass({
     );
   },
 
+  createdAgo () {
+    return (
+      <span className='light-text'>, { this.props.question.createdAgo } ago</span>
+    );
+  },
+
   render () {
     return (
       <div className="question-index-item">
@@ -57,6 +63,7 @@ const QuestionIndexItem = React.createClass({
         <p>
           <CloudinaryImage className="author-icon" publicId={imagePublicId} options={{ width: 16, height: 16 }} />
           { this.props.question.authorName }
+          { this.createdAgo() }
         </p>
         { this.state.preview }
       </div>

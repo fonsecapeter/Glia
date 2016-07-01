@@ -90,8 +90,6 @@ user interface.
   - [x] `QuestionIndexItem`
   - [x] `NewQuestionForm`
   - [ ] `EditQuestionForm`
-- [ ] save Questions to the DB when the form loses focus or is left idle
-  after editing.
 
 ### Phase 4: Answers (1.5 days, W2 M 6pm)
 

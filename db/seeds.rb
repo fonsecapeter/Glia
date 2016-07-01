@@ -49,13 +49,6 @@ questions.each do |question|
   )
 end
 
-30.times do
-  Question.create!(
-    author_id: 1,
-    title: 'What is a question?'
-  )
-end
-
 # 10.times do
 #   Question.create(
 #     author_id

@@ -50,7 +50,7 @@ const QuestionIndex = React.createClass({
               return (
                 <QuestionIndexItem question={ question } key={ question.id }/>
               );
-            })
+            }).reverse()
           }
         </div>
         <div className="help-box">
