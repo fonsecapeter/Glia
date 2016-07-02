@@ -114,6 +114,7 @@ const QuestionAskForm = React.createClass({
           <br />
           <textarea
             className={ dClass }
+            rows={ 6 }
             onClick={ this.descriptionFocus }
             onFocus={ this.descriptionFocus }
             onChange={ this._onDescriptionChange }

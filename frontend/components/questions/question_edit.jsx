@@ -58,12 +58,15 @@ const QuestionEdit = React.createClass({
 
           <form onSubmit={ this._onSubmit }>
             <input
+              className="question-edit-input"
               type="text"
               onChange={ this._onTitleChange }
               value={ this.state.title } />
 
             <br /><br />
             <textarea
+              className="question-edit-input"
+              rows={ 6 }
               onChange={ this._onDescriptionChange }
               value={ this.state.description }></textarea>
 
