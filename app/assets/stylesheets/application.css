@@ -200,6 +200,7 @@ header, .modal-container {
   float: right;
   padding: 5px 8px 6px 10px;
   margin: 0;
+  min-width: 110px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -211,6 +212,7 @@ header, .modal-container {
 
 .modal-ask-container {
   width: 50%;
+  min-width: 550px;
   margin: auto;
 }
 
@@ -277,7 +279,7 @@ header, .modal-container {
 }
 
 @media (max-width: 800px) {
-  .app-children, .question-index, header {
+  .app-children, .question-index, header, .modal-container {
     flex-direction: column;
   }
   .app-children, .question-index {
