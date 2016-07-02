@@ -362,6 +362,10 @@ header, .modal-container {
   }
 }
 
+.question-edit{
+  text-align: center;
+}
+
 .question-col {
   flex: 3;
   padding: 20px 20px 20px 20px;

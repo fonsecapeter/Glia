@@ -15,7 +15,7 @@ const QuestionEdit = React.createClass({
   },
 
   _onChange () {
-    const candidateQuestion = QuestionStore.find(this.props.questionId);
+    const candidateQuestion = QuestionStore.find(this.props.params.questionId);
     const question = candidateQuestion ? candidateQuestion : {};
     this.setState({
       title: question.title,
@@ -25,7 +25,7 @@ const QuestionEdit = React.createClass({
 
   componentDidMount () {
     this.questionListener = QuestionStore.addListener(this._onChange);
-    QuestionActions.fetchQuestion(this.props.params.questionId);
+    QuestionActions.fetchQuestion(parseInt(this.props.params.questionId));
   },
 
   componentWillUnmount () {
@@ -34,7 +34,11 @@ const QuestionEdit = React.createClass({
 
   _onSubmit (event) {
     event.preventDefault();
-    QuestionActions.updatePost(this.state);
+    QuestionActions.updateQuestion({
+      title: this.state.title,
+      description: this.state.description,
+      id: this.props.params.questionId
+    });
     hashHistory.push(`questions/${this.props.params.questionId}`);
   },
 
@@ -42,24 +46,29 @@ const QuestionEdit = React.createClass({
     this.setState({ title: event.currentTarget.value });
   },
 
-  _onBodyChange (event) {
-    this.setState({ body: event.currentTarget.value });
+  _onDescriptionChange (event) {
+    this.setState({ description: event.currentTarget.value });
   },
 
   render () {
     return (
       <div className="question-edit">
         <div className="question-col">
+          <h3>Edit Question</h3>
+
           <form onSubmit={ this._onSubmit }>
             <input
+              type="text"
               onChange={ this._onTitleChange }
               value={ this.state.title } />
-            <br />
+
+            <br /><br />
             <textarea
-              onChange={ this._onBodyChange }
-              value={ this.state.body }></textarea>
-            <br />
-            <input className="button" value="save" />
+              onChange={ this._onDescriptionChange }
+              value={ this.state.description }></textarea>
+
+            <br /><br />
+            <input type="submit" className="button" value="save" />
           </form>
         </div>
       </div>
