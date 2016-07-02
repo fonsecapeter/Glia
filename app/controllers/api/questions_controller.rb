@@ -51,8 +51,7 @@ class Api::QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(
       :title,
-      :description,
-      :answered
+      :description
     )
   end
 end
