@@ -1,4 +1,5 @@
 const React = require('react');
+const hashHistory = require('react-router').hashHistory;
 const QuestionStore = require('../../stores/question_store.js');
 const QuestionActions = require('../../actions/question_actions.js');
 const QuestionIndexItem = require('./question_index_item');
@@ -39,6 +40,24 @@ const QuestionDetail = React.createClass({
     );
   },
 
+  linkToEditPath () {
+    const questionId = this.props.params.questionId;
+    hashHistory.push(`questions/${questionId}/edit`);
+  },
+
+  editButton () {
+    const questionId = this.props.params.questionId;
+
+    if (window.currentUser &&
+        window.currentUser.questions.indexOf(parseInt(questionId)) !== -1) {
+      return (
+        <button onClick={ this.linkToEditPath }>edit</button>
+      );
+    } else {
+      return ('');
+    }
+  },
+
   render () {
     return(
       <div className="question-detail">
@@ -52,6 +71,7 @@ const QuestionDetail = React.createClass({
                 options={{ width: 16, height: 16 }} />
               { this.state.question.authorName }
               { this.createdAgo() }
+              { this.editButton() }
             </p>
           </h4>
           <br />

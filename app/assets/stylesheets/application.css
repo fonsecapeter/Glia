@@ -345,7 +345,7 @@ header, .modal-container {
 /* question index item */
 
 /* question detail */
-.question-detail {
+.question-detail, .question-edit {
   display: flex;
   padding: 40px 20px 20px 60px;
   margin: auto;
@@ -353,7 +353,7 @@ header, .modal-container {
 }
 
 @media (max-width: 800px) {
-  .question-detail {
+  .question-detail, .question-edit {
     flex-direction: column;
     padding: 60px 20px 20px 20px;
   }
