@@ -348,8 +348,9 @@ header, .modal-container {
 .question-detail, .question-edit {
   display: flex;
   padding: 40px 20px 20px 60px;
-  margin: auto;
+  /*margin: auto;*/
   margin-top: 0;
+  justify-content: flex-start;
 }
 
 @media (max-width: 800px) {
@@ -369,7 +370,8 @@ header, .modal-container {
 .question-col {
   flex: 3;
   padding: 20px 20px 20px 20px;
-  margin: auto;
+  /*margin: auto;*/
+  min-width: 400px;
   margin-top: 0;
 }
 

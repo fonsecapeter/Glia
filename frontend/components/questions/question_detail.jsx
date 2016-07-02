@@ -45,13 +45,24 @@ const QuestionDetail = React.createClass({
     hashHistory.push(`questions/${questionId}/edit`);
   },
 
-  editButton () {
+  destroyQuestion () {
+    const questionId = this.props.params.questionId;
+    QuestionActions.destroyQuestion(questionId);
+    hashHistory.push('/');
+  },
+
+  ownershipButtons () {
     const questionId = this.props.params.questionId;
 
     if (window.currentUser &&
         window.currentUser.questions.indexOf(parseInt(questionId)) !== -1) {
       return (
-        <button onClick={ this.linkToEditPath }>edit</button>
+        <div>
+          <button onClick={ this.linkToEditPath }>edit</button>
+          <button
+            onClick={ this.destroyQuestion }
+            className="red-button">delete</button>
+        </div>
       );
     } else {
       return ('');
@@ -64,15 +75,15 @@ const QuestionDetail = React.createClass({
         <div className="question-col">
           <h4>
             <h2>{ this.state.question.title }</h2>
-            <p>
+            <div>
               <CloudinaryImage
                 className="author-icon"
                 publicId={ imagePublicId }
                 options={{ width: 16, height: 16 }} />
               { this.state.question.authorName }
               { this.createdAgo() }
-              { this.editButton() }
-            </p>
+              { this.ownershipButtons() }
+            </div>
           </h4>
           <br />
           <p>{ this.state.question.description }</p>
