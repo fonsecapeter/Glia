@@ -1,5 +1,5 @@
 # Glia
-[Heroku link](https://www.heroku.com)
+[Heroku link](https://glia-app.herokuapp.com)
 
 [heroku]: http://www.herokuapp.com
 
