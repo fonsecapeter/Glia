@@ -7,4 +7,5 @@ json.question do
   json.authorId @question.author_id
   json.authorName @question.author.username
   json.createdAgo time_ago_in_words(@question.created_at)
+  json.answers @question.answers
 end

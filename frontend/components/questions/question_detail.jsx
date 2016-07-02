@@ -8,6 +8,8 @@ const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
 cloudinaryConfig({ cloud_name: 'dxhqr7u1z' });
 const imagePublicId = 'user_j20bee';
 
+const AnswerIndex = require('../answers/answer_index');
+
 const QuestionDetail = React.createClass({
   getInitialState () {
     return ({
@@ -70,6 +72,11 @@ const QuestionDetail = React.createClass({
   },
 
   render () {
+    let answers = [];
+    if (this.state.question.answers) {
+      answers = this.state.question.answers;
+    }
+
     return(
       <div className="question-detail">
         <div className="question-col">
@@ -87,6 +94,8 @@ const QuestionDetail = React.createClass({
           </h4>
           <br />
           <p>{ this.state.question.description }</p>
+          <AnswerIndex
+            answers={ answers } />
         </div>
         <div className="related-col">
           <div className="related-col-content">

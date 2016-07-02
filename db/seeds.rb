@@ -49,8 +49,10 @@ questions.each do |question|
   )
 end
 
-# 10.times do
-#   Question.create(
-#     author_id
-#   )
-# end
+100.times do
+  Answer.create!(
+    author_id: rand(2...31),
+    question_id: rand(1...21),
+    content: Faker::Lorem.paragraph(rand(2...100))
+  )
+end

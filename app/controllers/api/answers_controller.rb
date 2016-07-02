@@ -1,14 +1,14 @@
 class Api::AnswersController < ApplicationController
-  def index
-    @answers = Answer.where(question_id: params[:question_id])
-
-    render :index
-  end
+  # def index
+  #   @answers = Answer.where(question_id: params[:question_id])
+  #
+  #   render :index
+  # end
 
   def create
     @answer = Answer.new(answer_params)
     @answer.question_id = params[:question_id]
-    
+
     if (current_user)
       @answer.author_id = current_user.id
     else
@@ -24,11 +24,11 @@ class Api::AnswersController < ApplicationController
     end
   end
 
-  def show
-    @answer = Answer.find(params[:id])
-
-    render :show
-  end
+  # def show
+  #   @answer = Answer.find(params[:id])
+  #
+  #   render :show
+  # end
 
   def update
     @answer = Answer.find(params[:id])
