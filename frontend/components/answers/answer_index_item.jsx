@@ -17,7 +17,7 @@ const AnswerIndexItem = React.createClass({
 
   render () {
     return (
-      <div className="answer_index_item">
+      <div className="answer-index-item">
         <p>
           <CloudinaryImage
             className="author-icon"

@@ -4,7 +4,8 @@ const AnswerIndexItem = require('./answer_index_item');
 const AnswerIndex = React.createClass({
   render () {
     return (
-      <div className="AnswerIndex">
+      <div className="answer-index">
+        <h4>Answers</h4>
         {
           this.props.answers.map( answer => {
             return (
