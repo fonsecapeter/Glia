@@ -5,7 +5,7 @@ const AnswerIndex = React.createClass({
   render () {
     return (
       <div className="answer-index">
-        <h4>Answers</h4>
+        <h4>{ this.props.answers.length } Answers</h4>
         {
           this.props.answers.map( answer => {
             return (
@@ -13,7 +13,7 @@ const AnswerIndex = React.createClass({
                 answer={ answer }
                 key={ answer.id } />
             );
-          })
+          }).reverse()
         }
       </div>
     );

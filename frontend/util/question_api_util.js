@@ -24,7 +24,7 @@ const QuestionApiUtil = {
 
   fetchQuestion (questionId, success) {
     $.ajax({
-      url: `/api/questions/${questionId}`,
+      url: `/api/questions/${ questionId } `,
       type: 'GET',
       success
     });
@@ -32,7 +32,7 @@ const QuestionApiUtil = {
 
   updateQuestion (question, success, error) {
     $.ajax({
-      url: `/api/questions/${question.id}`,
+      url: `/api/questions/${ question.id }`,
       type: 'PATCH',
       data: { question: question },
       success,
@@ -45,12 +45,11 @@ const QuestionApiUtil = {
 
   destroyQuestion (questionId, success) {
     $.ajax({
-      url: `/api/questions/${questionId}`,
+      url: `/api/questions/${ questionId }`,
       type: 'DELETE',
       success
     });
-  },
-
+  }
 };
 
 module.exports = QuestionApiUtil;

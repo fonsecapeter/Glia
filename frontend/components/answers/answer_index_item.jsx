@@ -15,6 +15,22 @@ const AnswerIndexItem = React.createClass({
     );
   },
 
+  editButton () {
+    const answerId = this.props.answer.id;
+
+    if (window.currentUser &&
+        window.currentUser.answers.indexOf(parseInt(answerId)) !== -1) {
+      return (
+        <div>
+          <button onClick={ this.linkToEditPath }>edit</button>
+          <button
+            onClick={ this.destroyAnswer }
+            className="red-button">delete</button>
+        </div>
+      );
+    }
+  },
+
   render () {
     return (
       <div className="answer-index-item">
@@ -26,6 +42,8 @@ const AnswerIndexItem = React.createClass({
           { this.props.answer.authorName }
           { this.createdAgo() }
         </p>
+          { this.editButton () }
+        <br />
         <p>
           { this.props.answer.content }
         </p>

@@ -16,7 +16,10 @@ class Api::AnswersController < ApplicationController
     end
 
     if @answer.save
-      render :show
+      @question = @answer.question
+      @user = current_user
+      # render template: 'api/questions/show'
+      render :create
     else
       render json: {
         base: @answer.errors.full_messages
@@ -24,17 +27,13 @@ class Api::AnswersController < ApplicationController
     end
   end
 
-  # def show
-  #   @answer = Answer.find(params[:id])
-  #
-  #   render :show
-  # end
-
   def update
     @answer = Answer.find(params[:id])
 
     if @answer.update_attributes(answer_params);
-      render :show
+      @question = @answer.question
+      render template: 'api/questions/show'
+      # render :show
     else
       render json: {
         base: @answer.errors.full_messages
@@ -45,7 +44,9 @@ class Api::AnswersController < ApplicationController
   def destroy
     @answer = Answer.find(params[:id])
     @answer.destroy
-    render :show
+    @question = @answer.question
+    render template: 'api/questions/show'
+    # render :show
   end
 
   private

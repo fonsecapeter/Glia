@@ -3,6 +3,7 @@ const hashHistory = require('react-router').hashHistory;
 const QuestionStore = require('../../stores/question_store.js');
 const QuestionActions = require('../../actions/question_actions.js');
 const QuestionIndexItem = require('./question_index_item');
+const AnswerCreateForm = require('../answers/answer_create_form');
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
 const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
 cloudinaryConfig({ cloud_name: 'dxhqr7u1z' });
@@ -13,7 +14,8 @@ const AnswerIndex = require('../answers/answer_index');
 const QuestionDetail = React.createClass({
   getInitialState () {
     return ({
-      question: {}
+      question: {},
+      answering: false
     });
   },
 
@@ -71,31 +73,75 @@ const QuestionDetail = React.createClass({
     }
   },
 
-  render () {
+  toggleAnswering () {
+    if (this.state.answering) {
+      this.setState({ answering: false });
+    } else {
+      this.setState({ answering: true });
+    }
+  },
+
+  answerButton () {
+    if (window.currentUser && !(this.state.answering)) {
+      return (
+        <div>
+          <button onClick={ this.toggleAnswering }>answer</button>
+        </div>
+      );
+    }
+  },
+
+  createAnswerForm () {
+    if (this.state.answering) {
+      return (
+        <div className="answer-create">
+          <AnswerCreateForm
+            questionId={ this.props.params.questionId } />
+          <button onClick={ this.toggleAnswering }>cancel</button>
+        </div>
+      );
+    }
+  },
+
+  showAnswers () {
     let answers = [];
     if (this.state.question.answers) {
       answers = this.state.question.answers;
     }
 
+    if (answers.length > 0) {
+      return (
+        <AnswerIndex
+          answers={ answers } />
+      );
+    }
+  },
+
+  render () {
+
     return(
       <div className="question-detail">
         <div className="question-col">
-          <h4>
             <h2>{ this.state.question.title }</h2>
             <div>
-              <CloudinaryImage
-                className="author-icon"
-                publicId={ imagePublicId }
-                options={{ width: 16, height: 16 }} />
-              { this.state.question.authorName }
-              { this.createdAgo() }
+              <p>
+                <CloudinaryImage
+                  className="author-icon"
+                  publicId={ imagePublicId }
+                  options={{ width: 16, height: 16 }} />
+                { this.state.question.authorName }
+                { this.createdAgo() }
+              </p>
               { this.ownershipButtons() }
             </div>
-          </h4>
+
           <br />
           <p>{ this.state.question.description }</p>
-          <AnswerIndex
-            answers={ answers } />
+          <br />
+          { this.answerButton() }
+          { this.createAnswerForm() }
+
+          { this.showAnswers() }
         </div>
         <div className="related-col">
           <div className="related-col-content">

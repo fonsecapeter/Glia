@@ -331,9 +331,16 @@ header, .modal-container {
 }
 
 .help-icon {
-  width: 32px;
-  height: 32px;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  vertical-align: -10px;
+
   margin-right: 6px;
+}
+
+.help-title {
+  display: inline-block;
 }
 /* question index */
 
@@ -342,6 +349,10 @@ header, .modal-container {
   padding: 5px 5px 5px;
   margin: 5px 0 5px 0;
   border-bottom: 1px solid #ddd;
+}
+
+.answer-index-item {
+  padding-bottom: 16px;
 }
 
 .author-icon {
@@ -374,7 +385,7 @@ header, .modal-container {
   text-align: center;
 }
 
-.question-edit-input {
+.question-edit-input, .answer-create textarea {
   min-width: 500px;
 }
 
@@ -382,7 +393,7 @@ header, .modal-container {
   flex: 3;
   padding: 20px 20px 20px 20px;
   /*margin: auto;*/
-  min-width: 400px;
+  min-width: 700px;
   margin-top: 0;
 }
 
@@ -396,4 +407,11 @@ header, .modal-container {
 .related-col-content {
   position: fixed;
 }
+
+.answer-create {
+  padding: 40px 20px 20px 60px;
+  margin: auto;
+  text-align: center;
+}
+
 /* question detail */
