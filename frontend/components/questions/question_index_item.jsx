@@ -62,6 +62,23 @@ const QuestionIndexItem = React.createClass({
     );
   },
 
+  answerCount () {
+    let count = this.props.question.answerCount;
+    if (count > 0) {
+      return (
+        <span className="light-text">
+          , { count } answers
+        </span>
+      );
+    } else {
+      return (
+        <span className="light-text">
+          , not answered yet
+        </span>
+      );
+    }
+  },
+
   render () {
     let detailPath = `questions/${this.props.question.id}`;
 
@@ -75,6 +92,7 @@ const QuestionIndexItem = React.createClass({
             options={{ width: 16, height: 16 }} />
           { this.props.question.authorName }
           { this.createdAgo() }
+          { this.answerCount() }
         </p>
         { this.state.preview }
       </div>

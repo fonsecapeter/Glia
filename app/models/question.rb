@@ -30,9 +30,13 @@ class Question < ActiveRecord::Base
     class_name: 'Answer'
   )
 
+  def answered
+    answers.length > 0
+  end
+
   private
 
   def ensure_answered
-    self.answered === answered || false
+    self.answered === answered
   end
 end
