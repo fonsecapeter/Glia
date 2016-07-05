@@ -56,3 +56,17 @@ end
     content: Faker::Lorem.paragraph(rand(2...100))
   )
 end
+
+50.times do
+  Comment.create!(
+    author_id: rand(2...31),
+    commentable: Question.find(rand(1...21)),
+    content: Faker::Lorem.sentence
+  )
+
+  Comment.create!(
+    author_id: rand(2...31),
+    commentable: Answer.find(rand(1...100)),
+    content: Faker::Lorem.sentence
+  )
+end
