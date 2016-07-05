@@ -30,6 +30,8 @@ class Question < ActiveRecord::Base
     class_name: 'Answer'
   )
 
+  has_many :comments, as: :commentable
+
   def answered
     answers.length > 0
   end

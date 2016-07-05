@@ -34,6 +34,13 @@ class User < ActiveRecord::Base
     class_name: 'Answer'
   )
 
+  has_many(
+    :comments,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: 'Comment'
+  )
+
   def self.find_by_credentials(username, password)
     # verify username
     user = User.find_by(username: username)

@@ -28,7 +28,6 @@ const AnswerApiUtil = {
   },
 
   destroyAnswer (answerData, success) {
-    debugger;
     $.ajax({
       url: `/api/questions/${ answerData.questionId }/answers/${ answerData.answerId }`,
       type: 'DELETE',
