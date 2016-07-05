@@ -46,7 +46,7 @@ const QuestionDetail = React.createClass({
 
   linkToEditPath () {
     const questionId = this.props.params.questionId;
-    hashHistory.push(`questions/${questionId}/edit`);
+    hashHistory.push(`questions/${ questionId }/edit`);
   },
 
   destroyQuestion () {

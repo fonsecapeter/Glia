@@ -96,20 +96,29 @@ const QuestionAskForm = React.createClass({
     return (
 
       <div className="modal-container">
-        <hgroup className="logo">
-          <Link to='/' className='header-link'><h1>Glia</h1></Link>
-        </hgroup>
-        <div className="modal-ask-container">
-          <input
-            className={ tClass }
-            onClick={ this.titleFocus }
-            onFocus={ this.titleFocus }
-            onChange={ this._onTitleChange }
-            value={ this.state.title } />
-          <button
-            className="dummy-ask-button modal-ask-button"
-            onClick={ this._onSubmit }>Ask Question</button>
+        <div className="modal-container">
+          <hgroup className="logo">
+            <Link to='/' className='header-link'><h1>Glia</h1></Link>
+          </hgroup>
+          <div className="modal-ask-container">
+            <input
+              className={ tClass }
+              onClick={ this.titleFocus }
+              onFocus={ this.titleFocus }
+              onChange={ this._onTitleChange }
+              value={ this.state.title } />
+            <button
+              className="dummy-ask-button modal-ask-button"
+              onClick={ this._onSubmit }>Ask Question</button>
 
+          </div>
+          <div>
+            <button
+              onClick={ this.toggleDescription }
+              className="blue-text">{ dToggleValue }</button>
+          </div>
+        </div>
+        <div className="modal-ask-container ask-description-container">
           <br />
           <textarea
             className={ dClass }
@@ -118,11 +127,6 @@ const QuestionAskForm = React.createClass({
             onFocus={ this.descriptionFocus }
             onChange={ this._onDescriptionChange }
             value={ this.state.description }></textarea>
-        </div>
-        <div>
-          <button
-            onClick={ this.toggleDescription }
-            className="blue-text">{ dToggleValue }</button>
         </div>
       </div>
     );

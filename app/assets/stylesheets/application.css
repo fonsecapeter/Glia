@@ -31,7 +31,7 @@ html, body, section, article, h1, h2, p {
    background: transparent;
  }
 
-html, body, button, input, .button {
+html, body, button, input, textarea, .button {
   font-family: "Cabin";
   -webkit-font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -215,6 +215,10 @@ header, .modal-container {
   border-top: 8px solid #73B1D6;
 }
 
+.ask-description-container {
+  padding-top: 20px;
+}
+
 .modal-ask-container {
   width: 50%;
   min-width: 550px;
@@ -294,6 +298,29 @@ header, .modal-container {
   .help-box-content, .topic-list-content {
     position: static;
   }
+
+  .ask-description-container {
+    padding-top: 80px;
+  }
+}
+
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px) {
+  .app-children, .question-index, header, .modal-container {
+    flex-direction: column;
+  }
+  .app-children, .question-index {
+    padding-top: 60px;
+  }
+
+  .help-box-content, .topic-list-content {
+    position: static;
+  }
+
+  .ask-description-container {
+    padding-top: 80px;
+  }
 }
 
 .question-index h3 {
@@ -372,6 +399,18 @@ header, .modal-container {
 }
 
 @media (max-width: 800px) {
+  .question-detail, .question-edit {
+    flex-direction: column;
+    padding: 60px 20px 20px 20px;
+  }
+  .related-col-content {
+    position: static;
+  }
+}
+
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px) {
   .question-detail, .question-edit {
     flex-direction: column;
     padding: 60px 20px 20px 20px;
