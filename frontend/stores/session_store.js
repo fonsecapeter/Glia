@@ -4,7 +4,7 @@ const AppDispatcher = require('../dispatcher/dispatcher.js');
 const Store = require('flux/utils').Store;
 const SessionConstants = require('../constants/session_constants');
 
-let _currentUser = {};
+let _currentUser = { answers: [], questions: [] };
 let _currentUserHasBeenFetched = false;
 
 const SessionStore = new  Store(AppDispatcher);

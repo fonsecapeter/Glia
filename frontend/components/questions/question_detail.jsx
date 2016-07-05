@@ -1,6 +1,7 @@
 const React = require('react');
 const hashHistory = require('react-router').hashHistory;
 const QuestionStore = require('../../stores/question_store.js');
+const SessionStore = require('../../stores/session_store');
 const QuestionActions = require('../../actions/question_actions.js');
 const QuestionIndexItem = require('./question_index_item');
 const AnswerForm = require('../answers/answer_form');
@@ -27,11 +28,13 @@ const QuestionDetail = React.createClass({
 
   componentDidMount () {
     this.questionListener = QuestionStore.addListener(this._onChange);
+    this.sessionListener = SessionStore.addListener(this.forceUpdate.bind(this));
     QuestionActions.fetchQuestion(this.props.params.questionId);
   },
 
   componentWillUnmount () {
     this.questionListener.remove();
+    this.sessionListener.remove();
   },
 
   createdAgo () {
@@ -58,8 +61,8 @@ const QuestionDetail = React.createClass({
   ownershipButtons () {
     const questionId = this.props.params.questionId;
 
-    if (window.currentUser &&
-        window.currentUser.questions.indexOf(parseInt(questionId)) !== -1) {
+    if (SessionStore.isUserSignedIn() &&
+        SessionStore.currentUser().questions.indexOf(parseInt(questionId)) !== -1) {
       return (
         <div>
           <button onClick={ this.linkToEditPath }>edit</button>
@@ -82,7 +85,7 @@ const QuestionDetail = React.createClass({
   },
 
   answerButton () {
-    if (window.currentUser && !(this.state.answering)) {
+    if (SessionStore.isUserSignedIn() && !(this.state.answering)) {
       return (
         <div>
           <button onClick={ this.toggleAnswering }>answer</button>

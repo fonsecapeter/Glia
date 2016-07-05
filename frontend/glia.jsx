@@ -20,7 +20,7 @@ const SessionActions = require('./actions/session_actions');
 
 const appRouter = (
   <Router history={ hashHistory }>
-    <Route path="/" component={ App }>
+    <Route path="/" component={ App } >
       <IndexRoute component={ QuestionIndex } />
       <Route path="questions/:questionId" component={ QuestionDetail } />
       <Route path="questions/:questionId/edit" component={ QuestionEdit } />

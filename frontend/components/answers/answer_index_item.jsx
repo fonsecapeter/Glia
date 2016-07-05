@@ -1,4 +1,5 @@
 const React = require('react');
+const SessionStore = require('../../stores/session_store');
 const AnswerActions = require('../../actions/answer_actions');
 const AnswerForm = require('./answer_form');
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
@@ -11,6 +12,14 @@ const AnswerIndexItem = React.createClass({
     return ({
       editing: false
     });
+  },
+
+  componentDidMount () {
+    this.sessionListener = SessionStore.addListener(this.forceUpdate.bind(this));
+  },
+
+  componentWillUnmount () {
+    this.sessionListener.remove();
   },
 
   createdAgo () {
@@ -43,8 +52,8 @@ const AnswerIndexItem = React.createClass({
   editButton () {
     const answerId = this.props.answer.id;
 
-    if (window.currentUser &&
-        window.currentUser.answers.indexOf(parseInt(answerId)) !== -1) {
+    if (SessionStore.isUserSignedIn() &&
+        SessionStore.currentUser().answers.indexOf(parseInt(answerId)) !== -1) {
       return (
         <div>
           <button onClick={ this._toggleEditing }>edit</button>

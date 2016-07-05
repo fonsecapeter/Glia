@@ -72,7 +72,7 @@ const SignInForm = React.createClass({
       SessionActions.signUp(formData);
     }
 
-    hashHistory.push('/');
+    // hashHistory.push('/');
   },
 
   fieldErrors (field) {
