@@ -287,12 +287,16 @@ header, .modal-container {
   color: #585a61;
 }
 
+.topic-list-content {
+  position: fixed;
+}
+
 @media (max-width: 800px) {
   .app-children, .question-index, header, .modal-container {
     flex-direction: column;
   }
   .app-children, .question-index {
-    padding-top: 60px;
+    padding-top: 40px;
   }
 
   .help-box-content, .topic-list-content {
@@ -334,9 +338,6 @@ and (max-device-width : 667px) {
   margin-top: 0;
 }
 
-.topic-list-content {
-  position: fixed;
-}
 
 .feed {
   flex: 3;
