@@ -3,7 +3,7 @@ const hashHistory = require('react-router').hashHistory;
 const QuestionStore = require('../../stores/question_store.js');
 const QuestionActions = require('../../actions/question_actions.js');
 const QuestionIndexItem = require('./question_index_item');
-const AnswerCreateForm = require('../answers/answer_create_form');
+const AnswerForm = require('../answers/answer_form');
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
 const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
 cloudinaryConfig({ cloud_name: 'dxhqr7u1z' });
@@ -95,8 +95,10 @@ const QuestionDetail = React.createClass({
     if (this.state.answering) {
       return (
         <div className="answer-create">
-          <AnswerCreateForm
-            questionId={ this.props.params.questionId } />
+          <AnswerForm
+            questionId={ this.props.params.questionId }
+            closeSelf={ this.toggleAnswering }
+            method="create" />
           <button onClick={ this.toggleAnswering }>cancel</button>
         </div>
       );
@@ -112,7 +114,8 @@ const QuestionDetail = React.createClass({
     if (answers.length > 0) {
       return (
         <AnswerIndex
-          answers={ answers } />
+          answers={ answers }
+          questionId={ this.props.params.questionId } />
       );
     }
   },

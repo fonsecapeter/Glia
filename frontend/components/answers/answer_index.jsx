@@ -11,6 +11,7 @@ const AnswerIndex = React.createClass({
             return (
               <AnswerIndexItem
                 answer={ answer }
+                questionId={ this.props.questionId }
                 key={ answer.id } />
             );
           }).reverse()

@@ -40,8 +40,7 @@ const QuestionAskForm = React.createClass({
       title: 'what\'s on your mind?',
       description: 'description'
     });
-    hashHistory.push('/');
-    // this.setState(this.getInitialState());
+    this.refs.ask.hide();
   },
 
   _beforeSubmit () {

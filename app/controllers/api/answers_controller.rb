@@ -1,10 +1,4 @@
 class Api::AnswersController < ApplicationController
-  # def index
-  #   @answers = Answer.where(question_id: params[:question_id])
-  #
-  #   render :index
-  # end
-
   def create
     @answer = Answer.new(answer_params)
     @answer.question_id = params[:question_id]
@@ -16,9 +10,8 @@ class Api::AnswersController < ApplicationController
     end
 
     if @answer.save
-      @question = @answer.question
       @user = current_user
-      # render template: 'api/questions/show'
+      @question = @answer.question
       render :create
     else
       render json: {
@@ -32,8 +25,9 @@ class Api::AnswersController < ApplicationController
 
     if @answer.update_attributes(answer_params);
       @question = @answer.question
-      render template: 'api/questions/show'
-      # render :show
+      @user = current_user
+      render :create
+      # render template: 'api/questions/show'
     else
       render json: {
         base: @answer.errors.full_messages
@@ -45,8 +39,9 @@ class Api::AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @answer.destroy
     @question = @answer.question
-    render template: 'api/questions/show'
-    # render :show
+    @user = current_user
+    render :create
+    # render template: 'api/questions/show'
   end
 
   private

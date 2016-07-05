@@ -27,9 +27,10 @@ const AnswerApiUtil = {
     });
   },
 
-  destroyAnswer (answer, success, error) {
+  destroyAnswer (answerData, success) {
+    debugger;
     $.ajax({
-      url: `/api/questions/${ answer.questionId }/answers/${ answer.id }`,
+      url: `/api/questions/${ answerData.questionId }/answers/${ answerData.answerId }`,
       type: 'DELETE',
       success
     });

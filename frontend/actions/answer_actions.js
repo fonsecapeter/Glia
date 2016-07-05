@@ -20,15 +20,15 @@ const AnswerActions = {
   updateAnswer (answer) {
     AnswerApiUtil.updateAnswer(
       answer,
-      QuestionActions.receiveQuestion,
+      QuestionActions.receiveQuestionAndUser,
       ErrorActions.setErrors
     );
   },
 
-  destroyAnswer (answerId) {
+  destroyAnswer (answer) {
     AnswerApiUtil.destroyAnswer(
-      answerId,
-      QuestionActions.receiveQuestion
+      answer,
+      QuestionActions.receiveQuestionAndUser
     );
   },
 

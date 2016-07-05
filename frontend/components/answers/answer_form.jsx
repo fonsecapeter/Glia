@@ -4,9 +4,15 @@ const hashHistory = require('react-router').hashHistory;
 
 const AnswerCreateForm = React.createClass({
   getInitialState () {
-    return ({
-      content: '',
-    });
+    if (this.props.method === 'create') {
+      return ({
+        content: '',
+      });
+    } else if (this.props.method === 'edit') {
+      return ({
+        content: this.props.content
+      });
+    }
   },
 
   _onContentChange (event) {
@@ -16,15 +22,30 @@ const AnswerCreateForm = React.createClass({
   _onSubmit (event) {
     event.preventDefault();
 
-    AnswerActions.createAnswer({
+    const answer = {
       content: this.state.content,
       questionId: this.props.questionId
-    });
+    };
+
+    if (this.props.method === 'create') {
+      AnswerActions.createAnswer(answer);
+    } else if (this.props.method === 'edit') {
+      answer.id = this.props.answerId;
+      AnswerActions.updateAnswer(answer);
+    }
 
     this.setState({ content: '' });
+    this.props.closeSelf();
   },
 
   render () {
+    let buttonText;
+    if (this.props.method === 'create') {
+      buttonText = 'answer';
+    } else if (this.props.method === 'edit') {
+      buttonText = 'edit';
+    }
+
     return (
       <div>
         <form onSubmit={ this._onSubmit }>
@@ -36,7 +57,7 @@ const AnswerCreateForm = React.createClass({
             rows={ 6 }></textarea>
 
           <br /><br />
-          <input type="submit" className="button" value="answer" />
+          <input type="submit" className="button" value={ buttonText } />
         </form>
       </div>
     );
