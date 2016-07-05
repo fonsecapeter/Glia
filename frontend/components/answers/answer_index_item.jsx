@@ -5,7 +5,9 @@ const AnswerForm = require('./answer_form');
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
 const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
 cloudinaryConfig({ cloud_name: 'dxhqr7u1z' });
-const imagePublicId = 'user_j20bee';
+const userPublicId = 'user_j20bee';
+const binPublicId = 'bin_c5z2lh';
+const pencilPublicId = 'pencil_pt3utn';
 
 const AnswerIndexItem = React.createClass({
   getInitialState () {
@@ -56,10 +58,20 @@ const AnswerIndexItem = React.createClass({
         SessionStore.currentUser().answers.indexOf(parseInt(answerId)) !== -1) {
       return (
         <div>
-          <button onClick={ this._toggleEditing }>edit</button>
+          <button onClick={ this._toggleEditing }>
+            <CloudinaryImage
+              className="button-icon"
+              publicId={ pencilPublicId }
+              options={{ width: 16, height: 16 }} />
+          </button>
           <button
             onClick={ this._destroyAnswer }
-            className="red-button">delete</button>
+            className="red-button">
+            <CloudinaryImage
+              className="button-icon"
+              publicId={ binPublicId }
+              options={{ width: 16, height: 16 }} />
+          </button>
         </div>
       );
     }
@@ -72,7 +84,7 @@ const AnswerIndexItem = React.createClass({
           <p>
             <CloudinaryImage
               className="author-icon"
-              publicId={imagePublicId}
+              publicId={userPublicId}
               options={{ width: 16, height: 16 }} />
             { this.props.answer.authorName }
           </p>
@@ -95,7 +107,7 @@ const AnswerIndexItem = React.createClass({
           <p>
             <CloudinaryImage
               className="author-icon"
-              publicId={imagePublicId}
+              publicId={userPublicId}
               options={{ width: 16, height: 16 }} />
             { this.props.answer.authorName }
             { this.createdAgo() }

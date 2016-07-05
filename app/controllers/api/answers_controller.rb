@@ -27,7 +27,6 @@ class Api::AnswersController < ApplicationController
       @question = @answer.question
       @user = current_user
       render :create
-      # render template: 'api/questions/show'
     else
       render json: {
         base: @answer.errors.full_messages
@@ -41,7 +40,6 @@ class Api::AnswersController < ApplicationController
     @question = @answer.question
     @user = current_user
     render :create
-    # render template: 'api/questions/show'
   end
 
   private

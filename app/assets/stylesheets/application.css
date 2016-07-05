@@ -291,6 +291,10 @@ header, .modal-container {
   position: fixed;
 }
 
+.question-index {
+  display: flex;
+}
+
 @media (max-width: 800px) {
   .app-children, .question-index, header, .modal-container {
     flex-direction: column;
@@ -379,10 +383,15 @@ and (max-device-width : 667px) {
   padding-bottom: 16px;
 }
 
-.author-icon {
+.author-icon, .button-icon {
   width: 16px;
   height: 16px;
   margin-right: 6px;
+}
+
+.button-icon {
+  margin-left: 6px;
+  margin-top: 3px;
 }
 /* question index item */
 
