@@ -281,7 +281,7 @@ header, .modal-container {
 /* sign-in-up modals */
 
 /* question index */
-.app-children, .question-index {
+.app-children {
   padding-top: 10px;
   display: flex;
   color: #585a61;
@@ -314,8 +314,8 @@ and (max-device-width : 667px) {
   .app-children, .question-index, header, .modal-container {
     flex-direction: column;
   }
-  .app-children, .question-index {
-    padding-top: 60px;
+  .app-children {
+    padding-top: 40px;
   }
 
   .help-box-content, .topic-list-content {
