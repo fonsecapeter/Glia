@@ -5,14 +5,14 @@ const AnswerApiUtil = require('../util/answer_api_util');
 const AnswerConstants = require('../constants/answer_constants');
 const ErrorActions = require('./error_actions');
 const QuestionActions = require('./question_actions');
-const SessionActionss = require('./session_actions');
 
 const AnswerActions = {
   // client
   createAnswer (answer) {
     AnswerApiUtil.createAnswer(
       answer,
-      QuestionActions.receiveQuestion,
+      // QuestionActions.receiveQuestion,
+      QuestionActions.receiveQuestionAndUser,
       ErrorActions.setErrors
     );
   },
@@ -33,10 +33,10 @@ const AnswerActions = {
   },
 
   // server
-  receiveQuestionAndUser (data) {
-    SessionActions.receiveCurrentUser (data.user);
-    QuestionActions.receiveQuestion (data.question);
-  }
+  // receiveQuestionAndUser (data) {
+  //   SessionActions.receiveCurrentUser (data.user);
+  //   QuestionActions.receiveQuestion (data.question);
+  // }
 };
 
 module.exports = AnswerActions;

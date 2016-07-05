@@ -14,7 +14,9 @@ class Api::QuestionsController < ApplicationController
     end
 
     if @question.save
-      render :show
+      @user = current_user
+      render :create
+      # render :show
     else
       render json: {
         base: @question.errors.full_messages

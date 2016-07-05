@@ -1,5 +1,5 @@
 json.question do
-  json.partial! partial: 'api/questions/show'
+  json.partial! 'show'
 end
 
 json.user do

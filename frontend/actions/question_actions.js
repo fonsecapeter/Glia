@@ -4,6 +4,7 @@ const AppDispatcher = require('../dispatcher/dispatcher');
 const QuestionConstants = require('../constants/question_constants');
 const QuestionApiUtil = require('../util/question_api_util');
 const ErrorActions = require('./error_actions');
+const SessionActions = require('./session_actions');
 
 const QuestionActions = {
   // client
@@ -16,7 +17,8 @@ const QuestionActions = {
   createQuestion (question) {
     QuestionApiUtil.createQuestion(
       question,
-      QuestionActions.receiveQuestion,
+      // QuestionActions.receiveQuestion,
+      QuestionActions.receiveQuestionAndUser,
       ErrorActions.setErrors
     );
   },
@@ -44,6 +46,11 @@ const QuestionActions = {
   },
 
   // server
+  receiveQuestionAndUser (data) {
+    SessionActions.receiveCurrentUser (data.user);
+    QuestionActions.receiveQuestion (data.question);
+  },
+
   receiveAllQuestions (data) {
     AppDispatcher.dispatch({
       actionType: QuestionConstants.RECEIVE_QUESTIONS,
