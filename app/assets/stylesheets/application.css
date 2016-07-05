@@ -298,11 +298,9 @@ header, .modal-container {
   .app-children, .question-index {
     padding-top: 40px;
   }
-
   .help-box-content, .topic-list-content {
     position: static;
   }
-
   .ask-description-container {
     padding-top: 80px;
   }
@@ -314,14 +312,12 @@ and (max-device-width : 667px) {
   .app-children, .question-index, header, .modal-container {
     flex-direction: column;
   }
-  .app-children {
+  .app-children, .question-index {
     padding-top: 40px;
   }
-
   .help-box-content, .topic-list-content {
     position: static;
   }
-
   .ask-description-container {
     padding-top: 80px;
   }
