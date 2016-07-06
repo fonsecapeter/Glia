@@ -127,6 +127,7 @@ const SignInForm = React.createClass({
 
           { this.fieldErrors('base') }
           <input type='text'
+            autoFocus={ true }
             value={ this.state.username }
             onFocus={ this.unameFocus }
             onClick={ this.unameFocus }

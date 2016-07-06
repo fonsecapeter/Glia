@@ -101,15 +101,18 @@ const QuestionAskForm = React.createClass({
             <Link to='/' className='header-link'><h1>Glia</h1></Link>
           </hgroup>
           <div className="modal-ask-container">
-            <input
-              className={ tClass }
-              onClick={ this.titleFocus }
-              onFocus={ this.titleFocus }
-              onChange={ this._onTitleChange }
-              value={ this.state.title } />
-            <button
-              className="dummy-ask-button modal-ask-button"
-              onClick={ this._onSubmit }>Ask Question</button>
+            <form onSubmit={ this._onSubmit }>
+              <input
+                autoFocus={ true }
+                className={ tClass }
+                onKeyDown={ this.titleFocus }
+                onChange={ this._onTitleChange }
+                value={ this.state.title } />
+              <input
+                type="submit"
+                className="dummy-ask-button modal-ask-button button"
+                value="Ask Question" />
+            </form>
 
           </div>
           <div>
@@ -156,6 +159,10 @@ const QuestionAskForm = React.createClass({
   },
   // ---------------------------------------------------------------------------
 
+  doNothing (event) {
+    event.preventDefault();
+  },
+
   render () {
     let dabClass = 'dummy-ask-bar';
     let dabVal = this.state.title;
@@ -168,13 +175,17 @@ const QuestionAskForm = React.createClass({
       <div className="question-ask-form">
         { this.getModal('ask') }
         <hgroup className="dummy-ask-container">
-          <input
-            className={ dabClass }
-            onClick={ this.toggleDialog('ask') }
-            value={ dabVal } />
-          <button
-            className="dummy-ask-button"
-            onClick={ this.toggleDialog('ask') }>Ask Question</button>
+          <form onSubmit={ this.doNothing }>
+            <input
+              className={ dabClass }
+              onClick={ this.toggleDialog('ask') }
+              value={ dabVal } />
+            <input
+              type="submit"
+              className="dummy-ask-button button"
+              onClick={ this.toggleDialog('ask') }
+              value="Ask Question" />
+          </form>
         </hgroup>
       </div>
     );
