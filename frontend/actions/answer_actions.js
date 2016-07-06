@@ -2,7 +2,6 @@
 
 const AppDispatcher = require('../dispatcher/dispatcher');
 const AnswerApiUtil = require('../util/answer_api_util');
-const AnswerConstants = require('../constants/answer_constants');
 const ErrorActions = require('./error_actions');
 const QuestionActions = require('./question_actions');
 
@@ -11,7 +10,6 @@ const AnswerActions = {
   createAnswer (answer) {
     AnswerApiUtil.createAnswer(
       answer,
-      // QuestionActions.receiveQuestion,
       QuestionActions.receiveQuestionAndUser,
       ErrorActions.setErrors
     );
@@ -30,13 +28,7 @@ const AnswerActions = {
       answer,
       QuestionActions.receiveQuestionAndUser
     );
-  },
-
-  // server
-  // receiveQuestionAndUser (data) {
-  //   SessionActions.receiveCurrentUser (data.user);
-  //   QuestionActions.receiveQuestion (data.question);
-  // }
+  }
 };
 
 module.exports = AnswerActions;

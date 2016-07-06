@@ -5,7 +5,7 @@ class Api::CommentsController < ApplicationController
     @comment.commentable_type = params[:comment][:commentable_type]
 
     if (current_user)
-      @comment.author_id = current_user.idea
+      @comment.author_id = current_user.id
     else
       @comment.author_id = 1
     end
@@ -13,7 +13,7 @@ class Api::CommentsController < ApplicationController
     if @comment.save
       @user = current_user
 
-      if commentable_type = 'Question'
+      if @comment.commentable_type = 'Question'
         @question = @comment.commentable
       else
         @question = @comment.commentable.question
@@ -34,7 +34,17 @@ class Api::CommentsController < ApplicationController
     else
       @question = @comment.commentable.question
     end
-    
+
     @cuser = current_user
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(
+      :content,
+      :commentable_id,
+      :commentable_type
+    )
   end
 end

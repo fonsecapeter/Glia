@@ -1,4 +1,5 @@
 const React = require('react');
+const CommentActions = require('../../actions/comment_actions');
 
 const NewCommentForm = React.createClass({
   getInitialState () {
@@ -9,6 +10,17 @@ const NewCommentForm = React.createClass({
 
   _onContentChange (event) {
     this.setState({ content: event.currentTarget.value });
+  },
+
+  _onSubmit (event) {
+    event.preventDefault();
+    const comment = {
+      content: this.state.content,
+      commentable_type: this.props.commentableType,
+      commentable_id: parseInt(this.props.commentableId)
+    };
+
+    CommentActions.createComment(comment);
   },
 
   render () {

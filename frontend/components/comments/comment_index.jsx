@@ -17,6 +17,8 @@ const CommentIndex = React.createClass({
               this.props.comments.map( comment => {
                 return (
                   <CommentIndexItem
+                    commentableType={ this.props.commentableType }
+                    commentableId={ this.props.commentableId }
                     comment={ comment }
                     key={ comment.id } />
                 );

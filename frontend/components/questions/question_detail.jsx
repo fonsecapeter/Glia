@@ -139,6 +139,8 @@ const QuestionDetail = React.createClass({
     if (this.state.commenting) {
       return (
         <CommentIndex
+          commentableType="Question"
+          commentableId={ this.props.params.questionId }
           comments={ this.state.question.comments } />
       );
     }
