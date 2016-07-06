@@ -486,7 +486,7 @@ and (max-device-width : 667px) {
     position: static;
   }
   .ask-description-container {
-    padding-top: 80px;
+    padding-top: 100px;
   }
   .topic-list, .feed, .help-box {
     flex: none;
