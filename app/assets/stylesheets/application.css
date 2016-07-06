@@ -64,7 +64,7 @@ button, .button {
   /*color: #585a61;*/
   /*border: 1px solid #ced1e1;*/
   /*box-shadow: 0 1px 1px 0 rgba(200,200,200,0.2);*/
-  
+
 }
 
 button:hover, .button:hover {
@@ -305,44 +305,6 @@ header, .modal-container {
   display: flex;
 }
 
-@media (max-width: 800px) {
-  .app-children, .question-index, header, .modal-container {
-    flex-direction: column;
-  }
-  .app-children, .question-index {
-    padding-top: 40px;
-  }
-  .help-box-content, .topic-list-content {
-    position: static;
-  }
-  .ask-description-container {
-    padding-top: 80px;
-  }
-  .topic-list, .feed, .help-box {
-    flex: none;
-  }
-}
-
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 667px) {
-  .app-children, .question-index, header, .modal-container {
-    flex-direction: column;
-  }
-  .app-children, .question-index {
-    padding-top: 40px;
-  }
-  .help-box-content, .topic-list-content {
-    position: static;
-  }
-  .ask-description-container {
-    padding-top: 80px;
-  }
-  .topic-list, .feed, .help-box {
-    flex: none;
-  }
-}
-
 .question-index h3 {
   color: black;
 }
@@ -424,34 +386,6 @@ and (max-device-width : 667px) {
   position: fixed;
 }
 
-@media (max-width: 800px) {
-  .question-detail, .question-edit {
-    flex-direction: column;
-    padding: 60px 20px 20px 20px;
-  }
-  .related-col-content {
-    position: static;
-  }
-  .question-col, .related-col {
-    flex: none;
-  }
-}
-
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 667px) {
-  .question-detail, .question-edit {
-    flex-direction: column;
-    padding: 60px 20px 20px 20px;
-  }
-  .related-col-content {
-    position: static;
-  }
-  .question-col, .related-col {
-    flex: none;
-  }
-}
-
 .question-edit {
   text-align: center;
 }
@@ -482,3 +416,69 @@ and (max-device-width : 667px) {
 }
 
 /* question detail */
+
+@media (max-width: 800px) {
+  .app-children, .question-index, header, .modal-container {
+    flex-direction: column;
+  }
+  .app-children, .question-index {
+    padding-top: 40px;
+  }
+  .help-box-content, .topic-list-content {
+    position: static;
+  }
+  .ask-description-container {
+    padding-top: 80px;
+  }
+  .topic-list, .feed, .help-box {
+    flex: none;
+  }
+}
+
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px) {
+  .app-children, .question-index, header, .modal-container {
+    flex-direction: column;
+  }
+  .app-children, .question-index {
+    padding-top: 40px;
+  }
+  .help-box-content, .topic-list-content {
+    position: static;
+  }
+  .ask-description-container {
+    padding-top: 80px;
+  }
+  .topic-list, .feed, .help-box {
+    flex: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .question-detail, .question-edit {
+    flex-direction: column;
+    padding: 60px 20px 20px 20px;
+  }
+  .related-col-content {
+    position: static;
+  }
+  .question-col, .related-col {
+    flex: none;
+  }
+}
+
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px) {
+  .question-detail, .question-edit {
+    flex-direction: column;
+    padding: 60px 20px 20px 20px;
+  }
+  .related-col-content {
+    position: static;
+  }
+  .question-col, .related-col {
+    flex: none;
+  }
+}
