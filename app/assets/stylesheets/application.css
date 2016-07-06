@@ -463,12 +463,6 @@ and (max-device-width : 667px) {
   .app-children, .question-index, header, .modal-container {
     flex-direction: column;
   }
-  .logo a {
-    font-size: 52;
-  }
-  header button, header .button {
-    font-size: 52;
-  }
   .app-children, .question-index {
     padding-top: 60px;
   }
@@ -481,7 +475,14 @@ and (max-device-width : 667px) {
   .topic-list, .feed, .help-box {
     flex: none;
   }
+  .logo a {
+    font-size: 28px;
+  }
+  button, .button {
+    font-size: 16px;
+  }
 }
+
 
 @media (max-width: 800px) {
   .question-detail, .question-edit {
