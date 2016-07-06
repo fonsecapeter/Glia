@@ -37,7 +37,7 @@ class Api::CommentsController < ApplicationController
       @question = @comment.commentable.question
     end
 
-    @cuser = current_user
+    @user = current_user
     render 'api/answers/create'
   end
 

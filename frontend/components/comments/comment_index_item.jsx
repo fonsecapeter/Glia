@@ -1,5 +1,6 @@
 const React = require('react');
 const SessionStore = require('../../stores/session_store');
+const CommentActions = require('../../actions/comment_actions');
 
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
 const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
@@ -17,7 +18,13 @@ const CommentIndexItem = React.createClass({
   },
 
   _destroyComment () {
-    console.log('DESTROY');
+    const comment = {
+      id: this.props.comment.id,
+      commentableType: this.props.commentableType,
+      commentableId: this.props.commentableId
+    };
+
+    CommentActions.destroyComment(comment);
   },
 
   ownershipButtons () {
