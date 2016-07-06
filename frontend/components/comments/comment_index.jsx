@@ -10,7 +10,9 @@ const CommentIndex = React.createClass({
   render () {
     return (
       <div className="comment-index">
-        <NewCommentForm />
+        <NewCommentForm
+          commentableType={ this.props.commentableType }
+          commentableId={ this.props.commentableId } />
         <table>
           <tbody>
             {

@@ -18,6 +18,8 @@ class Api::CommentsController < ApplicationController
       else
         @question = @comment.commentable.question
       end
+
+      render 'api/answers/create'
     else
       render json: {
         base: @comment.errors.full_messages
@@ -36,6 +38,7 @@ class Api::CommentsController < ApplicationController
     end
 
     @cuser = current_user
+    render 'api/answers/create'
   end
 
   private
