@@ -2,17 +2,21 @@ const React = require('react');
 const SessionStore = require('../../stores/session_store');
 const AnswerActions = require('../../actions/answer_actions');
 const AnswerForm = require('./answer_form');
+const CommentIndex = require('../comments/comment_index');
+
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
 const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
 cloudinaryConfig({ cloud_name: 'dxhqr7u1z' });
 const userPublicId = 'user_j20bee';
 const binPublicId = 'bin_c5z2lh';
 const pencilPublicId = 'pencil_pt3utn';
+const commentPublicId = 'comment_dbsbo8';
 
 const AnswerIndexItem = React.createClass({
   getInitialState () {
     return ({
-      editing: false
+      editing: false,
+      commenting: false
     });
   },
 
@@ -77,6 +81,41 @@ const AnswerIndexItem = React.createClass({
     }
   },
 
+  commentIndex () {
+    if (this.state.commenting) {
+      return (
+        <CommentIndex
+          comments={ this.props.answer.comments } />
+      );
+    }
+  },
+
+  toggleCommenting () {
+    if (this.state.commenting) {
+      this.setState({ commenting: false });
+    } else {
+      this.setState({ commenting: true });
+    }
+  },
+
+  commentButton () {
+    let commentCount = this.props.answer.commentCount;
+    if  (commentCount < 1) {
+      commentCount = '';
+    }
+
+    return (
+      <button
+        onClick={ this.toggleCommenting }>
+        { commentCount }
+        <CloudinaryImage
+          className="button-icon"
+          publicId={ commentPublicId }
+          options={{ width: 16, height: 16 }} />
+      </button>
+    );
+  },
+
   render () {
     if (this.state.editing) {
       return (
@@ -117,6 +156,8 @@ const AnswerIndexItem = React.createClass({
           <div>
             { this.props.answer.content }
           </div>
+          { this.commentButton() }
+          { this.commentIndex() }
         </div>
       );
     }

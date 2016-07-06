@@ -417,6 +417,28 @@ header, .modal-container {
 
 /* question detail */
 
+
+/* comments */
+.comment-index {
+  margin-left: 20px;
+}
+
+.comment-index-item {
+  display: block;
+  border-top: 1px solid #ddd;
+}
+.comment-index-item td {
+  padding: 5px 5px 10px 5px;
+  vertical-align: top;
+  /*border-top: 1px solid #ddd;*/
+}
+
+.author-info {
+  white-space: nowrap;
+}
+
+/* comments */
+
 @media (max-width: 800px) {
   .app-children, .question-index, header, .modal-container {
     flex-direction: column;

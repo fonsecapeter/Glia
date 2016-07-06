@@ -5,20 +5,24 @@ const SessionStore = require('../../stores/session_store');
 const QuestionActions = require('../../actions/question_actions.js');
 const QuestionIndexItem = require('./question_index_item');
 const AnswerForm = require('../answers/answer_form');
+const AnswerIndex = require('../answers/answer_index');
+const CommentIndex = require('../comments/comment_index');
+
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
 const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
 cloudinaryConfig({ cloud_name: 'dxhqr7u1z' });
 const userPublicId = 'user_j20bee';
 const binPublicId = 'bin_c5z2lh';
 const pencilPublicId = 'pencil_pt3utn';
+const commentPublicId = 'comment_dbsbo8';
 
-const AnswerIndex = require('../answers/answer_index');
 
 const QuestionDetail = React.createClass({
   getInitialState () {
     return ({
       question: {},
-      answering: false
+      answering: false,
+      commenting: false
     });
   },
 
@@ -83,8 +87,6 @@ const QuestionDetail = React.createClass({
           </button>
         </div>
       );
-    } else {
-      return ('');
     }
   },
 
@@ -99,9 +101,7 @@ const QuestionDetail = React.createClass({
   answerButton () {
     if (SessionStore.isUserSignedIn() && !(this.state.answering)) {
       return (
-        <div>
-          <button onClick={ this.toggleAnswering }>answer</button>
-        </div>
+        <button onClick={ this.toggleAnswering }>answer</button>
       );
     }
   },
@@ -135,6 +135,41 @@ const QuestionDetail = React.createClass({
     }
   },
 
+  commentIndex () {
+    if (this.state.commenting) {
+      return (
+        <CommentIndex
+          comments={ this.state.question.comments } />
+      );
+    }
+  },
+
+  toggleCommenting () {
+    if (this.state.commenting) {
+      this.setState({ commenting: false });
+    } else {
+      this.setState({ commenting: true });
+    }
+  },
+
+  commentButton () {
+    let commentCount = this.state.question.commentCount;
+    if  (commentCount < 1) {
+      commentCount = '';
+    }
+
+    return (
+      <button
+        onClick={ this.toggleCommenting }>
+        { commentCount }
+        <CloudinaryImage
+          className="button-icon"
+          publicId={ commentPublicId }
+          options={{ width: 16, height: 16 }} />
+      </button>
+    );
+  },
+
   render () {
 
     return(
@@ -157,7 +192,9 @@ const QuestionDetail = React.createClass({
           <p>{ this.state.question.description }</p>
           <br />
           { this.answerButton() }
+          { this.commentButton() }
           { this.createAnswerForm() }
+          { this.commentIndex() }
 
           { this.showAnswers() }
         </div>
