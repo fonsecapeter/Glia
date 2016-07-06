@@ -142,6 +142,38 @@ input {
 .v-align-center {
   vertical-align: middle;
 }
+
+.card-top {
+  width: 100%;
+  padding: 8px 5px 5px 5px;
+  margin-bottom: 0;
+  border-radius: 3px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #6f7e90;
+  color: white;
+}
+
+.card-top-content {
+  margin: 0;
+  border: none;
+  text-align: center;
+}
+
+.card-bottom-content {
+  margin: 0;
+  text-align: center;
+}
+
+.card-bottom {
+  width: 100%;
+  padding: 5px 5px 8px 5px;
+  margin-top: 0;
+  border-radius: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: #f6f6f6;
+}
 /* reset */
 
 /* main nav */
@@ -332,12 +364,17 @@ header, .modal-container {
   flex: 1;
   padding: 20px 20px 20px 20px;
   margin: auto;
-  margin-top: 0;
+  margin-top: 40px;
   height: 80px;
 }
 
 .help-box-content {
   position: fixed;
+}
+
+.help-box-content h4 {
+  margin: 0;
+  border: none;
 }
 
 .help-icon {

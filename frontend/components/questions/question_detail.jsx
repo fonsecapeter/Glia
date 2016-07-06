@@ -206,17 +206,21 @@ const QuestionDetail = React.createClass({
         </div>
         <div className="related-col">
           <div className="related-col-content">
-            <h4>Related Questions</h4>
-            <ul>
-              <li>Question</li>
-              <li>Question</li>
-              <li>Question</li>
-              <li>Question</li>
-              <li>Question</li>
-              <li>Question</li>
-              <li>Question</li>
-              <li>Question</li>
-            </ul>
+            <div className="card-top">
+              <h4 className="card-top-content">Related Questions</h4>
+            </div>
+            <div className="card-bottom">
+              <ul className="card-bottom-content">
+                <li>Question</li>
+                <li>Question</li>
+                <li>Question</li>
+                <li>Question</li>
+                <li>Question</li>
+                <li>Question</li>
+                <li>Question</li>
+                <li>Question</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
