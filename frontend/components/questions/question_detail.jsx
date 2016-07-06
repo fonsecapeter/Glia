@@ -101,7 +101,9 @@ const QuestionDetail = React.createClass({
   answerButton () {
     if (SessionStore.isUserSignedIn() && !(this.state.answering)) {
       return (
-        <button onClick={ this.toggleAnswering }>answer</button>
+        <button
+          onClick={ this.toggleAnswering }
+          className="v-align-center">answer</button>
       );
     }
   },
@@ -165,7 +167,7 @@ const QuestionDetail = React.createClass({
         onClick={ this.toggleCommenting }>
         { commentCount }
         <CloudinaryImage
-          className="button-icon"
+          className="button-icon v-align-center"
           publicId={ commentPublicId }
           options={{ width: 16, height: 16 }} />
       </button>
@@ -193,8 +195,10 @@ const QuestionDetail = React.createClass({
           <br />
           <p>{ this.state.question.description }</p>
           <br />
-          { this.answerButton() }
-          { this.commentButton() }
+          <div>
+            { this.answerButton() }
+            { this.commentButton() }
+          </div>
           { this.createAnswerForm() }
           { this.commentIndex() }
 

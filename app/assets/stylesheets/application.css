@@ -138,6 +138,10 @@ input {
 .flex {
   display: flex;
 }
+
+.v-align-center {
+  vertical-align: middle;
+}
 /* reset */
 
 /* main nav */
