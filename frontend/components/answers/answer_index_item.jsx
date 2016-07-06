@@ -85,6 +85,8 @@ const AnswerIndexItem = React.createClass({
     if (this.state.commenting) {
       return (
         <CommentIndex
+          commentableType="Answer"
+          commentableId={ this.props.answer.id }
           comments={ this.props.answer.comments } />
       );
     }

@@ -13,7 +13,7 @@ class Api::CommentsController < ApplicationController
     if @comment.save
       @user = current_user
 
-      if @comment.commentable_type = 'Question'
+      if @comment.commentable_type == 'Question'
         @question = @comment.commentable
       else
         @question = @comment.commentable.question
@@ -31,7 +31,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
 
-    if commentable_type = 'Question'
+    if @comment.commentable_type == 'Question'
       @question = @comment.commentable
     else
       @question = @comment.commentable.question
