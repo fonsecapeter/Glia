@@ -437,6 +437,19 @@ header, .modal-container {
   white-space: nowrap;
 }
 
+.comment-input {
+  margin-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 60%;
+}
+
+.comment-submit {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: auto;
+}
 /* comments */
 
 @media (max-width: 800px) {
