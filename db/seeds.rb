@@ -29,6 +29,14 @@ questions = [
   'What are the phases of clinical trials?'
 ]
 
+topics = [
+  'Science',
+  'Research',
+  'Dementia',
+  'Alzheimer\'s Disease',
+  ''
+]
+
 User.create!(
   username: 'guest',
   password: 'password'

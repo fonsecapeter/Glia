@@ -24,10 +24,10 @@ Glia is a web application (inspired by Quora) that will be built using Ruby on R
     - [x] read list for each question (all)
     - [x] edit (own)
     - [x] delete (own)
-  - [ ] Comments for Answers
-    - [ ] create comment for answer (all)
-    - [ ] read list for each answer (all)
-    - [ ] delete (own)
+  - [x] Comments for Answers
+    - [x] create comment for answer (all)
+    - [x] read list for each answer (all)
+    - [x] delete (own)
   - [ ] Search for Questions
   - [ ] Topics
     - [ ] filter questions by topic
@@ -106,17 +106,17 @@ user interface.
 
 **Objective:** Comments belong to Answers, and can be viewed in QuestionDetail.
 
-- [ ] create `Comment` model
+- [x] create `Comment` model
 - build out API, Flux loop, and components for:
-  - [ ] Comment CRUD
-  - [ ] adding comments requires a login
+  - [x] Comment CRUD
+  - [x] adding comments requires a login
 - Use CSS to style QuestionDetail
 
 ### Phase 6: Topics (1.5 days, W2 W 6pm)
 
 **Objective:** Questions can be tagged with multiple Topics.
 
-- [ ] create `Topic` model and `TopicTagging` join table
+- [x] create `Topic` model and `TopicTagging` join table
 - build out API, Flux loop, and components for:
   - [ ] fetching TopicTags for questions
   - [ ] adding TopicTags to questions

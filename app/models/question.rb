@@ -30,6 +30,9 @@ class Question < ActiveRecord::Base
     class_name: 'Answer'
   )
 
+  has_many :topic_taggings
+  has_many :topics, through: :topic_taggings
+
   has_many :comments, as: :commentable
 
   def answered
