@@ -464,10 +464,10 @@ and (max-device-width : 667px) {
     flex-direction: column;
   }
   .logo {
-    font-size: 32;
+    font-size: 42;
   }
   header button {
-    font-size: 24;
+    font-size: 32;
   }
   .app-children, .question-index {
     padding-top: 60px;
