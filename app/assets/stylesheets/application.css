@@ -477,9 +477,6 @@ and (max-device-width : 667px) {
     flex-direction: column;
   }
   .app-children, .question-index {
-    padding-top: 70px;
-  }
-  .question-detail {
     padding-top: 80px;
   }
   .help-box-content, .topic-list-content {
