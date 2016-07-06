@@ -463,7 +463,7 @@ and (max-device-width : 667px) {
   .app-children, .question-index, header, .modal-container {
     flex-direction: column;
   }
-  .app-children, .question-index {
+  .app-children, .question-index, .question-detail {
     padding-top: 60px;
   }
   .help-box-content, .topic-list-content {
