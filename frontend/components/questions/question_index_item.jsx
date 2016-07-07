@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 const Link = require('react-router').Link;
 const CommentIndex = require('../comments/comment_index');
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
@@ -23,6 +24,8 @@ const QuestionIndexItem = React.createClass({
     this.setState({
       preview: this.preview()
     });
+
+    ReactDOM.findDOMNode(this).scrollIntoView();
   },
 
   preview () {

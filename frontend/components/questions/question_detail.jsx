@@ -42,6 +42,7 @@ const QuestionDetail = React.createClass({
   componentWillReceiveProps (nextProps) {
     if (this.props.params.questionId === nextProps.params.questionId) {
       QuestionActions.fetchQuestion(nextProps.params.questionId);
+      window.scrollTo(0, 0);
     }
   },
 

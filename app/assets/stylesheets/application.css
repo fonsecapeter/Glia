@@ -38,12 +38,12 @@ html, body, button, input, textarea, .button {
   -moz-appearance: none;
   appearance: none;
   background-color: #fff;
+  transition: opacity ease-in-out 100ms, color ease-in-out 100ms, background-color ease-in-out 100ms, border-color ease-in-out 100ms;
 }
 
 button, .button {
   margin: 6px;
   box-sizing: border-box;
-  transition: opacity ease-in-out 100ms, color ease-in-out 100ms, background-color ease-in-out 100ms, border-color ease-in-out 100ms;
   border-radius: 3px;
   display: inline-block;
   font-weight: 500;
@@ -212,6 +212,11 @@ header, .modal-container {
 
 .logo a {
   color: #73B1D6;
+}
+
+.logo a:hover {
+  text-decoration: none;
+  color: #88bedd;
 }
 
 .header-sign-out-button {
