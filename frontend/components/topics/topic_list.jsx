@@ -9,6 +9,12 @@ const TopicIndex = React.createClass({
     });
   },
 
+  _onChange () {
+    this.setState({
+      topics: TopicStore.all()
+    });
+  },
+
   componentDidMount () {
     this.topicListener = TopicStore.addListener(this._onChange);
     TopicActions.fetchAllTopics();
@@ -24,13 +30,11 @@ const TopicIndex = React.createClass({
         <div className="topic-list-content">
           <h4>Topics</h4>
           <ul>
-            <li>topic</li>
-            <li>topic</li>
-            <li>topic</li>
-            <li>topic</li>
-            <li>topic</li>
-            <li>topic</li>
-            <li>topic</li>
+            {
+              this.state.topics.map( topic => {
+                return <li key={ topic.id }>{ topic.name }</li>;
+              })
+            }
           </ul>
         </div>
       </div>

@@ -21,6 +21,7 @@ const NewCommentForm = React.createClass({
     };
 
     CommentActions.createComment(comment);
+    this.setState({ content: '' });
   },
 
   render () {
