@@ -48,6 +48,8 @@ class Question < ActiveRecord::Base
                   .map { |topic| "#{topic.id}" }
                   .join(' OR topic_taggings.topic_id = ')
 
+    topic_ids = topic_ids == '' ? 0 : topic_ids
+
     Question.find_by_sql([<<-SQL])
       SELECT DISTINCT
         questions.*
