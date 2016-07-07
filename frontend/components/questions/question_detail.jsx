@@ -7,6 +7,7 @@ const QuestionIndexItem = require('./question_index_item');
 const AnswerForm = require('../answers/answer_form');
 const AnswerIndex = require('../answers/answer_index');
 const CommentIndex = require('../comments/comment_index');
+const RelatedQuestionsCard = require('./related_questions_card');
 
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
 const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
@@ -205,23 +206,8 @@ const QuestionDetail = React.createClass({
           { this.showAnswers() }
         </div>
         <div className="related-col">
-          <div className="related-col-content">
-            <div className="card-top">
-              <h4 className="card-top-content">Related Questions</h4>
-            </div>
-            <div className="card-bottom">
-              <ul className="card-bottom-content">
-                <li>Question</li>
-                <li>Question</li>
-                <li>Question</li>
-                <li>Question</li>
-                <li>Question</li>
-                <li>Question</li>
-                <li>Question</li>
-                <li>Question</li>
-              </ul>
-            </div>
-          </div>
+          <RelatedQuestionsCard
+            relatedQuestions={ this.state.question.relatedQuestions } />
         </div>
       </div>
     );

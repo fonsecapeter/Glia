@@ -30,4 +30,8 @@ json.question do
       json.authorName comment.author.username
     end
   end
+  json.relatedQuestions(@question.related_questions) do |related_question|
+    json.id related_question.id
+    json.title related_question.title
+  end
 end

@@ -39,6 +39,30 @@ class Question < ActiveRecord::Base
     answers.length > 0
   end
 
+  def related_questions
+    # Question.find_by(topics: self.topic)
+    # query for all questiosn with at least one matching topic
+    # could optimize later with scoring for matching topics and order of topic
+    # appearance, but this will do for now
+    topic_ids = self.topics
+                  .map { |topic| "#{topic.id}" }
+                  .join(' OR topic_taggings.topic_id = ')
+
+    Question.find_by_sql([<<-SQL])
+      SELECT DISTINCT
+        questions.*
+      FROM
+        questions
+        JOIN topic_taggings
+          ON questions.id = topic_taggings.question_id
+      WHERE
+        (topic_taggings.topic_id = #{topic_ids})
+        AND questions.id != #{self.id}
+      LIMIT
+        10
+    SQL
+  end
+
   # def topics=(given_topic_ids)
   #   given_topic_ids.each do |topic_id|
   #     self.topics.find_or_create_by(id: topic_id)
