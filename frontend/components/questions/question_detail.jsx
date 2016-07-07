@@ -39,6 +39,12 @@ const QuestionDetail = React.createClass({
     QuestionActions.fetchQuestion(this.props.params.questionId);
   },
 
+  componentWillReceiveProps (nextProps) {
+    if (this.props.params.questionId === nextProps.params.questionId) {
+      QuestionActions.fetchQuestion(nextProps.params.questionId);
+    }
+  },
+
   componentWillUnmount () {
     this.questionListener.remove();
     this.sessionListener.remove();
