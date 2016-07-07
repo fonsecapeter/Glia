@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactQuill = require('react-quill');
 const Link = require('react-router').Link;
 const QuestionActions = require('../../actions/question_actions');
 const hashHistory = require('react-router').hashHistory;
@@ -11,7 +12,7 @@ const QuestionAskForm = React.createClass({
   getInitialState () {
     return ({
       title: 'what\'s on your mind?',
-      description: 'description',
+      description: '',
       showDescription: false
     });
   },
@@ -22,9 +23,9 @@ const QuestionAskForm = React.createClass({
     });
   },
 
-  _onDescriptionChange (event) {
+  _onDescriptionChange (description) {
     this.setState({
-      description: event.currentTarget.value
+      description: description
     });
   },
 
@@ -62,12 +63,6 @@ const QuestionAskForm = React.createClass({
     }
   },
 
-  descriptionFocus () {
-    if (this.state.description === 'description') {
-      this.setState({description: ''});
-    }
-  },
-
   // modal ---------------------------------------------------------------------
   toggleDescription () {
     if (this.state.showDescription) {
@@ -79,7 +74,7 @@ const QuestionAskForm = React.createClass({
 
   getContent (modalName) {
     let tClass = 'modal-ask-bar';
-    let dClass = 'modal-ask-description';
+    let dClass = 'modal-ask-description quill';
     if (this.state.title === 'what\'s on your mind?') {
       tClass += ' empty-input';
     }
@@ -123,13 +118,11 @@ const QuestionAskForm = React.createClass({
         </div>
         <div className="modal-ask-container ask-description-container">
           <br />
-          <textarea
+          <ReactQuill
             className={ dClass }
-            rows={ 6 }
-            onClick={ this.descriptionFocus }
-            onFocus={ this.descriptionFocus }
-            onChange={ this._onDescriptionChange }
-            value={ this.state.description }></textarea>
+            theme="snow"
+            value={ this.state.description }
+            onChange={ this._onDescriptionChange } />
         </div>
       </div>
     );

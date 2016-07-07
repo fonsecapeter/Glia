@@ -16,7 +16,10 @@ module.exports = {
           presets: ['react', 'es2015']
         }
       }
-    ]
+    ],
+    // Shut off warnings about using pre-built javascript files
+    // as Quill.js unfortunately ships one as its `main`.
+    noParse: /node_modules\/quill\/dist/
   },
   devtool: 'source-maps',
   resolve: {

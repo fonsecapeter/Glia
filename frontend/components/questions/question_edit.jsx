@@ -1,5 +1,6 @@
 const React = require('react');
 const hashHistory = require('react-router').hashHistory;
+const ReactQuill = require('react-quill');
 const QuestionStore = require('../../stores/question_store.js');
 const QuestionActions = require('../../actions/question_actions.js');
 
@@ -46,8 +47,12 @@ const QuestionEdit = React.createClass({
     this.setState({ title: event.currentTarget.value });
   },
 
-  _onDescriptionChange (event) {
-    this.setState({ description: event.currentTarget.value });
+  _onDescriptionChange (description) {
+    this.setState({ description: description });
+  },
+
+  linkBack () {
+    hashHistory.push(`/questions/${ this.props.params.questionId }`);
   },
 
   render () {
@@ -64,14 +69,17 @@ const QuestionEdit = React.createClass({
               value={ this.state.title } />
 
             <br /><br />
-            <textarea
-              className="question-edit-input"
-              rows={ 6 }
-              onChange={ this._onDescriptionChange }
-              value={ this.state.description }></textarea>
+            <ReactQuill
+              className="quill"
+              theme="snow"
+              value={ this.state.description }
+              onChange={ this._onDescriptionChange } />
 
             <br /><br />
             <input type="submit" className="button" value="save" />
+
+            <br /><br />
+            <button onClick={ this.linkBack }>cancel</button>
           </form>
         </div>
       </div>

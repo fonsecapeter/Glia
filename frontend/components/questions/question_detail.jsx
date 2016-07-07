@@ -186,7 +186,7 @@ const QuestionDetail = React.createClass({
 
     return(
       <div className="question-detail">
-        <div className="question-col">
+        <div className="question-col quill-created">
             <h2>{ this.state.question.title }</h2>
             <div>
               <p>
@@ -201,7 +201,8 @@ const QuestionDetail = React.createClass({
             </div>
 
           <br />
-          <p>{ this.state.question.description }</p>
+          <div
+            dangerouslySetInnerHTML={{__html:this.state.question.description}} />
           <br />
           <div>
             { this.answerButton() }

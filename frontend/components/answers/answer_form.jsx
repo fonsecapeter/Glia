@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactQuill = require('react-quill');
 const AnswerActions = require('../../actions/answer_actions');
 const hashHistory = require('react-router').hashHistory;
 
@@ -15,8 +16,8 @@ const AnswerCreateForm = React.createClass({
     }
   },
 
-  _onContentChange (event) {
-    this.setState({ content: event.currentTarget.value });
+  _onContentChange (content) {
+    this.setState({ content: content });
   },
 
   _onSubmit (event) {
@@ -49,12 +50,11 @@ const AnswerCreateForm = React.createClass({
     return (
       <div>
         <form onSubmit={ this._onSubmit }>
-          <textarea
-            className="answer-form-input"
-            type="text"
-            onChange={ this._onContentChange }
+          <ReactQuill
+            className="quill"
+            theme="snow"
             value={ this.state.content }
-            rows={ 6 }></textarea>
+            onChange={ this._onContentChange } />
 
           <br /><br />
           <input type="submit" className="button" value={ buttonText } />

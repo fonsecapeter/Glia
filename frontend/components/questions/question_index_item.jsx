@@ -34,25 +34,27 @@ const QuestionIndexItem = React.createClass({
         preview.length > 200) {
       preview = preview.slice(0, 200) + '...';
       return (
-        <p onClick={ this.expandDescription }>
-          { preview } <a onClick={ this.expandDescription }>(more)</a>
-        </p>
+        <div onClick={ this.expandDescription }>
+          <div
+            dangerouslySetInnerHTML={{__html:preview}} />
+          <a onClick={ this.expandDescription }>(more)</a>
+      </div>
       );
     } else {
       return (
-        <p>
-          { preview }
-        </p>
+        <div
+          dangerouslySetInnerHTML={{__html:preview}} />
       );
     }
   },
 
   expanded () {
     return (
-      <p>
-        { this.props.question.description }
+      <div>
+        <div
+          dangerouslySetInnerHTML={{__html:this.props.question.description}} />
         <a onClick={ this.shrinkDescription }>(less)</a>
-      </p>
+      </div>
     );
   },
 
@@ -87,7 +89,7 @@ const QuestionIndexItem = React.createClass({
     let detailPath = `questions/${ this.props.question.id }`;
 
     return (
-      <div className="question-index-item">
+      <div className="question-index-item quill-created">
         <Link to={ detailPath }><h3>{ this.props.question.title }</h3></Link>
         <p>
           <CloudinaryImage

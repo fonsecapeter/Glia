@@ -38,7 +38,9 @@ html, body, button, input, textarea, .button {
   -moz-appearance: none;
   appearance: none;
   background-color: #fff;
-  transition: opacity ease-in-out 100ms, color ease-in-out 100ms, background-color ease-in-out 100ms, border-color ease-in-out 100ms;
+  /*transition: opacity ease-in-out 100ms, color ease-in-out 100ms, background-color ease-in-out 100ms, border-color ease-in-out 100ms;*/
+  -webkit-transition: all 0.3s eas-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 button, .button {
@@ -77,6 +79,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   color: #73B1D6;
+  position: relative
 }
 
 a:hover {
@@ -183,6 +186,17 @@ li {
   border-top-right-radius: 0;
   background-color: #f6f6f6;
 }
+
+.quill {
+  border: 1px solid #ddd;
+  height: 400px;
+  text-align: left;
+  padding-bottom: 80px;
+}
+
+ask-modal .quill {
+  height: 200px;
+}
 /* reset */
 
 /* main nav */
@@ -212,6 +226,7 @@ header, .modal-container {
 
 .logo a {
   color: #73B1D6;
+  transition: opacity ease-in-out 100ms, color ease-in-out 100ms, background-color ease-in-out 100ms, border-color ease-in-out 100ms;
 }
 
 .logo a:hover {
@@ -302,6 +317,8 @@ header, .modal-container {
 .modal-ask-description {
   width: 100%;
   margin-top: 5px;
+  height: 300px;
+  padding-bottom: 80px;
 }
 /* main nav */
 
@@ -414,6 +431,11 @@ header, .modal-container {
 
 .answer-index-item {
   padding-bottom: 16px;
+}
+
+.quill-created img {
+  max-width: 100%;
+  border-radius: 3px;
 }
 
 .author-icon, .button-icon {

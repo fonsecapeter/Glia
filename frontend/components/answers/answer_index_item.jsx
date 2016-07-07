@@ -144,7 +144,7 @@ const AnswerIndexItem = React.createClass({
       );
     } else {
       return (
-        <div className="answer-index-item">
+        <div className="answer-index-item quill-created">
           <p>
             <CloudinaryImage
               className="author-icon"
@@ -155,9 +155,8 @@ const AnswerIndexItem = React.createClass({
           </p>
           { this.editButton () }
           <br />
-          <div>
-            { this.props.answer.content }
-          </div>
+          <div
+            dangerouslySetInnerHTML={{__html:this.props.answer.content}} />
           { this.commentButton() }
           { this.commentIndex() }
         </div>
