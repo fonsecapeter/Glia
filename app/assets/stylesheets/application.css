@@ -433,7 +433,7 @@ header, .modal-container {
 }
 
 .related-col-content {
-  position: fixed;
+  /*position: fixed;*/
 }
 
 .question-edit {
