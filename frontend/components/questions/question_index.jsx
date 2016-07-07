@@ -2,6 +2,7 @@ const React = require('react');
 const QuestionStore = require('../../stores/question_store.js');
 const QuestionActions = require('../../actions/question_actions.js');
 const QuestionIndexItem = require('./question_index_item');
+const TopicIndex = require('../topics/topic_list');
 const Help = require('../help.jsx');
 
 const QuestionIndex = React.createClass({
@@ -29,20 +30,7 @@ const QuestionIndex = React.createClass({
   render () {
     return (
       <div className="question-index">
-        <div className="topic-list">
-          <div className="topic-list-content">
-            <h4>Topics</h4>
-            <ul>
-              <li>topic</li>
-              <li>topic</li>
-              <li>topic</li>
-              <li>topic</li>
-              <li>topic</li>
-              <li>topic</li>
-              <li>topic</li>
-            </ul>
-          </div>
-        </div>
+        <TopicIndex />
         <div className="feed">
           <h4>Top Questions For You</h4>
           {
