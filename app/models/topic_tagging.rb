@@ -11,8 +11,8 @@
 
 class TopicTagging < ActiveRecord::Base
   validates :question, :topic, presence: true
-  validates_uniqueness_of :question, scope: :topic
+  # validates_uniqueness_of :topic, scope: :question
 
-  belongs_to :question
-  belongs_to :topic
+  belongs_to :question, inverse_of: :topic_taggings
+  belongs_to :topic, inverse_of: :topic_taggings
 end

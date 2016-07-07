@@ -146,3 +146,7 @@ user interface.
 - [ ] Support groups for private questions
 - [ ] Pagination / infinite scroll for Questions Index
 - [ ] Responsive layout
+
+:bug: asking question when not signed in
+
+:beetle: posting comment with no text in it

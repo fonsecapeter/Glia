@@ -129,8 +129,7 @@ const SignInForm = React.createClass({
           <input type='text'
             autoFocus={ true }
             value={ this.state.username }
-            onFocus={ this.unameFocus }
-            onClick={ this.unameFocus }
+            onKeyDown={ this.unameFocus }
             onChange={ this._update('username') }
             className={ uClass } />
 

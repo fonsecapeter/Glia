@@ -30,14 +30,20 @@ class Question < ActiveRecord::Base
     class_name: 'Answer'
   )
 
-  has_many :topic_taggings
-  has_many :topics, through: :topic_taggings
+  has_many :topic_taggings, inverse_of: :question, dependent: :destroy
+  has_many :topics, through: :topic_taggings, source: :topic
 
   has_many :comments, as: :commentable
 
   def answered
     answers.length > 0
   end
+
+  # def topics=(given_topic_ids)
+  #   given_topic_ids.each do |topic_id|
+  #     self.topics.find_or_create_by(id: topic_id)
+  #   end
+  # end
 
   private
 

@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-questions = [
+QUESTIONS = [
   'What is Alzheimer’s disease and how does it differ from dementia?',
   'What is clinical research?',
   'What is a clinical trial?',
@@ -29,12 +29,38 @@ questions = [
   'What are the phases of clinical trials?'
 ]
 
-topics = [
-  'Science',
-  'Research',
-  'Dementia',
-  'Alzheimer\'s Disease',
-  ''
+TOPICS = [
+  'Science',  # 0
+  'Research', # 1
+  'Dementia', # 2
+  'Alzheimer\'s Disease', # 3
+  'Trials',   # 4
+  'Advice',   # 5
+  'Safety'    # 6
+]
+
+TOPIC_TAGGINGS = [
+  [3, 2, 0],
+  [1, 0],
+  [4, 1, 0],
+  [4, 1, 5],
+  [4, 1, 6],
+  [4, 1],
+  [4, 1, 0, 3],
+  [4, 1, 0, 3],
+  [4, 1, 6],
+  [4, 1, 6, 5],
+  [4, 1, 6, 5],
+  [1],
+  [6],
+  [6, 4, 5],
+  [4, 6],
+  [4, 6],
+  [4, 1, 0],
+  [4, 1, 0],
+  [1, 0],
+  [4, 1, 0],
+  [4, 1, 0]
 ]
 
 User.create!(
@@ -49,11 +75,16 @@ User.create!(
   )
 end
 
-questions.each do |question|
-  Question.create!(
+TOPICS.each do |topic|
+  Topic.create!(name: topic)
+end
+
+QUESTIONS.each_with_index do |question, idx|
+  q = Question.create!(
     author_id: rand(2...31),
     title: question,
-    description: Faker::Lorem.paragraph(rand(2...100))
+    description: Faker::Lorem.paragraph(rand(2...100)),
+    topic_ids: TOPIC_TAGGINGS[idx].map { |tag_id| tag_id + 1 }
   )
 end
 
