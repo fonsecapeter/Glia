@@ -55,7 +55,7 @@ DESCRIPTIONS = [
   '<p>They can\'t all be the same, right?</p>',
   '<p>What happens in each one?</p>',
   '<img src="https://images.unsplash.com/photo-1417217601328-d3c66e6f1d48?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6b6b0c2e56a3b04470f56bf738873e83" />',
-  '<p>I have heard the term used a lot lately</p>',
+  '<p>I have heard the term used a lot lately. In fact, I have even started seeing it in some of the common news routes. I feel as though it is a complicated differentiation from Alzheimer\'s disease. I would say that I have the following concerns: <ul><li>What does it mean?</li><li>How is it different from Alzheimer\'s Disease</li><li>Is it new or has it been around for a long time</li><li>Why am I just now hearing about this?</li></ul></p>',
   '<img src="https://images.unsplash.com/photo-1453847668862-487637052f8a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=7e975fe2069f0d7d1e657b7a5efb718d" />'
 ]
 
