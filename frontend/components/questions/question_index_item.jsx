@@ -69,20 +69,21 @@ const QuestionIndexItem = React.createClass({
   },
 
   answerCount () {
-    let count = this.props.question.answerCount;
-    if (count > 0) {
-      return (
-        <span className="light-text">
-          , { count } answers
-        </span>
-      );
+    let count = parseInt(this.props.question.answerCount);
+    let text = '';
+    if (count > 1) {
+      text = `, ${ count } answers`;
+    } else if (count === 1) {
+      text = `, ${ count } answer`;
     } else {
-      return (
-        <span className="light-text">
-          , not answered yet
-        </span>
-      );
+      text = ', not answered yet';
     }
+
+    return (
+      <span className="light-text">
+        { text }
+      </span>
+    );
   },
 
   render () {
