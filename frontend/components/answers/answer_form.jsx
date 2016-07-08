@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 const ReactQuill = require('react-quill');
 const AnswerActions = require('../../actions/answer_actions');
 const hashHistory = require('react-router').hashHistory;
@@ -14,6 +15,10 @@ const AnswerCreateForm = React.createClass({
         content: this.props.content
       });
     }
+  },
+
+  componentDidMount () {
+    ReactDOM.findDOMNode(this).scrollIntoView();
   },
 
   _onContentChange (content) {
