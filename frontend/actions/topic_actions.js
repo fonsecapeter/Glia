@@ -13,11 +13,26 @@ const TopicActions = {
     );
   },
 
+  createTopic (topic) {
+    TopicApiUtil.createTopic(
+      topic,
+      TopicActions.receiveTopic,
+      ErrorActions.setErrors
+    );
+  },
+
   // server
   receiveAllTopics (data) {
     AppDispatcher.dispatch({
       actionType: TopicConstants.RECEIVE_TOPICS,
       topics: data
+    });
+  },
+
+  receiveTopic (data) {
+    AppDispatcher.dispatch({
+      actionType: TopicConstants.RECEIVE_TOPIC,
+      topic: data.topic
     });
   }
 };

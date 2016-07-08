@@ -3,6 +3,7 @@ const Link = require('react-router').Link;
 const TopicStore = require('../../stores/topic_store');
 const TopicActions = require('../../actions/topic_actions');
 const QuestionActions = require('../../actions/question_actions');
+const TopicForm = require('./topic_form');
 
 const TopicIndex = React.createClass({
   getInitialState () {
@@ -53,6 +54,7 @@ const TopicIndex = React.createClass({
               })
             }
           </ul>
+          <TopicForm />
         </div>
       </div>
     );

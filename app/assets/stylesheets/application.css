@@ -541,18 +541,26 @@ header, .modal-container {
   white-space: nowrap;
 }
 
-.comment-input {
+.comment-input, .topic-input {
   margin-right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   width: 60%;
 }
 
-.comment-submit {
+.comment-submit, .topic-submit {
   margin-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   width: auto;
+}
+
+.topic-list h4 {
+  width: 80%
+}
+
+.topic-input {
+  width: 60%;
 }
 /* comments */
 
