@@ -80,10 +80,8 @@ const AnswerCreateForm = React.createClass({
       contentType: false,
       success: xhr => {
         console.log(xhr);
-        // const image = `<CloudinaryImage className="img" publicId=${xhr.public_id} />`;
         const image = `<img src=\"http://res.cloudinary.com/dxhqr7u1z/image/fetch/${ xhr.url }\" /><br />`;
         const cont = self.state.content;
-        debugger;
         self.setState({
           content: image + cont,
           disabledState: false
