@@ -206,6 +206,19 @@ ask-modal .quill {
 .quill-created p, .quill-created li {
   padding-bottom: 6px;
 }
+
+.dropzone {
+  margin: auto;
+  float: none;
+  background-color: #f6f6f6;
+  border-radius: 3px;
+  min-height: 60px;
+  cursor: pointer;
+}
+
+.dropzone p {
+  padding: 6px;
+}
 /* reset */
 
 /* main nav */
@@ -442,7 +455,7 @@ header, .modal-container {
   padding-bottom: 16px;
 }
 
-.quill-created img {
+.quill-created img, .img{
   max-width: 100%;
   border-radius: 3px;
 }
@@ -612,4 +625,9 @@ and (max-device-width : 667px) {
   .question-col, .related-col {
     flex: none;
   }
+}
+
+.disabled {
+  color: gray;
+  cursor: wait;
 }
