@@ -1,5 +1,6 @@
 const React = require('react');
 const ReactQuill = require('react-quill');
+const Dropzone = require('react-dropzone');
 const Link = require('react-router').Link;
 const QuestionActions = require('../../actions/question_actions');
 const hashHistory = require('react-router').hashHistory;
@@ -13,7 +14,9 @@ const QuestionAskForm = React.createClass({
     return ({
       title: 'what\'s on your mind?',
       description: '',
-      showDescription: false
+      showDescription: false,
+      file: '',
+      disabledState: false
     });
   },
 
@@ -62,7 +65,54 @@ const QuestionAskForm = React.createClass({
       this.setState({title: ''});
     }
   },
+  // dropzone ------------------------------------------------------------------
+  openDrop (event) {
+    event.preventDefault();
+    this.refs.dropzone.open();
+  },
 
+  onDrop (files) {
+    console.log(files[0].preview);
+    this.setState({
+      file: files[0],
+      disabledState: true,
+     });
+
+    const url = "https://api.cloudinary.com/v1_1/dxhqr7u1z/image/upload";
+    const timestamp = Date.now() / 1000 | 0;
+    const apiKey = 627249736112177;
+
+    const self = this;
+
+    const formData = new FormData();
+    formData.append('file', files[0]);
+    formData.append('timestamp', timestamp);
+    formData.append('api_key', apiKey);
+    formData.append('upload_preset', 'scjzwdf9');
+
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: formData,
+      cache: false,
+      dataType: 'json',
+      processData: false,
+      contentType: false,
+      success: xhr => {
+        console.log(xhr);
+        const image = `<img src=\"http://res.cloudinary.com/dxhqr7u1z/image/fetch/${ xhr.url }\" /><br />`;
+        const cont = self.state.description;
+        self.setState({
+          description: image + cont,
+          disabledState: false
+        });
+      },
+      error: function (xhr) {
+        console.log(xhr);
+      }
+    });
+  },
+  // dropzone ------------------------------------------------------------------
   // modal ---------------------------------------------------------------------
   toggleDescription () {
     if (this.state.showDescription) {
@@ -88,8 +138,12 @@ const QuestionAskForm = React.createClass({
       dClass += ' hidden';
     }
 
-    return (
+    let disabledClass = '';
+    if (this.state.disabledState) {
+      disabledClass = ' disabled';
+    }
 
+    return (
       <div className="modal-container">
         <div className="modal-container">
           <hgroup className="logo">
@@ -105,8 +159,9 @@ const QuestionAskForm = React.createClass({
                 value={ this.state.title } />
               <input
                 type="submit"
-                className="dummy-ask-button modal-ask-button button"
-                value="Ask Question" />
+                className={ "dummy-ask-button modal-ask-button button" + disabledClass}
+                value="Ask Question"
+                disabled={ this.state.disabledState } />
             </form>
 
           </div>
@@ -118,11 +173,27 @@ const QuestionAskForm = React.createClass({
         </div>
         <div className="modal-ask-container ask-description-container">
           <br />
-          <ReactQuill
-            className={ dClass }
-            theme="snow"
-            value={ this.state.description }
-            onChange={ this._onDescriptionChange } />
+          <Dropzone
+            ref="dropzone"
+            className={ "dropzone" + dClass + disabledClass }
+            onDrop={ this.onDrop }
+            multiple={ false }
+            accept="image/png,image/jpeg,image/gif"
+            disableClick={ true }
+            disabled={ this.state.disabledState }>
+            <p>
+              Drag an image from file or
+              <button
+                onClick={ this.openDrop }
+                disabled={ this.state.disabledState }>insert</button>
+            </p>
+            <ReactQuill
+              className={ dClass + disabledClass }
+              theme="snow"
+              value={ this.state.description }
+              onChange={ this._onDescriptionChange }
+              disabled={ this.state.disabledState } />
+            </Dropzone>
         </div>
       </div>
     );

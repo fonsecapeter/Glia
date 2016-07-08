@@ -311,6 +311,8 @@ header, .modal-container {
 
 .ask-description-container {
   padding-top: 20px;
+  padding-left: 6px;
+  padding-right: 6px;
   margin: auto;
 }
 
@@ -340,6 +342,7 @@ header, .modal-container {
   margin-top: 5px;
   height: 300px;
   padding-bottom: 80px;
+  border: 1px solid #ddd;
 }
 /* main nav */
 

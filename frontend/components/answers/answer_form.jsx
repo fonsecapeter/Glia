@@ -4,6 +4,7 @@ const ReactQuill = require('react-quill');
 const Dropzone = require('react-dropzone');
 const AnswerActions = require('../../actions/answer_actions');
 const hashHistory = require('react-router').hashHistory;
+
 const cloudinaryConfig = require('react-cloudinary').cloudinaryConfig;
 const CloudinaryImage = require('react-cloudinary').CloudinaryImage;
 cloudinaryConfig({ cloud_name: 'dxhqr7u1z' });
@@ -50,7 +51,7 @@ const AnswerCreateForm = React.createClass({
     this.setState({ content: '' });
     this.props.closeSelf();
   },
-
+  // dropzone ------------------------------------------------------------------
   openDrop (event) {
     event.preventDefault();
     this.refs.dropzone.open();
@@ -97,7 +98,7 @@ const AnswerCreateForm = React.createClass({
       }
     });
   },
-
+  // dropzone ------------------------------------------------------------------
   render () {
     let buttonText;
     if (this.props.method === 'create') {
@@ -110,14 +111,10 @@ const AnswerCreateForm = React.createClass({
     if (this.state.disabledState) {
       disabledClass = ' disabled';
     }
-    // <img src={ this.state.file.preview } />
 
     return (
       <div>
         <form onSubmit={ this._onSubmit }>
-
-          <br /><br />
-
           <Dropzone
             ref="dropzone"
             className={ "dropzone" + disabledClass }
@@ -131,7 +128,7 @@ const AnswerCreateForm = React.createClass({
               <button
                 onClick={ this.openDrop }
                 disabled={ this.state.disabledState }>insert</button>
-              </p>
+            </p>
             <ReactQuill
               className={ "quill" + disabledClass }
               theme="snow"
