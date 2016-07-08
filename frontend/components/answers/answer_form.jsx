@@ -51,6 +51,11 @@ const AnswerCreateForm = React.createClass({
     this.props.closeSelf();
   },
 
+  openDrop (event) {
+    event.preventDefault();
+    this.refs.dropzone.open();
+  },
+
   onDrop (files) {
     console.log(files[0].preview);
     this.setState({
@@ -105,27 +110,34 @@ const AnswerCreateForm = React.createClass({
     if (this.state.disabledState) {
       disabledClass = ' disabled';
     }
+    // <img src={ this.state.file.preview } />
 
     return (
       <div>
         <form onSubmit={ this._onSubmit }>
-          <ReactQuill
-            className={ "quill" + disabledClass }
-            theme="snow"
-            value={ this.state.content }
-            onChange={ this._onContentChange }
-            disabled={ this.state.disabledState } />
 
           <br /><br />
 
           <Dropzone
+            ref="dropzone"
             className={ "dropzone" + disabledClass }
             onDrop={ this.onDrop }
             multiple={ false }
             accept="image/png,image/jpeg,image/gif"
+            disableClick={ true }
             disabled={ this.state.disabledState }>
-            <p>Drag an image from file</p>
-            <img src={ this.state.file.preview } />
+            <p>
+              Drag an image from file or
+              <button
+                onClick={ this.openDrop }
+                disabled={ this.state.disabledState }>insert</button>
+              </p>
+            <ReactQuill
+              className={ "quill" + disabledClass }
+              theme="snow"
+              value={ this.state.content }
+              onChange={ this._onContentChange }
+              disabled={ this.state.disabledState } />
           </Dropzone>
 
           <br /><br />

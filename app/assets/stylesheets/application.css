@@ -188,7 +188,7 @@ li {
 }
 
 .quill {
-  border: 1px solid #ddd;
+  /*border: 1px solid #ddd;*/
   height: 400px;
   text-align: left;
   padding-bottom: 80px;
@@ -213,7 +213,6 @@ ask-modal .quill {
   background-color: #f6f6f6;
   border-radius: 3px;
   min-height: 60px;
-  cursor: pointer;
 }
 
 .dropzone p {
@@ -628,6 +627,6 @@ and (max-device-width : 667px) {
 }
 
 .disabled {
-  color: gray;
-  cursor: wait;
+  opacity: 0.65;
+  cursor: not-allowed;
 }
