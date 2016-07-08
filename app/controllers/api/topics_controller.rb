@@ -4,4 +4,10 @@ class Api::TopicsController < ApplicationController
 
     render :index
   end
+
+  # def show
+  #   @topic = Topic.find(params[:id])
+  #
+  #   render :show
+  # end
 end

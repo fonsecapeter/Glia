@@ -2,6 +2,10 @@ class Api::QuestionsController < ApplicationController
   def index
     @questions = Question.all();
 
+    if topic_id
+      @questions = Topic.find(topic_id).questions
+    end
+
     render :index
   end
 
@@ -54,5 +58,9 @@ class Api::QuestionsController < ApplicationController
       :title,
       :description
     )
+  end
+
+  def topic_id
+    params[:topic_id]
   end
 end

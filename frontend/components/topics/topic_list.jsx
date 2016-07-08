@@ -1,6 +1,8 @@
 const React = require('react');
+const Link = require('react-router').Link;
 const TopicStore = require('../../stores/topic_store');
 const TopicActions = require('../../actions/topic_actions');
+const QuestionActions = require('../../actions/question_actions');
 
 const TopicIndex = React.createClass({
   getInitialState () {
@@ -24,6 +26,11 @@ const TopicIndex = React.createClass({
     this.topicListener.remove();
   },
 
+  _onClick (event) {
+    const topicId = event.currentTarget.topicId;
+    QuestionActions.fetchQuestionsByTopicId(topicId);
+  },
+
   render () {
     return (
       <div className="topic-list">
@@ -32,7 +39,17 @@ const TopicIndex = React.createClass({
           <ul>
             {
               this.state.topics.map( topic => {
-                return <li key={ topic.id }>{ topic.name }</li>;
+                return (
+                  <li
+                    key={ topic.id }>
+                    <Link
+                      onClick={ this._onClick }
+                      topicId={ topic.id }
+                      to={ `topics/${ topic.id }` }>
+                      { topic.name }
+                    </Link>
+                  </li>
+                );
               })
             }
           </ul>

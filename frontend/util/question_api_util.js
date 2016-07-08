@@ -9,6 +9,15 @@ const QuestionApiUtil = {
     });
   },
 
+  fetchQuestionsByTopicId (topicId, success) {
+    $.ajax({
+      url: '/api/questions',
+      type: 'GET',
+      data: { topic_id: topicId },
+      success
+    });
+  },
+
   createQuestion (question, success, error) {
     $.ajax({
       url: '/api/questions',

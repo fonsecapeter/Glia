@@ -14,6 +14,13 @@ const QuestionActions = {
     );
   },
 
+  fetchQuestionsByTopicId (topicId) {
+    QuestionApiUtil.fetchQuestionsByTopicId(
+      topicId,
+      QuestionActions.receiveAllQuestions
+    );
+  },
+
   createQuestion (question) {
     QuestionApiUtil.createQuestion(
       question,

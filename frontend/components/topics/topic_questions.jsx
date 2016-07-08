@@ -1,11 +1,11 @@
 const React = require('react');
 const QuestionStore = require('../../stores/question_store.js');
 const QuestionActions = require('../../actions/question_actions.js');
-const QuestionIndexItem = require('./question_index_item');
-const TopicIndex = require('../topics/topic_list');
+const QuestionIndexItem = require('../questions/question_index_item');
+const TopicIndex = require('./topic_list');
 const Help = require('../help.jsx');
 
-const QuestionIndex = React.createClass({
+const TopicQuestionIndex = React.createClass({
   getInitialState () {
     return ({
       questions: []
@@ -20,14 +20,15 @@ const QuestionIndex = React.createClass({
 
   componentDidMount () {
     this.questionListener = QuestionStore.addListener(this._onChange);
-    QuestionActions.fetchAllQuestions();
+    QuestionActions.fetchQuestionsByTopicId(this.props.params.topicId);
   },
 
-  // componontWillReceiveProps (newProps) {
-  //   if (this.props.params === newProps.params) {
-  //     QuestionActions.fetchAllQuestions();
-  //   }
-  // },
+  componentWillReceiveProps (nextProps) {
+    if (this.props.params.topicId === nextProps.params.topicId) {
+      QuestionActions.fetchQuestionsByTopicId(nextProps.params.topicId);
+      window.scrollTo(0, 0);
+    }
+  },
 
   componentWillUnmount () {
     this.questionListener.remove();
@@ -55,4 +56,4 @@ const QuestionIndex = React.createClass({
   }
 });
 
-module.exports = QuestionIndex;
+module.exports = TopicQuestionIndex;

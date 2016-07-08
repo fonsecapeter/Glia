@@ -447,10 +447,10 @@ header, .modal-container {
 /* question index */
 
 /* question index item */
-.question-index-item, .answer-index-item {
+.question-index-item+.question-index-item, .answer-index-item+.answer-index-item {
   padding: 5px 5px 5px;
   margin: 5px 0 5px 0;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
 }
 
 .answer-index-item {
@@ -526,6 +526,9 @@ header, .modal-container {
 
 .comment-index-item {
   display: block;
+}
+
+.comment-index-item+.comment-index-item {
   border-top: 1px solid #ddd;
 }
 .comment-index-item td {
