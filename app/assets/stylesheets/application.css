@@ -197,6 +197,15 @@ li {
 ask-modal .quill {
   height: 200px;
 }
+
+.quill-created ul {
+  list-style-type: disc;
+  padding-left: 16px;
+}
+
+.quill-created p, .quill-created li {
+  padding-bottom: 6px;
+}
 /* reset */
 
 /* main nav */

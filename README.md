@@ -118,7 +118,7 @@ user interface.
 
 - [x] create `Topic` model and `TopicTagging` join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching TopicTags for questions
+  - [x] fetching TopicTags for questions
   - [ ] adding TopicTags to questions
   - [ ] creating TopicTags while adding to questions
   - [ ] searching questions by TopicTags
@@ -128,9 +128,9 @@ user interface.
 
 **objective:** Enable complex styling of answers.
 
-- [ ] Integrate rich text formatting (`react-quill` based on Quill.js looks great).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new AnswerForm.
+- [x] Integrate rich text formatting (`react-quill` based on Quill.js looks great).
+- [x] Use Rails helpers to sanitize HTML before rendering.
+- [x] Style the new AnswerForm.
 
 ### Phase 8: Searchable (1 day, W2 F 6pm)
 
@@ -145,7 +145,7 @@ user interface.
 - [ ] User status of healthcare provider + visual distinction in answers
 - [ ] Support groups for private questions
 - [ ] Pagination / infinite scroll for Questions Index
-- [ ] Responsive layout
+- [x] Responsive layout
 
 :bug: asking question when not signed in
 
