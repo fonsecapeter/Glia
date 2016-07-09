@@ -9,7 +9,7 @@ Glia is a web application (inspired by Quora) that will be built using Ruby on R
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
-- [ ] Minimum necessary features:
+- [x] Minimum necessary features:
   - [x] Authentication
     - [x] Create an account
     - [x] Log in / out
@@ -28,14 +28,13 @@ Glia is a web application (inspired by Quora) that will be built using Ruby on R
     - [x] create comment for answer (all)
     - [x] read list for each answer (all)
     - [x] delete (own)
-  - [ ] Search for Questions
-  - [ ] Topics
-    - [ ] filter questions by topic
-    - [ ] add topics to questions (own)
-    - [ ] remove topics from questions (own)
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Topics
+    - [x] filter questions by topic
+    - [x] add topics to questions (own)
+    - [x] remove topics from questions (own)
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
 
 ## Design Docs
 * [View Wireframes][views]
@@ -102,7 +101,7 @@ user interface.
   - [x] adding answers requires a login
 - [x] Use CSS to style QuestionDetail, AnswerIndex, AnswerIndexItem, and AnswerIndexForms
 
-### Phase 5: Comments (1 day, W2 Tu 12pm)
+### Phase 5: Comments (1.5 day, W2 Tu 6pm)
 
 **Objective:** Comments belong to Answers, and can be viewed in QuestionDetail.
 
@@ -112,19 +111,19 @@ user interface.
   - [x] adding comments requires a login
 - Use CSS to style QuestionDetail
 
-### Phase 6: Topics (1.5 days, W2 W 6pm)
+### Phase 6: Topics (1.5 days, W2 Th 12pm)
 
 **Objective:** Questions can be tagged with multiple Topics.
 
 - [x] create `Topic` model and `TopicTagging` join table
 - build out API, Flux loop, and components for:
   - [x] fetching TopicTags for questions
-  - [ ] adding TopicTags to questions
-  - [ ] creating TopicTags while adding to questions
-  - [ ] searching questions by TopicTags
-- [ ] Style new elements for filtered QuestionIndex (by topic)
+  - [x] adding TopicTags to questions
+  - [x] creating TopicTags
+  - [x] searching questions by TopicTags
+- [x] Style new elements for filtered QuestionIndex (by topic)
 
-### Phase 7: Rich Text Formatting (1 day, W2 Th 6pm)
+### Phase 7: Rich Text Formatting (1.5 day, W2 F 6pm)
 
 **objective:** Enable complex styling of answers.
 
@@ -132,20 +131,12 @@ user interface.
 - [x] Use Rails helpers to sanitize HTML before rendering.
 - [x] Style the new AnswerForm.
 
-### Phase 8: Searchable (1 day, W2 F 6pm)
-
-**objective:** Enable question searches.
-
-- [ ] Create searchResult dropdown component that responds to question input
-- [ ] Limit to 5 results
-- [ ] Search button to display all search results
-- [ ] Style new elements in filtered QuestionIndex
-
 ### Bonus Features (TBD)
 - [ ] User status of healthcare provider + visual distinction in answers
 - [ ] Support groups for private questions
 - [ ] Pagination / infinite scroll for Questions Index
 - [x] Responsive layout
+- [ ] Search by question text
 
 :bug: asking question when not signed in
 

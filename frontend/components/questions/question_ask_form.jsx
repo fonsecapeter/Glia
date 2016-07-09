@@ -3,9 +3,11 @@ const ReactQuill = require('react-quill');
 const Dropzone = require('react-dropzone');
 const Link = require('react-router').Link;
 const QuestionActions = require('../../actions/question_actions');
+const TopicActions = require('../../actions/topic_actions');
 const hashHistory = require('react-router').hashHistory;
 
 const SessionStore = require('../../stores/session_store');
+const TopicStore = require('../../stores/topic_store');
 
 const Boron = require('boron');
 
@@ -16,8 +18,23 @@ const QuestionAskForm = React.createClass({
       description: '',
       showDescription: false,
       file: '',
-      disabledState: false
+      disabledState: false,
+      topicIds: [],
+      availableTopics: []
     });
+  },
+
+  componentDidMount() {
+    this.topicListener = TopicStore.addListener(this._onAvailableTopicChange);
+    TopicActions.fetchAllTopics();
+  },
+
+  componentWillUnmount () {
+    this.topicListener.remove();
+  },
+
+  _onAvailableTopicChange () {
+    this.setState({ availableTopics: TopicStore.all() });
   },
 
   _onTitleChange (event) {
@@ -57,7 +74,11 @@ const QuestionAskForm = React.createClass({
       description = this.state.description;
     }
 
-    return { title: title, description: description };
+    return {
+      title: title,
+      description: description,
+      topic_ids: this.state.topicIds
+    };
   },
 
   titleFocus () {
@@ -72,7 +93,6 @@ const QuestionAskForm = React.createClass({
   },
 
   onDrop (files) {
-    console.log(files[0].preview);
     this.setState({
       file: files[0],
       disabledState: true,
@@ -99,7 +119,6 @@ const QuestionAskForm = React.createClass({
       processData: false,
       contentType: false,
       success: xhr => {
-        console.log(xhr);
         const image = `<img src=\"http://res.cloudinary.com/dxhqr7u1z/image/fetch/${ xhr.url }\" /><br />`;
         const cont = self.state.description;
         self.setState({
@@ -119,6 +138,20 @@ const QuestionAskForm = React.createClass({
       this.setState({ showDescription: false });
     } else {
       this.setState({ showDescription: true });
+    }
+  },
+
+  _onCheckChange (event) {
+    let topicIds = this.state.topicIds;
+    const newTopicId = parseInt(event.currentTarget.value);
+    const idx = topicIds.indexOf(newTopicId);
+
+    if (event.currentTarget.checked) {
+      topicIds.push(newTopicId);
+      this.setState({ topicIds: topicIds });
+    } else {
+      topicIds.splice(idx, 1);
+      this.setState({ topicIds: topicIds });
     }
   },
 
@@ -193,7 +226,20 @@ const QuestionAskForm = React.createClass({
               value={ this.state.description }
               onChange={ this._onDescriptionChange }
               disabled={ this.state.disabledState } />
-            </Dropzone>
+          </Dropzone>
+          {
+            this.state.availableTopics.map( topic => {
+              return (
+                <label className={ "checkbox-label" + dClass }>
+                  <input type="checkbox"
+                    value={ topic.id }
+                    checked={ this.state.topicIds.indexOf(parseInt(topic.id)) !== -1 }
+                    onChange={ this._onCheckChange } />
+                  { topic.name }
+                </label>
+              );
+            })
+          }
         </div>
       </div>
     );

@@ -5,16 +5,22 @@ const Dropzone = require('react-dropzone');
 const QuestionStore = require('../../stores/question_store.js');
 const QuestionActions = require('../../actions/question_actions.js');
 
+const TopicStore = require('../../stores/topic_store');
+const TopicActions = require('../../actions/topic_actions');
+
+
 const QuestionEdit = React.createClass({
   getInitialState () {
     const candidateQuestion = QuestionStore.find(this.props.params.questionId);
-    const question = candidateQuestion ? candidateQuestion : {};
+    const question = candidateQuestion ? candidateQuestion : {topicIds: []};
 
     return ({
       title: question.title,
       desription: question.desription,
       file: '',
-      disabledState: false
+      disabledState: false,
+      topicIds: question.topicIds,
+      availableTopics: []
     });
   },
 
@@ -23,17 +29,26 @@ const QuestionEdit = React.createClass({
     const question = candidateQuestion ? candidateQuestion : {};
     this.setState({
       title: question.title,
-      description: question.description
+      description: question.description,
+      topicIds: question.topicIds
     });
+  },
+
+  _onAvailableTopicChange () {
+    this.setState({ availableTopics: TopicStore.all() });
   },
 
   componentDidMount () {
     this.questionListener = QuestionStore.addListener(this._onChange);
     QuestionActions.fetchQuestion(parseInt(this.props.params.questionId));
+
+    this.topicListener = TopicStore.addListener(this._onAvailableTopicChange);
+    TopicActions.fetchAllTopics();
   },
 
   componentWillUnmount () {
     this.questionListener.remove();
+    this.topicListener.remove();
   },
 
   _onSubmit (event) {
@@ -41,7 +56,8 @@ const QuestionEdit = React.createClass({
     QuestionActions.updateQuestion({
       title: this.state.title,
       description: this.state.description,
-      id: this.props.params.questionId
+      id: this.props.params.questionId,
+      topic_ids: this.state.topicIds
     });
     hashHistory.push(`questions/${this.props.params.questionId}`);
   },
@@ -64,7 +80,6 @@ const QuestionEdit = React.createClass({
   },
 
   onDrop (files) {
-    console.log(files[0].preview);
     this.setState({
       file: files[0],
       disabledState: true,
@@ -91,7 +106,6 @@ const QuestionEdit = React.createClass({
       processData: false,
       contentType: false,
       success: xhr => {
-        console.log(xhr);
         const image = `<img src=\"http://res.cloudinary.com/dxhqr7u1z/image/fetch/${ xhr.url }\" /><br />`;
         const cont = self.state.description;
         self.setState({
@@ -105,6 +119,20 @@ const QuestionEdit = React.createClass({
     });
   },
   // dropzone ------------------------------------------------------------------
+  _onCheckChange (event) {
+    let topicIds = this.state.topicIds;
+    const newTopicId = parseInt(event.currentTarget.value);
+    const idx = topicIds.indexOf(newTopicId);
+
+    if (event.currentTarget.checked) {
+      topicIds.push(newTopicId);
+      this.setState({ topicIds: topicIds });
+    } else {
+      topicIds.splice(idx, 1);
+      this.setState({ topicIds: topicIds });
+    }
+  },
+
   render () {
     let disabledClass = '';
     if (this.state.disabledState) {
@@ -145,6 +173,20 @@ const QuestionEdit = React.createClass({
                 onChange={ this._onDescriptionChange }
                 disabled={ this.state.disabledState } />
               </Dropzone>
+
+              {
+                this.state.availableTopics.map( topic => {
+                  return (
+                    <label className={ "checkbox-label" }>
+                      <input type="checkbox"
+                        value={ topic.id }
+                        checked={ this.state.topicIds.indexOf(parseInt(topic.id)) !== -1 }
+                        onChange={ this._onCheckChange } />
+                      { topic.name }
+                    </label>
+                  );
+                })
+              }
 
             <br /><br />
             <input

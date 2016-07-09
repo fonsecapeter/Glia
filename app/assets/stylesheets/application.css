@@ -644,3 +644,18 @@ and (max-device-width : 667px) {
   opacity: 0.65;
   cursor: not-allowed;
 }
+
+input[type=checkbox] {
+  width: 6px;
+  height: 6px;
+}
+
+input[type=checkbox]:checked {
+  background-color: #6f7e90;
+  border-color: #6f7e90;
+}
+
+.checkbox-label {
+  border: none;
+  padding: 3px;
+}
