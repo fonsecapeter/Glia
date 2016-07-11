@@ -42,6 +42,7 @@ const TopicIndex = React.createClass({
       this.setState({
         creatingTopic: true
       });
+      window.scrollTo(0, 0);
     }
   },
 
