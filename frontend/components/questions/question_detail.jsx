@@ -1,5 +1,7 @@
 const React = require('react');
 const hashHistory = require('react-router').hashHistory;
+const Link = require('react-router').Link;
+
 const QuestionStore = require('../../stores/question_store.js');
 const SessionStore = require('../../stores/session_store');
 const QuestionActions = require('../../actions/question_actions.js');
@@ -21,7 +23,7 @@ const commentPublicId = 'comment_dbsbo8';
 const QuestionDetail = React.createClass({
   getInitialState () {
     return ({
-      question: {},
+      question: { topics: [] },
       answering: false,
       commenting: false
     });
@@ -182,6 +184,24 @@ const QuestionDetail = React.createClass({
     );
   },
 
+  topics () {
+    return (
+      <span>
+        {
+          this.state.question.topics.map (topic => {
+            return (
+              <span>
+                &nbsp;
+                <Link to={ `topics/${ topic.id }` } key={ topic.id }>{ topic.name }</Link>
+                &nbsp;
+              </span>
+            );
+          })
+        }
+      </span>
+    );
+  },
+
   render () {
 
     return(
@@ -196,6 +216,7 @@ const QuestionDetail = React.createClass({
                   options={{ width: 16, height: 16 }} />
                 { this.state.question.authorName }
                 { this.createdAgo() }
+                { this.topics() }
               </p>
               { this.ownershipButtons() }
             </div>

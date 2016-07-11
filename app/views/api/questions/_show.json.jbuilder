@@ -9,6 +9,10 @@ json.question do
   json.createdAgo time_ago_in_words(@question.created_at)
   json.commentCount @question.comments.count
   json.topicIds @question.topics.map { |topic| topic.id }
+  json.topics(@question.topics) do |topic|
+    json.id topic.id
+    json.name topic.name
+  end
   json.comments(@question.comments) do |comment|
     json.id comment.id
     json.content comment.content
