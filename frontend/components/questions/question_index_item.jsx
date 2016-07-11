@@ -93,11 +93,13 @@ const QuestionIndexItem = React.createClass({
       <div className="question-index-item quill-created">
         <Link to={ detailPath }><h3>{ this.props.question.title }</h3></Link>
         <p>
-          <CloudinaryImage
-            className="author-icon"
-            publicId={userPublicId}
-            options={{ width: 16, height: 16 }} />
-          { this.props.question.authorName }
+          <Link to={ `users/${ this.props.question.authorId }` }>
+            <CloudinaryImage
+              className="author-icon"
+              publicId={userPublicId}
+              options={{ width: 16, height: 16 }} />
+            { this.props.question.authorName }
+          </Link>
           { this.createdAgo() }
           { this.answerCount() }
         </p>

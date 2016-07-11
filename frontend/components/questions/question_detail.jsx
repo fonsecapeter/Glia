@@ -190,7 +190,7 @@ const QuestionDetail = React.createClass({
         {
           this.state.question.topics.map (topic => {
             return (
-              <span>
+              <span key={ topic.id }>
                 &nbsp;
                 <Link to={ `topics/${ topic.id }` } key={ topic.id }>{ topic.name }</Link>
                 &nbsp;
@@ -210,11 +210,13 @@ const QuestionDetail = React.createClass({
             <h2>{ this.state.question.title }</h2>
             <div>
               <p>
-                <CloudinaryImage
-                  className="author-icon"
-                  publicId={ userPublicId }
-                  options={{ width: 16, height: 16 }} />
-                { this.state.question.authorName }
+                <Link to={ `users/${ this.state.question.authorId }` }>
+                  <CloudinaryImage
+                    className="author-icon"
+                    publicId={ userPublicId }
+                    options={{ width: 16, height: 16 }} />
+                  { this.state.question.authorName }
+                </Link>
                 { this.createdAgo() }
                 { this.topics() }
               </p>

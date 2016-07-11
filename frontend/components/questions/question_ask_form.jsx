@@ -230,7 +230,7 @@ const QuestionAskForm = React.createClass({
           {
             this.state.availableTopics.map( topic => {
               return (
-                <label className={ "checkbox-label" + dClass }>
+                <label className={ "checkbox-label" + dClass } key={ topic.id }>
                   <input type="checkbox"
                     value={ topic.id }
                     checked={ this.state.topicIds.indexOf(parseInt(topic.id)) !== -1 }

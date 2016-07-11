@@ -1,4 +1,6 @@
 const React = require('react');
+const Link = require('react-router').Link;
+
 const SessionStore = require('../../stores/session_store');
 const CommentActions = require('../../actions/comment_actions');
 
@@ -49,11 +51,13 @@ const CommentIndexItem = React.createClass({
     return (
       <tr className="comment-index-item">
         <td className="author-info">
-          <CloudinaryImage
-            className="author-icon"
-            publicId={userPublicId}
-            options={{ width: 16, height: 16 }} />
-          { this.props.comment.authorName }: &nbsp;
+          <Link to={ `users/${ this.props.comment.authorId }` }>
+            <CloudinaryImage
+              className="author-icon"
+              publicId={userPublicId}
+              options={{ width: 16, height: 16 }} />
+            { this.props.comment.authorName }:
+          </Link> &nbsp;
         </td>
         <td>
           { this.props.comment.content } &nbsp;

@@ -7,7 +7,7 @@ const SessionConstants = require('../constants/session_constants');
 let _currentUser = { answers: [], questions: [] };
 let _currentUserHasBeenFetched = false;
 
-const SessionStore = new  Store(AppDispatcher);
+const SessionStore = new Store(AppDispatcher);
 
 const _signIn = function (currentUser) {
   _currentUser = currentUser;

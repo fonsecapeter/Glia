@@ -155,6 +155,10 @@ li {
   vertical-align: middle;
 }
 
+.h-align-center {
+  text-align: center;
+}
+
 .card-top {
   width: 100%;
   padding: 8px 5px 5px 5px;
@@ -475,9 +479,9 @@ header, .modal-container {
 /* question index item */
 
 /* question detail */
-.question-detail, .question-edit {
+.question-detail, .question-edit, .user-detail {
   display: flex;
-  padding: 40px 20px 20px 60px;
+  padding: 42px 20px 20px 60px;
   /*margin: auto;*/
   margin-top: 0;
   justify-content: flex-start;
@@ -613,7 +617,7 @@ and (max-device-width : 667px) {
 
 
 @media (max-width: 800px) {
-  .question-detail, .question-edit {
+  .question-detail, .question-edit, .user-detail {
     flex-direction: column;
     padding: 60px 20px 20px 20px;
   }
@@ -628,7 +632,7 @@ and (max-device-width : 667px) {
 @media only screen
 and (min-device-width : 375px)
 and (max-device-width : 667px) {
-  .question-detail, .question-edit {
+  .question-detail, .question-edit, .user-detail {
     flex-direction: column;
     padding: 60px 20px 20px 20px;
   }
@@ -662,4 +666,11 @@ input[type=checkbox]:checked {
 
 .unfixed {
   position: static;
+}
+
+.avatar-detail {
+  /*border-radius: 50%;*/
+  border-radius: 3px;
+  max-height: 160px;
+  max-width: 160px;
 }

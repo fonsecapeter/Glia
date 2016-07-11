@@ -35,11 +35,13 @@ const App = React.createClass({
       return (
         <hgroup className="header-group">
           <p className="header-name">
-            <CloudinaryImage
-              className="author-icon"
-              publicId={imagePublicId}
-              options={{ width: 16, height: 16 }} />
-          { SessionStore.currentUser().username }
+          <Link to={ `users/${ SessionStore.currentUser().id }` }>
+              <CloudinaryImage
+                className="author-icon"
+                publicId={imagePublicId}
+                options={{ width: 16, height: 16 }} />
+            { SessionStore.currentUser().username }
+          </Link>
         </p>
           <input type="submit"
             className="header-sign-out-button button"

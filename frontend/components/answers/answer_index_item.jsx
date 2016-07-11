@@ -1,4 +1,6 @@
 const React = require('react');
+const Link = require('react-router').Link;
+
 const SessionStore = require('../../stores/session_store');
 const AnswerActions = require('../../actions/answer_actions');
 const AnswerForm = require('./answer_form');
@@ -123,11 +125,13 @@ const AnswerIndexItem = React.createClass({
       return (
         <div className="answer-index-item">
           <p>
-            <CloudinaryImage
-              className="author-icon"
-              publicId={userPublicId}
-              options={{ width: 16, height: 16 }} />
-            { this.props.answer.authorName }
+            <Link to={ `users/${ this.props.answer.authorId }` }>
+              <CloudinaryImage
+                className="author-icon"
+                publicId={userPublicId}
+                options={{ width: 16, height: 16 }} />
+              { this.props.answer.authorName }
+            </Link>
           </p>
           <div>
             <div className="answer-create">
@@ -146,12 +150,14 @@ const AnswerIndexItem = React.createClass({
       return (
         <div className="answer-index-item quill-created">
           <p>
-            <CloudinaryImage
-              className="author-icon"
-              publicId={userPublicId}
-              options={{ width: 16, height: 16 }} />
-            { this.props.answer.authorName }
-            { this.createdAgo() }
+            <Link to={ `users/${ this.props.answer.authorId }` }>
+              <CloudinaryImage
+                className="author-icon"
+                publicId={userPublicId}
+                options={{ width: 16, height: 16 }} />
+              { this.props.answer.authorName }
+            </Link>
+              { this.createdAgo() }
           </p>
           { this.editButton () }
           <br />
