@@ -155,6 +155,14 @@ const QuestionAskForm = React.createClass({
     }
   },
 
+  moveCursorToStart (event) {
+    if (this.state.title === 'what\'s on your mind?') {
+      let input = document.getElementById(event.currentTarget.id);
+      input.selectionStart = 0;
+      input.selectionEnd = 0;
+    }
+  },
+
   getContent (modalName) {
     let tClass = 'modal-ask-bar';
     let dClass = 'modal-ask-description quill';
@@ -185,7 +193,9 @@ const QuestionAskForm = React.createClass({
           <div className="modal-ask-container">
             <form onSubmit={ this._onSubmit }>
               <input
+                id="title"
                 autoFocus={ true }
+                onFocus={ this.moveCursorToStart }
                 className={ tClass }
                 onKeyDown={ this.titleFocus }
                 onChange={ this._onTitleChange }

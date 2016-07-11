@@ -23,6 +23,10 @@ const SignInForm = React.createClass({
   componentDidMount () {
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
     this.sessionListener = SessionStore.addListener(this.redirectIfLoggedIn);
+
+    let input = document.getElementById('unameInput');
+    input.selectionStart = 0;
+    input.selectionEnd = 0;
   },
 
   componentWillUnmount () {
@@ -99,6 +103,9 @@ const SignInForm = React.createClass({
 
   pwdFocus () {
     if (this.state.pwdType === 'text') {
+      let input = document.getElementById('pwdInput');
+      input.selectionStart = 0;
+      input.selectionEnd = 0;
       this.setState({ password: '', pwdType: 'password' });
     }
   },
@@ -127,6 +134,7 @@ const SignInForm = React.createClass({
 
           { this.fieldErrors('base') }
           <input type='text'
+            id="unameInput"
             autoFocus={ true }
             value={ this.state.username }
             onKeyDown={ this.unameFocus }
@@ -136,6 +144,7 @@ const SignInForm = React.createClass({
           <br />
           <br />
           <input type={this.state.pwdType}
+            id="pwdInput"
             value={ this.state.password }
             onFocus={ this.pwdFocus }
             onClick={ this.pwdFocus }
