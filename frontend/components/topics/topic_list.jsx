@@ -8,7 +8,8 @@ const TopicForm = require('./topic_form');
 const TopicIndex = React.createClass({
   getInitialState () {
     return ({
-      topics: []
+      topics: [],
+      creatingTopic: false
     });
   },
 
@@ -32,14 +33,49 @@ const TopicIndex = React.createClass({
     QuestionActions.fetchQuestionsByTopicId(topicId);
   },
 
+  toggleCreating () {
+    if (this.state.creatingTopic) {
+      this.setState({
+        creatingTopic: false
+      });
+    } else {
+      this.setState({
+        creatingTopic: true
+      });
+    }
+  },
+
+  topicForm () {
+    if (this.state.creatingTopic) {
+      return (
+        <TopicForm />
+      );
+    } else {
+      return ('');
+    }
+  },
+
   render () {
+    let className = "topic-list-content";
+    let buttonText;
+    let preview;
+
+    if (this.state.creatingTopic) {
+      buttonText = '▲';
+      preview = this.state.topics;
+      className += " unfixed";
+    } else {
+      buttonText = '▼';
+      preview = this.state.topics.slice(0, 8);
+    }
+
     return (
       <div className="topic-list">
-        <div className="topic-list-content">
+        <div className={ className }>
           <h4>Topics</h4>
           <ul>
             {
-              this.state.topics.map( topic => {
+              preview.map( topic => {
                 return (
                   <li
                     key={ topic.id }>
@@ -54,7 +90,8 @@ const TopicIndex = React.createClass({
               })
             }
           </ul>
-          <TopicForm />
+          <button onClick={ this.toggleCreating }>{ buttonText }</button>
+          { this.topicForm() }
         </div>
       </div>
     );
