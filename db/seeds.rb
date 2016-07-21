@@ -94,7 +94,8 @@ TOPICS = [
   'Trials',   # 4
   'Advice',   # 5
   'Safety',   # 6
-  'FTD'       # 7
+  'FTD',      # 7
+  'Demo'      # 8
 ]
 
 TOPIC_TAGGINGS = [
@@ -139,13 +140,16 @@ User.create!(
   username: 'guest',
   password: 'password'
 )
-
 30.times do
   User.create!(
     username: Faker::Name.first_name,
     password: 'password'
   )
 end
+User.create!(
+  username: 'Peter',
+  password: 'password'
+)
 
 TOPICS.each do |topic|
   Topic.create!(name: topic)
@@ -175,6 +179,18 @@ QUESTIONS.each_with_index do |question, idx|
     end
   end
 end
+
+# demo question
+Question.create!(
+  author_id: 1,
+  title: 'What is Alzheimer’s',
+  topic_ids: [9, 4],
+)
+Answer.create!(
+  author_id: 32,
+  question_id: Question.last.id,
+  content: "<div>Alzheimer's disease is the most common type of dementia and mostly notably leads to memory impairment, among other symptoms. It is a neurodegerative disease, which means the brain atrophies, or shrinks, as it progresses.  </div><div><br></div><div><img src=\"http://www.alz.org/braintour/images/alzheimer_brain.jpg\"></div><div><br></div><div>There is currently no cure, but drug trials are getting closer to a treatment and research at large is getting better at catching it early. Some <a href=\"http://archneur.jamanetwork.com/article.aspx?articleid=785938\">research</a> has also shown that dementia patients can gain artistic insight and hypothesize that these parts of the brain can expand to fill in some of the space left as other parts shrink.</div><div><br></div><div>The <a href=\"http://www.alz.org/\">Alzheimer's Association</a> has a lot of information and some very educational resources.</div>"
+)
 
 # 100.times do
 #   Answer.create!(
