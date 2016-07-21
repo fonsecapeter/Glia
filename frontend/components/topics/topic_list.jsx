@@ -66,9 +66,11 @@ const TopicIndex = React.createClass({
       preview = this.state.topics;
       className += " unfixed";
     } else {
-      buttonText = '▼';
+      buttonText = '+';
       preview = this.state.topics.slice(0, 8);
     }
+
+    const self = this;
 
     return (
       <div className="topic-list">
@@ -77,17 +79,19 @@ const TopicIndex = React.createClass({
           <ul>
             {
               preview.map( topic => {
-                return (
-                  <li
-                    key={ topic.id }>
-                    <Link
-                      onClick={ this._onClick }
-                      topicId={ topic.id }
-                      to={ `topics/${ topic.id }` }>
-                      { topic.name }
-                    </Link>
-                  </li>
-                );
+                if (topic.id !== parseInt(self.props.topicId)) {
+                  return (
+                    <li
+                      key={ topic.id }>
+                      <Link
+                        onClick={ this._onClick }
+                        topicId={ topic.id }
+                        to={ `topics/${ topic.id }/${ topic.name }` }>
+                        { topic.name }
+                      </Link>
+                    </li>
+                  );
+                }
               })
             }
           </ul>

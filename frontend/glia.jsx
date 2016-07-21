@@ -26,7 +26,7 @@ const appRouter = (
       <IndexRoute component={ QuestionIndex } />
       <Route path="questions/:questionId" component={ QuestionDetail } />
       <Route path="questions/:questionId/edit" component={ QuestionEdit } />
-      <Route path="topics/:topicId" component={ TopicQuestions } />
+      <Route path="topics/:topicId/:topicName" component={ TopicQuestions } />
       <Route path="users/:userId" component={ UserDetail } />
     </Route>
   </Router>

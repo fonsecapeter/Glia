@@ -37,9 +37,10 @@ const TopicQuestionIndex = React.createClass({
   render () {
     return (
       <div className="question-index">
-        <TopicIndex />
+        <TopicIndex
+          topicId={ this.props.params.topicId } />
         <div className="feed">
-          <h4>Top Questions For You</h4>
+          <h4>{ this.props.params.topicName }</h4>
           {
             this.state.questions.map( question => {
               return (

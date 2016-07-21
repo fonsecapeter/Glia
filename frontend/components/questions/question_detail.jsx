@@ -113,7 +113,7 @@ const QuestionDetail = React.createClass({
       return (
         <button
           onClick={ this.toggleAnswering }
-          className="v-align-center">answer</button>
+          className="v-align-center light-blue-button tall-button">answer</button>
       );
     }
   },
@@ -174,7 +174,8 @@ const QuestionDetail = React.createClass({
 
     return (
       <button
-        onClick={ this.toggleCommenting }>
+        onClick={ this.toggleCommenting }
+        className="v-align-center tall-button">
         { commentCount }
         <CloudinaryImage
           className="button-icon v-align-center"
@@ -192,7 +193,7 @@ const QuestionDetail = React.createClass({
             return (
               <span key={ topic.id }>
                 &nbsp;
-                <Link to={ `topics/${ topic.id }` } key={ topic.id }>{ topic.name }</Link>
+                <Link to={ `topics/${ topic.id }/${ topic.name }` } key={ topic.id }>{ topic.name }</Link>
                 &nbsp;
               </span>
             );
